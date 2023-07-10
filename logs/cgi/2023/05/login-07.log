@@ -1,0 +1,41 @@
+[2023-05-07 21:48:47]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-05-07 21:48:47]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-05-07 21:48:47]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-05-07 21:48:47]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-05-07 21:48:47]--[src_cgi/login_cgi.c:167]--redis connected error
+[2023-05-07 21:48:47]--[src_cgi/login_cgi.c:303]--token = 
+[2023-05-07 21:55:06]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-05-07 21:55:06]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-05-07 21:55:06]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-05-07 21:55:06]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-05-07 21:55:06]--[src_cgi/login_cgi.c:167]--redis connected error
+[2023-05-07 21:55:06]--[src_cgi/login_cgi.c:303]--token = 
+[2023-05-07 21:55:39]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-05-07 21:55:39]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-05-07 21:55:39]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-05-07 21:55:39]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-05-07 21:55:39]--[src_cgi/login_cgi.c:167]--redis connected error
+[2023-05-07 21:55:39]--[src_cgi/login_cgi.c:303]--token = 
+[2023-05-07 22:09:59]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-05-07 22:09:59]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-05-07 22:09:59]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-05-07 22:09:59]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-05-07 22:09:59]--[src_cgi/login_cgi.c:185]--tmp = kevin_666623506868927
+[2023-05-07 22:09:59]--[src_cgi/login_cgi.c:201]--base64 = rp9m4wmNf+SSpe3GI+PGwKA3DRltiDT9
+[2023-05-07 22:09:59]--[src_cgi/login_cgi.c:303]--token = d7cd36903c2f4247f340acc16584a3e4

@@ -1,0 +1,12 @@
+[2023-05-15 15:48:41]--[src_cgi/login_cgi.c:275]--len = 0, No data from standard input
+[2023-05-15 22:13:34]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-05-15 22:13:34]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-05-15 22:13:34]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-05-15 22:13:34]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-05-15 22:13:34]--[src_cgi/login_cgi.c:185]--tmp = kevin_66657550348126
+[2023-05-15 22:13:34]--[src_cgi/login_cgi.c:201]--base64 = rp9m4wmNf+QXvcg9R7/s1lkzBZfbMq9x
+[2023-05-15 22:13:34]--[src_cgi/login_cgi.c:303]--token = 23274061dde319969fb13d0396ca98f5

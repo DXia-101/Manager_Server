@@ -1,0 +1,149 @@
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:410]--cmd = count
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:168]--line = 4
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:410]--cmd = normal
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:442]--buf = {
+    "count": 4,
+    "start": 0,
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:274]--SELECT * FROM waresinfo limit 0,4 
+ 在操作
+[2023-05-27 16:25:34]--[src_cgi/warestable.c:347]--{
+	"wares":	[{
+			"wares_id":	1,
+			"wares_name":	"黑色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	2,
+			"wares_name":	"白色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	3,
+			"wares_name":	"彩色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	4,
+			"wares_name":	"紫色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}]
+}
+[2023-05-27 16:25:35]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:35]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:35]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:35]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:35]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:35]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:36]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:410]--cmd = search=
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:442]--buf = {
+    "token": "d8c21bfee888f615315bec02fc57b6ad",
+    "user": "kevin_666"
+}
+
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:220]--cJSON_GetObjectItem err
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:457]--user = kevin_666, token = d8c21bfee888f615315bec02fc57b6ad, start = 0, count = 4
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:274]-- 在操作
+[2023-05-27 16:25:37]--[src_cgi/warestable.c:277]-- 操作失败:Query was empty 

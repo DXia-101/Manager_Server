@@ -1,0 +1,10 @@
+[2023-05-07 20:45:45]--[src_cgi/reg_cgi.c:236]--buf = {
+    "email": "abc@qq.com",
+    "firstPwd": "e10adc3949ba59abbe56e057f20f883e",
+    "nickName": "kevin@666",
+    "phone": "11111111111",
+    "userName": "kevin_666"
+}
+
+[2023-05-07 20:45:45]--[src_cgi/reg_cgi.c:128]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-05-07 20:45:45]--[src_cgi/reg_cgi.c:141]--user = kevin_666, nick_name = kevin@666, pwd = e10adc3949ba59abbe56e057f20f883e, tel = 11111111111, email = abc@qq.com
