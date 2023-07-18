@@ -69,6 +69,7 @@ $(wares):	$(CGI_SRC_PATH)/warestable.o \
 			$(COMMON_PATH)/util_cgi.o \
 			$(COMMON_PATH)/cJSON.o \
 			$(COMMON_PATH)/deal_mysql.o \
+			$(COMMON_PATH)/base64.o \
 			$(COMMON_PATH)/redis_op.o  \
 			$(COMMON_PATH)/cfg.o
 		$(CC) $^ -o $@ $(LIBS)

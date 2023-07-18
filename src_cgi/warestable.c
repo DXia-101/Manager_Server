@@ -16,6 +16,7 @@
 #include "deal_mysql.h"
 #include "cfg.h"
 #include "cJSON.h"
+#include "base64.h"
 #include <sys/time.h>
 
 #define WARES_LOG_MODULE       "cgi"
@@ -595,7 +596,8 @@ int main(){
     char user[USER_NAME_LEN];
     char token[TOKEN_LEN];
 	
-	char keyword[40];
+	char keyword[100];
+	char keywordori[100];
 
      // 读取数据库配置信息
     read_cfg();
@@ -652,7 +654,7 @@ int main(){
 
                 get_wares_count(ret); // 获取商品信息个数
 
-            }else if(strcmp(cmd,"waresnormal") == 0){
+            }else if(strcmp(cmd,"waresnormal") == 0){	//初始化时获取商品列表的
 				int start;// 文件起点
 				int count;// 文件个数
 				get_wareslist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
@@ -670,7 +672,7 @@ int main(){
 						free(out);
 					}
 				}
-			}else if(strcmp(cmd,"waresresult") == 0){
+			}else if(strcmp(cmd,"waresresult") == 0){	//搜索时获取商品列表的
 				int start; //文件起点
 				int count; // 文件个数
 				get_wareslist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
@@ -695,7 +697,10 @@ int main(){
 			}else if(strcmp(cmd,"waresadd") == 0){
 				
 			}else{
-				query_parse_key_value(cmd,"waressearch",keyword,NULL);
+				query_parse_key_value(cmd,"waressearch",keywordori,NULL);
+				//将base64转码的关键字转为原来的文字
+				base64_decode(keywordori,keyword);
+				LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"keywordori = %s\n",keywordori);
 				LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"keyword = %s\n",keyword);
 				
 				get_count_json_info(buf, user, token); // 通过json包获取用户名, token
