@@ -47,4 +47,8 @@ void process_result_test(MYSQL *conn, MYSQL_RES *res_set);
 //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
 int process_result_one(MYSQL *conn, char *sql_cmd, char *buf);
 
+//处理数据库更新或删除操作
+//返回值：0成功不生成结果集，如果需要返回受影响行数，用mysql_affected_rows，非零值，失败
+int process_no_result(MYSQL *conn,char *sql_cmd,int *affected_rows);
+
 #endif

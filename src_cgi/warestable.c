@@ -443,6 +443,129 @@ END:
     return ret;
 }
 
+//解析上传的原料信息json包
+int get_wares_info(char *buf,char *wares_id,char *wares_name,char *wares_store_unit,char* wares_amount,char *wares_sell_unit,char *wares_price){
+	int ret = 0;
+	
+	cJSON *root = cJSON_Parse(buf);
+	if(NULL == root)
+    {
+		LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_Parse err\n");
+        ret = -1;
+        goto END;
+	}
+	
+	cJSON *child1 = cJSON_GetObjectItem(root, "wares_id");
+    if(NULL == child1)
+    {
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        ret = -1;
+        goto END;
+    }
+    strcpy(wares_id, child1->valuestring); 
+	
+	cJSON *child2 = cJSON_GetObjectItem(root, "wares_name");
+    if(NULL == child2)
+    {
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        ret = -1;
+        goto END;
+    }
+    strcpy(wares_name, child2->valuestring);
+	
+	cJSON *child3 = cJSON_GetObjectItem(root, "wares_store_unit");
+    if(NULL == child3)
+    {
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        ret = -1;
+        goto END;
+    }
+    strcpy(wares_store_unit, child3->valuestring);
+	
+	cJSON *child4 = cJSON_GetObjectItem(root, "wares_amount");
+    if(NULL == child4)
+    {
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        ret = -1;
+        goto END;
+    }
+    strcpy(wares_amount, child4->valuestring); 
+	
+	cJSON *child5 = cJSON_GetObjectItem(root, "wares_sell_unit");
+    if(NULL == child5)
+    {
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        ret = -1;
+        goto END;
+    }
+    strcpy(wares_sell_unit, child5->valuestring); 
+	
+	cJSON *child6 = cJSON_GetObjectItem(root, "wares_price");
+    if(NULL == child6)
+    {
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        ret = -1;
+        goto END;
+    }
+    strcpy(wares_price, child6->valuestring); 
+	
+END:
+	if(root != NULL){
+		cJSON_Delete(root);
+		root = NULL;
+	}
+	return ret;
+}	
+
+//更新商品信息
+int wares_update(char *buf){
+	int ret = 0;
+	MYSQL *conn = NULL;
+	
+	char wares_id[128];
+	char wares_name[128];
+	char wares_store_unit[128];
+	char wares_amount[128];
+	char wares_sell_unit[128];
+	char wares_price[128];
+	ret = get_wares_info(buf,wares_id,wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price);
+	if(ret != 0){
+		goto END;
+	}
+	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"wares_id = %s, wares_name = %s, wares_store_unit = %s, wares_amount = %s,wares_sell_unit = %s, wares_price = %s",wares_id,wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price);
+
+	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
+	if(conn == NULL){
+		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"msql_conn err\n");
+		ret = -1;
+		goto END;
+	}
+	
+	mysql_query(conn,"set names utf8");
+	
+	char sql_cmd[SQL_MAX_LEN] = {0};
+	
+	sprintf(sql_cmd,"UPDATE waresinfo SET wares_name = '%s',wares_store_unit = '%s',wares_amount = '%s',wares_sell_unit = '%s',wares_price = '%s' WHERE wares_id = '%s'",wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price,wares_id);
+
+	int affected_rows = 0;
+	int ret2 = process_no_result(conn,sql_cmd,&affected_rows);
+	if(ret2 != 0){
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 操作失败\n", sql_cmd);
+		ret = -1;
+        goto END;
+	}else{
+		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"affected %d rows\n",affected_rows);
+	}
+	
+END:
+    if(conn != NULL)
+    {
+        mysql_close(conn);
+    }
+
+    return ret;
+}
+
 //获取商品列表
 int get_wares_list(char *cmd,char *user,int start,int count){
 	int ret = 0;
@@ -693,7 +816,17 @@ int main(){
 			}else if(strcmp(cmd,"waresdelte") == 0){
 				
 			}else if(strcmp(cmd,"waresupdate") == 0){
-				
+				ret = wares_update(buf);
+				if (ret == 0) //上传成功
+				{
+					//返回前端注册情况， 002代表成功
+					out = return_status("020");
+				}
+				else if(ret == -1)
+				{
+					//返回前端注册情况， 004代表失败
+					out = return_status("021");
+				}
 			}else if(strcmp(cmd,"waresadd") == 0){
 				
 			}else{

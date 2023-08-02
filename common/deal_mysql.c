@@ -158,3 +158,20 @@ END:
 
     return ret;
 }
+
+//处理数据库更新或删除操作
+//返回值：0成功不生成结果集，如果需要返回受影响行数，用mysql_affected_rows，非零值，失败
+int process_no_result(MYSQL *conn,char *sql_cmd,int *affected_rows){
+	int ret = 0;
+	
+	if(mysql_query(conn,sql_cmd) != 0){
+		print_error(conn, "mysql_query error!\n");
+        ret = -1;
+        goto END;
+	}
+	
+	//获取受影响的行数
+	*affected_rows = (int)mysql_affected_rows(conn);
+END:
+	return ret;
+}

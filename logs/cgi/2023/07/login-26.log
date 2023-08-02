@@ -1,0 +1,33 @@
+[2023-07-26 20:34:02]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-07-26 20:34:02]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-07-26 20:34:02]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-07-26 20:34:02]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-07-26 20:34:02]--[src_cgi/login_cgi.c:185]--tmp = kevin_666430321997906
+[2023-07-26 20:34:02]--[src_cgi/login_cgi.c:201]--base64 = rp9m4wmNf+TD3SuZQeGDJmwkLgFracRN
+[2023-07-26 20:34:02]--[src_cgi/login_cgi.c:303]--token = 840813a163f3aaab1e1427ddd95b28c7
+[2023-07-26 20:44:56]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-07-26 20:44:56]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-07-26 20:44:56]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-07-26 20:44:56]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-07-26 20:44:56]--[src_cgi/login_cgi.c:185]--tmp = kevin_666784420246676
+[2023-07-26 20:44:56]--[src_cgi/login_cgi.c:201]--base64 = rp9m4wmNf+SZbZracq+8XUt0DDlh7xLx
+[2023-07-26 20:44:56]--[src_cgi/login_cgi.c:303]--token = 4a4234e788ef37632c849a7bd94e3dde
+[2023-07-26 21:33:40]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-07-26 21:33:40]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-07-26 21:33:40]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-07-26 21:33:40]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-07-26 21:33:40]--[src_cgi/login_cgi.c:185]--tmp = kevin_66646035160840
+[2023-07-26 21:33:40]--[src_cgi/login_cgi.c:201]--base64 = rp9m4wmNf+TTsocMKzUD5c4kshGihUIm
+[2023-07-26 21:33:40]--[src_cgi/login_cgi.c:303]--token = 249254da0ce817065aae326bfeadbffe
