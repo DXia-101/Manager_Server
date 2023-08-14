@@ -1,0 +1,22 @@
+[2023-08-09 19:10:55]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-08-09 19:10:55]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-09 19:10:55]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-09 19:10:55]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-08-09 19:10:55]--[src_cgi/login_cgi.c:185]--tmp = kevin_666535851912279
+[2023-08-09 19:10:55]--[src_cgi/login_cgi.c:201]--base64 = rp9m4wmNf+TIvhdvIZMl3wRLOkH1N+h/
+[2023-08-09 19:10:55]--[src_cgi/login_cgi.c:303]--token = ba5161ea4cf3d5058c8769272cf7cfd2
+[2023-08-09 19:11:35]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-08-09 19:11:35]--[src_cgi/login_cgi.c:294]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-09 19:11:35]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-09 19:11:35]--[src_cgi/login_cgi.c:161]--redis:[ip=127.0.0.1,port=6379]
+[2023-08-09 19:11:35]--[src_cgi/login_cgi.c:185]--tmp = kevin_66640163587320
+[2023-08-09 19:11:35]--[src_cgi/login_cgi.c:201]--base64 = rp9m4wmNf+T9/T7h/YhoayeooyqsE9+S
+[2023-08-09 19:11:35]--[src_cgi/login_cgi.c:303]--token = b49d72d6d079e9cccd7cc558acdf75e9

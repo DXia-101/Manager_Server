@@ -172,6 +172,8 @@ int process_no_result(MYSQL *conn,char *sql_cmd,int *affected_rows){
 	
 	//获取受影响的行数
 	*affected_rows = (int)mysql_affected_rows(conn);
+	
+	return ret;
 END:
 	return ret;
 }
