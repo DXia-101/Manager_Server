@@ -536,12 +536,11 @@ int wares_update(char *buf){
 	mysql_query(conn,"set names utf8");
 	
 	char sql_cmd[SQL_MAX_LEN] = {0};
-	
 	sprintf(sql_cmd,"UPDATE waresinfo SET wares_name = '%s',wares_store_unit = '%s',wares_amount = '%d',wares_sell_unit = '%s',wares_price = '%d' WHERE wares_id = '%d'",wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price,wares_id);
 	int affected_rows = 0;
 	int ret2 = process_no_result(conn,sql_cmd,&affected_rows);
 	if(ret2 != 0){
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 更新失败\n", sql_cmd);
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 删除失败\n", sql_cmd);
 		ret = -1;
         goto END;
 	}else{
@@ -557,6 +556,48 @@ END:
     return ret;
 }
 
+int wares_delete(char *buf){
+	int ret = 0;
+	MYSQL *conn = NULL;
+	int wares_id;
+	char wares_name[128];
+	char wares_store_unit[128];
+	int wares_amount;
+	char wares_sell_unit[128];
+	int wares_price;
+	ret = get_wares_info(buf,&wares_id,wares_name,wares_store_unit,&wares_amount,wares_sell_unit,&wares_price);
+	if(ret != 0){
+		goto END;
+	}
+	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"wares_id = %d, wares_name = %s, wares_store_unit = %s, wares_amount = %d,wares_sell_unit = %s, wares_price = %d",wares_id,wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price);
+	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
+	if(conn == NULL){
+		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"msql_conn err\n");
+		ret = -1;
+		goto END;
+	}
+	mysql_query(conn,"set names utf8");
+	
+	char sql_cmd[SQL_MAX_LEN] = {0};
+	sprintf(sql_cmd,"DELETE FROM waresinfo WHERE wares_id = '%d';",wares_id);
+	int affected_rows = 0;
+	int ret2 = process_no_result(conn,sql_cmd,&affected_rows);
+	if(ret2 != 0){
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 删除失败\n", sql_cmd);
+		ret = -1;
+        goto END;
+	}else{
+		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"affected %d rows\n",affected_rows);
+	}
+	
+END:
+    if(conn != NULL)
+    {
+        mysql_close(conn);
+    }
+
+    return ret;
+}
 
 //添加原料信息
 int wares_add(char *buf){
@@ -851,8 +892,26 @@ int main(){
 						free(out);
 					}
 				}
-			}else if(strcmp(cmd,"waresdelte") == 0){
-				
+			}else if(strcmp(cmd,"waresdelete") == 0){
+				ret = wares_delete(buf);
+				if (ret == 0) //上传成功
+				{
+					//返回前端注册情况， 002代表成功
+					char *out = return_status("023");
+					if(out != NULL){
+						printf(out); 	//给前端反馈错误码
+						free(out);
+					}
+				}
+				else if(ret == -1)
+				{
+					//返回前端注册情况， 004代表失败
+					char *out = return_status("024");
+					if(out != NULL){
+						printf(out); 	//给前端反馈错误码
+						free(out);
+					}
+				}
 			}else if(strcmp(cmd,"waresupdate") == 0){
 				ret = wares_update(buf);
 				if (ret == 0) //上传成功
