@@ -1,0 +1,66 @@
+[2023-11-28 21:28:37]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-11-28 21:34:21]--[src_cgi/showpro.c:395]--cmd = showprocount
+[2023-11-28 21:34:21]--[src_cgi/showpro.c:427]--buf = {
+    "token": "5150be037f2b9fa922d0d60f54fa769c",
+    "user": "user"
+}
+
+[2023-11-28 21:34:21]--[src_cgi/showpro.c:239]--line = 3
+[2023-11-28 21:34:21]--[src_cgi/showpro.c:395]--cmd = showpronormal
+[2023-11-28 21:34:21]--[src_cgi/showpro.c:427]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "5150be037f2b9fa922d0d60f54fa769c",
+    "user": "user"
+}
+
+[2023-11-28 21:34:21]--[src_cgi/showpro.c:442]--user = user, token = 5150be037f2b9fa922d0d60f54fa769c, start = 0, count = 3
+[2023-11-28 21:34:21]--[src_cgi/showpro.c:275]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-11-28 21:34:21]--[src_cgi/showpro.c:332]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:395]--cmd = showprocount
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:427]--buf = {
+    "token": "b4c04c4a7543ee56f0d94540031eb62e",
+    "user": "user"
+}
+
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:239]--line = 3
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:395]--cmd = showpronormal
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:427]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "b4c04c4a7543ee56f0d94540031eb62e",
+    "user": "user"
+}
+
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:442]--user = user, token = b4c04c4a7543ee56f0d94540031eb62e, start = 0, count = 3
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:275]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-11-28 21:46:37]--[src_cgi/showpro.c:332]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}

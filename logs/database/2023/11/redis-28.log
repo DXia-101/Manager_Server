@@ -1,0 +1,20 @@
+[2023-11-28 20:48:26]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 20:48:26]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:11:39]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:11:39]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:27:39]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:27:39]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:30:08]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:30:08]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:34:21]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:34:21]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:34:21]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:34:21]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:34:21]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:34:21]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:46:37]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:46:37]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:46:37]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:46:37]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!
+[2023-11-28 21:46:37]--[common/redis_op.c:369]--[+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+[2023-11-28 21:46:37]--[common/redis_op.c:525]--[+][GMS_REDIS]Disconnect SUCCESS!

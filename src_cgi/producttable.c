@@ -1,5 +1,5 @@
 /**
- * @file warestable.c
+ * @file producttable.c
  * @brief   登陆后台CGI程序
  * @author Mike
  * @version 2.0
@@ -20,8 +20,8 @@
 #include "base64.h"
 #include <sys/time.h>
 
-#define WARES_LOG_MODULE       "cgi"
-#define WARES_LOG_PROC         "wares"
+#define Product_LOG_MODULE       "cgi"
+#define Product_LOG_PROC         "product"
 
 //mysql 数据库配置信息 用户名， 密码， 数据库名称
 static char mysql_user[128] = {0};
@@ -36,7 +36,7 @@ void read_cfg()
     get_cfg_value(CFG_PATH, "mysql", "user", mysql_user);
     get_cfg_value(CFG_PATH, "mysql", "password", mysql_pwd);
     get_cfg_value(CFG_PATH, "mysql", "database", mysql_db);
-    LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "mysql:[user=%s,pwd=%s,database=%s]", mysql_user, mysql_pwd, mysql_db);
+    LOG(Product_LOG_MODULE, Product_LOG_PROC, "mysql:[user=%s,pwd=%s,database=%s]", mysql_user, mysql_pwd, mysql_db);
 }
 
 //解析的json包, 登陆token
@@ -56,7 +56,7 @@ int get_count_json_info(char *buf, char *user, char *token){
 	cJSON* root = cJSON_Parse(buf);
 	if(NULL == root)
     {
-		LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_Parse err\n");
+		LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_Parse err\n");
         ret = -1;
         goto END;
 	}
@@ -66,24 +66,24 @@ int get_count_json_info(char *buf, char *user, char *token){
     cJSON *child1 = cJSON_GetObjectItem(root, "user");
     if(NULL == child1)
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
 
-    //LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "child1->valuestring = %s\n", child1->valuestring);
+    //LOG(Product_LOG_MODULE, Product_LOG_PROC, "child1->valuestring = %s\n", child1->valuestring);
     strcpy(user, child1->valuestring); //拷贝内容
 
     //登陆token
     cJSON *child2 = cJSON_GetObjectItem(root, "token");
     if(NULL == child2)
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
 
-    //LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "child2->valuestring = %s\n", child2->valuestring);
+    //LOG(Product_LOG_MODULE, Product_LOG_PROC, "child2->valuestring = %s\n", child2->valuestring);
     strcpy(token, child2->valuestring); //拷贝内容
 
 END:
@@ -131,7 +131,7 @@ void return_login_status(long num, int token_flag)
 }
 
 //获取商品信息数目
-void get_wares_count(int ret){
+void get_product_count(int ret){
 	
 	
 	char sql_cmd[SQL_MAX_LEN] = {0};
@@ -142,20 +142,20 @@ void get_wares_count(int ret){
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "msql_conn err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "msql_conn err\n");
         goto END;
     }
 	
 	//设置数据库编码，主要处理中文编码问题
     mysql_query(conn, "set names utf8");
 
-    sprintf(sql_cmd, "select count(*) from waresinfo");
+    sprintf(sql_cmd, "select count(*) from productinfo");
     char tmp[512] = {0};
     //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
     int ret2 = process_result_one(conn, sql_cmd, tmp); //指向sql语句
     if(ret2 != 0)
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 操作失败\n", sql_cmd);
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "%s 操作失败\n", sql_cmd);
         goto END;
     }
 
@@ -167,14 +167,14 @@ END:
         mysql_close(conn);
     }
 
-    LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "line = %ld\n", line);
+    LOG(Product_LOG_MODULE, Product_LOG_PROC, "line = %ld\n", line);
 
     //给前端反馈的信息
     return_login_status(line, ret);
 }
 
 //解析的json包
-int get_wareslist_json_info(char *buf,char *user,char *token,int *p_start,int *p_count){
+int get_productlist_json_info(char *buf,char *user,char *token,int *p_start,int *p_count){
 	int ret = 0;
 	
 	/*json数据如下
@@ -190,7 +190,7 @@ int get_wareslist_json_info(char *buf,char *user,char *token,int *p_start,int *p
 	//解析一个json字符串为json对象
 	cJSON * root = cJSON_Parse(buf);
 	if(NULL == root){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"cJSON_Parse err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"cJSON_Parse err\n");
 		ret =-1;
 		goto END;
 	}
@@ -199,7 +199,7 @@ int get_wareslist_json_info(char *buf,char *user,char *token,int *p_start,int *p
 	// 用户
 	cJSON* child1 = cJSON_GetObjectItem(root,"user");
 	if(NULL == child1){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"cJSON_GetObjectItem err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"cJSON_GetObjectItem err\n");
 		ret = -1;
 		goto END;
 	}
@@ -209,7 +209,7 @@ int get_wareslist_json_info(char *buf,char *user,char *token,int *p_start,int *p
 	// token
 	cJSON* child2 = cJSON_GetObjectItem(root,"token");
 	if(NULL == child2){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"cJSON_GetObjectItem err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"cJSON_GetObjectItem err\n");
 		ret = -1;
 		goto END;
 	}
@@ -219,7 +219,7 @@ int get_wareslist_json_info(char *buf,char *user,char *token,int *p_start,int *p
 	// 文件起点
 	cJSON* child3 = cJSON_GetObjectItem(root,"start");
 	if(NULL == child3){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"cJSON_GetObjectItem err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"cJSON_GetObjectItem err\n");
 		ret = -1;
 		goto END;
 	}
@@ -229,7 +229,7 @@ int get_wareslist_json_info(char *buf,char *user,char *token,int *p_start,int *p
 	// 文件请求个数
 	cJSON* child4 = cJSON_GetObjectItem(root,"count");
 	if(NULL == child4){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"cJSON_GetObjectItem err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"cJSON_GetObjectItem err\n");
 		ret = -1;
 		goto END;
 	}
@@ -264,7 +264,7 @@ void get_search_count(int ret,char *keyword){
 	//connect the database
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"msql_conn err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"msql_conn err\n");
 		goto END;
 	}
 	
@@ -272,16 +272,16 @@ void get_search_count(int ret,char *keyword){
     mysql_query(conn, "set names utf8");
 	
 	if(is_number(keyword)){
-		sprintf(sql_cmd,"select count(*) from waresinfo where wares_id = '%s'",keyword);
+		sprintf(sql_cmd,"select count(*) from productinfo where product_id = '%s'",keyword);
 	}else{
-		sprintf(sql_cmd,"select count(*) from waresinfo where wares_name = '%s'",keyword);
+		sprintf(sql_cmd,"select count(*) from productinfo where product_name = '%s'",keyword);
 	}
 	
 	char tmp[512] = {0};
 	//返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
 	int ret2 = process_result_one(conn,sql_cmd,tmp);	//指向sql语句
 	if(ret2 != 0){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"%s 操作失败\n",sql_cmd);
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"%s 操作失败\n",sql_cmd);
 		goto END;
 	}
 
@@ -292,7 +292,7 @@ END:
 		mysql_close(conn);
 	}
 	
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"line = %ld\n",line);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"line = %ld\n",line);
 	
 	//给前端反馈的信息
 	return_login_status(line,ret);
@@ -312,7 +312,7 @@ int get_search_list(char *cmd,char *user,int start,int count,char *keyword){
 	//connect the database
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"msql_conn err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"msql_conn err\n");
 		ret = -1;
 		goto END;
 	}
@@ -322,15 +322,15 @@ int get_search_list(char *cmd,char *user,int start,int count,char *keyword){
 	
 	
 	if(is_number(keyword)){
-		sprintf(sql_cmd,"select * from waresinfo where wares_id = '%s'",keyword);
+		sprintf(sql_cmd,"select * from productinfo where product_id = '%s'",keyword);
 	}else{
-		sprintf(sql_cmd,"select * from waresinfo where wares_name = '%s'",keyword);
+		sprintf(sql_cmd,"select * from productinfo where product_name = '%s'",keyword);
 	}
 	
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"%s 在操作\n",sql_cmd);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"%s 在操作\n",sql_cmd);
 	
 	if(mysql_query(conn,sql_cmd) != 0){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"%s 操作失败:%s \n",sql_cmd,mysql_error(conn));
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"%s 操作失败:%s \n",sql_cmd,mysql_error(conn));
 		ret = -1;
 		goto END;
 	}
@@ -339,7 +339,7 @@ int get_search_list(char *cmd,char *user,int start,int count,char *keyword){
 	
 	if (res_set == NULL)
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "smysql_store_result error: %s!\n", mysql_error(conn));
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "smysql_store_result error: %s!\n", mysql_error(conn));
         ret = -1;
         goto END;
     }
@@ -349,7 +349,7 @@ int get_search_list(char *cmd,char *user,int start,int count,char *keyword){
     line = mysql_num_rows(res_set);
     if (line == 0)//没有结果
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "mysql_num_rows(res_set) failed：%s\n", mysql_error(conn));
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "mysql_num_rows(res_set) failed：%s\n", mysql_error(conn));
         ret = -1;
         goto END;
     }
@@ -364,44 +364,44 @@ int get_search_list(char *cmd,char *user,int start,int count,char *keyword){
 		cJSON *item = cJSON_CreateObject();
 		
 		//mysql_num_fields获取结果中列的个数
-		//--wares_id
+		//--product_id
 		if(row[0] != NULL){
-			cJSON_AddNumberToObject(item,"wares_id",atoi(row[0]));
+			cJSON_AddNumberToObject(item,"product_id",atoi(row[0]));
 		}
 		
-		//--wares_name
+		//--product_name
 		if(row[1] != NULL){
-			cJSON_AddStringToObject(item,"wares_name",row[1]);
+			cJSON_AddStringToObject(item,"product_name",row[1]);
 		}
 		
-		//wares_store_unit
+		//product_store_unit
 		if(row[2] != NULL){
-			cJSON_AddStringToObject(item,"wares_store_unit",row[2]);
+			cJSON_AddStringToObject(item,"product_store_unit",row[2]);
 		}
 		
-		//wares_amount
+		//product_amount
 		if(row[3] != NULL){
-			cJSON_AddNumberToObject(item,"wares_amount",atoi(row[3]));
+			cJSON_AddNumberToObject(item,"product_amount",atoi(row[3]));
 		}
 		
-		//wares_sell_unit
+		//product_sell_unit
 		if(row[4] != NULL){
-			cJSON_AddStringToObject(item,"wares_sell_unit",row[4]);
+			cJSON_AddStringToObject(item,"product_sell_unit",row[4]);
 		}
 		
-		//wares_price
+		//product_price
 		if(row[5] != NULL){
-			cJSON_AddNumberToObject(item,"wares_price",atoi(row[5]));
+			cJSON_AddNumberToObject(item,"product_price",atoi(row[5]));
 		}
 		
 		cJSON_AddItemToArray(array,item);
 	}
 	
-	cJSON_AddItemToObject(root,"wares",array);
+	cJSON_AddItemToObject(root,"product",array);
 	
 	out = cJSON_Print(root);
 	
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"%s\n",out);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"%s\n",out);
 	
 END:
 	if(ret == 0){
@@ -445,63 +445,63 @@ END:
 }
 
 //解析上传的原料信息json包
-int get_wares_info(char *buf,int *wares_id,char *wares_name,char *wares_store_unit,int* wares_amount,char *wares_sell_unit,int *wares_price){
+int get_product_info(char *buf,int *product_id,char *product_name,char *product_store_unit,int* product_amount,char *product_sell_unit,int *product_price){
 	int ret = 0;
 
     cJSON *root = cJSON_Parse(buf);
     if (NULL == root) {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_Parse err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_Parse err\n");
         ret = -1;
         goto END;
     }
 	
-	cJSON *child = cJSON_GetObjectItem(root, "wares_amount");
+	cJSON *child = cJSON_GetObjectItem(root, "product_amount");
     if (NULL == child) {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
-    *wares_amount = child->valueint;
+    *product_amount = child->valueint;
 	
-    child = cJSON_GetObjectItem(root, "wares_id");
+    child = cJSON_GetObjectItem(root, "product_id");
     if (NULL == child) {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
-    *wares_id = child->valueint;
+    *product_id = child->valueint;
 	
-    child = cJSON_GetObjectItem(root, "wares_name");
+    child = cJSON_GetObjectItem(root, "product_name");
     if (NULL == child) {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
-    strcpy(wares_name, child->valuestring);
+    strcpy(product_name, child->valuestring);
 	
-	child = cJSON_GetObjectItem(root, "wares_price");
+	child = cJSON_GetObjectItem(root, "product_price");
     if (NULL == child) {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
-    *wares_price = child->valueint;
+    *product_price = child->valueint;
     
-	child = cJSON_GetObjectItem(root, "wares_store_unit");
+	child = cJSON_GetObjectItem(root, "product_store_unit");
     if (NULL == child) {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
-    strcpy(wares_store_unit, child->valuestring);
+    strcpy(product_store_unit, child->valuestring);
 	
-	child = cJSON_GetObjectItem(root, "wares_sell_unit");
+	child = cJSON_GetObjectItem(root, "product_sell_unit");
     if (NULL == child) {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cJSON_GetObjectItem err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cJSON_GetObjectItem err\n");
         ret = -1;
         goto END;
     }
-    strcpy(wares_sell_unit, child->valuestring);
+    strcpy(product_sell_unit, child->valuestring);
 
 END:
     if (root != NULL) {
@@ -512,39 +512,39 @@ END:
 }	
 
 //更新商品信息
-int wares_update(char *buf){
+int product_update(char *buf){
 	int ret = 0;
 	MYSQL *conn = NULL;
 	
-	int wares_id;
-	char wares_name[128];
-	char wares_store_unit[128];
-	int wares_amount;
-	char wares_sell_unit[128];
-	int wares_price;
-	ret = get_wares_info(buf,&wares_id,wares_name,wares_store_unit,&wares_amount,wares_sell_unit,&wares_price);
+	int product_id;
+	char product_name[128];
+	char product_store_unit[128];
+	int product_amount;
+	char product_sell_unit[128];
+	int product_price;
+	ret = get_product_info(buf,&product_id,product_name,product_store_unit,&product_amount,product_sell_unit,&product_price);
 	if(ret != 0){
 		goto END;
 	}
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"wares_id = %d, wares_name = %s, wares_store_unit = %s, wares_amount = %d,wares_sell_unit = %s, wares_price = %d",wares_id,wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"product_id = %d, product_name = %s, product_store_unit = %s, product_amount = %d,product_sell_unit = %s, product_price = %d",product_id,product_name,product_store_unit,product_amount,product_sell_unit,product_price);
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"msql_conn err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"msql_conn err\n");
 		ret = -1;
 		goto END;
 	}
 	mysql_query(conn,"set names utf8");
 	
 	char sql_cmd[SQL_MAX_LEN] = {0};
-	sprintf(sql_cmd,"UPDATE waresinfo SET wares_name = '%s',wares_store_unit = '%s',wares_amount = '%d',wares_sell_unit = '%s',wares_price = '%d' WHERE wares_id = '%d'",wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price,wares_id);
+	sprintf(sql_cmd,"UPDATE productinfo SET product_name = '%s',product_store_unit = '%s',product_amount = '%d',product_sell_unit = '%s',product_price = '%d' WHERE product_id = '%d'",product_name,product_store_unit,product_amount,product_sell_unit,product_price,product_id);
 	int affected_rows = 0;
 	int ret2 = process_no_result(conn,sql_cmd,&affected_rows);
 	if(ret2 != 0){
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 删除失败\n", sql_cmd);
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "%s 删除失败\n", sql_cmd);
 		ret = -1;
         goto END;
 	}else{
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"affected %d rows\n",affected_rows);
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"affected %d rows\n",affected_rows);
 	}
 	
 END:
@@ -556,38 +556,38 @@ END:
     return ret;
 }
 
-int wares_delete(char *buf){
+int product_delete(char *buf){
 	int ret = 0;
 	MYSQL *conn = NULL;
-	int wares_id;
-	char wares_name[128];
-	char wares_store_unit[128];
-	int wares_amount;
-	char wares_sell_unit[128];
-	int wares_price;
-	ret = get_wares_info(buf,&wares_id,wares_name,wares_store_unit,&wares_amount,wares_sell_unit,&wares_price);
+	int product_id;
+	char product_name[128];
+	char product_store_unit[128];
+	int product_amount;
+	char product_sell_unit[128];
+	int product_price;
+	ret = get_product_info(buf,&product_id,product_name,product_store_unit,&product_amount,product_sell_unit,&product_price);
 	if(ret != 0){
 		goto END;
 	}
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"wares_id = %d, wares_name = %s, wares_store_unit = %s, wares_amount = %d,wares_sell_unit = %s, wares_price = %d",wares_id,wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"product_id = %d, product_name = %s, product_store_unit = %s, product_amount = %d,product_sell_unit = %s, product_price = %d",product_id,product_name,product_store_unit,product_amount,product_sell_unit,product_price);
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"msql_conn err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"msql_conn err\n");
 		ret = -1;
 		goto END;
 	}
 	mysql_query(conn,"set names utf8");
 	
 	char sql_cmd[SQL_MAX_LEN] = {0};
-	sprintf(sql_cmd,"DELETE FROM waresinfo WHERE wares_id = '%d';",wares_id);
+	sprintf(sql_cmd,"DELETE FROM productinfo WHERE product_id = '%d';",product_id);
 	int affected_rows = 0;
 	int ret2 = process_no_result(conn,sql_cmd,&affected_rows);
 	if(ret2 != 0){
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 删除失败\n", sql_cmd);
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "%s 删除失败\n", sql_cmd);
 		ret = -1;
         goto END;
 	}else{
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"affected %d rows\n",affected_rows);
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"affected %d rows\n",affected_rows);
 	}
 	
 END:
@@ -600,24 +600,24 @@ END:
 }
 
 //添加原料信息
-int wares_add(char *buf){
+int product_add(char *buf){
 	int ret = 0;
 	MYSQL *conn = NULL;
 	
-	int wares_id;
-	char wares_name[128];
-	char wares_store_unit[128];
-	int wares_amount;
-	char wares_sell_unit[128];
-	int wares_price;
-	ret = get_wares_info(buf,&wares_id,wares_name,wares_store_unit,&wares_amount,wares_sell_unit,&wares_price);
+	int product_id;
+	char product_name[128];
+	char product_store_unit[128];
+	int product_amount;
+	char product_sell_unit[128];
+	int product_price;
+	ret = get_product_info(buf,&product_id,product_name,product_store_unit,&product_amount,product_sell_unit,&product_price);
 	if(ret != 0){
 		goto END;
 	}
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"wares_id = %d, wares_name = %s, wares_store_unit = %s, wares_amount = %d,wares_sell_unit = %s, wares_price = %d",wares_id,wares_name,wares_store_unit,wares_amount,wares_sell_unit,wares_price);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"product_id = %d, product_name = %s, product_store_unit = %s, product_amount = %d,product_sell_unit = %s, product_price = %d",product_id,product_name,product_store_unit,product_amount,product_sell_unit,product_price);
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"msql_conn err\n");
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"msql_conn err\n");
 		ret = -1;
 		goto END;
 	}
@@ -625,15 +625,15 @@ int wares_add(char *buf){
 	
 	char sql_cmd[SQL_MAX_LEN] = {0};
 	
-	sprintf(sql_cmd, "INSERT INTO waresinfo (wares_id, wares_name, wares_store_unit, wares_amount, wares_sell_unit, wares_price) VALUES ( '%d', '%s', '%s', '%d', '%s', '%d')", wares_id, wares_name, wares_store_unit, wares_amount, wares_sell_unit, wares_price);
+	sprintf(sql_cmd, "INSERT INTO productinfo (product_id, product_name, product_store_unit, product_amount, product_sell_unit, product_price) VALUES ( '%d', '%s', '%s', '%d', '%s', '%d')", product_id, product_name, product_store_unit, product_amount, product_sell_unit, product_price);
 	int affected_rows = 0;
 	int ret2 = process_no_result(conn,sql_cmd,&affected_rows);
 	if(ret2 != 0){
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 插入失败\n", sql_cmd);
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "%s 插入失败\n", sql_cmd);
 		ret = -1;
         goto END;
 	}else{
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"affected %d rows\n",affected_rows);
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"affected %d rows\n",affected_rows);
 	}
 	
 END:
@@ -646,7 +646,7 @@ END:
 }
 
 //获取商品列表
-int get_wares_list(char *cmd,char *user,int start,int count){
+int get_product_list(char *cmd,char *user,int start,int count){
 	int ret = 0;
 	char sql_cmd[SQL_MAX_LEN] = {0};
 	MYSQL *conn = NULL;
@@ -660,7 +660,7 @@ int get_wares_list(char *cmd,char *user,int start,int count){
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "msql_conn err\n");
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "msql_conn err\n");
         ret = -1;
         goto END;
     }
@@ -668,16 +668,16 @@ int get_wares_list(char *cmd,char *user,int start,int count){
     //设置数据库编码，主要处理中文编码问题
     mysql_query(conn, "set names utf8");
 	
-	if(strcmp(cmd,"waresnormal") == 0) // 获取商品信息
+	if(strcmp(cmd,"productnormal") == 0) // 获取商品信息
 	{
 		//sql语句
-		sprintf(sql_cmd,"SELECT * FROM waresinfo limit %d,%d \n",start,count);
+		sprintf(sql_cmd,"SELECT * FROM productinfo limit %d,%d \n",start,count);
 	}
 	
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"%s 在操作\n",sql_cmd);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"%s 在操作\n",sql_cmd);
 	
 	if(mysql_query(conn,sql_cmd) != 0){
-		LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"%s 操作失败:%s \n",sql_cmd,mysql_error(conn));
+		LOG(Product_LOG_MODULE,Product_LOG_PROC,"%s 操作失败:%s \n",sql_cmd,mysql_error(conn));
 		ret = -1;
 		goto END;
 	}
@@ -685,7 +685,7 @@ int get_wares_list(char *cmd,char *user,int start,int count){
 	res_set = mysql_store_result(conn);/*生成结果集*/
     if (res_set == NULL)
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "smysql_store_result error: %s!\n", mysql_error(conn));
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "smysql_store_result error: %s!\n", mysql_error(conn));
         ret = -1;
         goto END;
     }
@@ -695,7 +695,7 @@ int get_wares_list(char *cmd,char *user,int start,int count){
     line = mysql_num_rows(res_set);
     if (line == 0)//没有结果
     {
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "mysql_num_rows(res_set) failed：%s\n", mysql_error(conn));
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "mysql_num_rows(res_set) failed：%s\n", mysql_error(conn));
         ret = -1;
         goto END;
     }
@@ -710,44 +710,44 @@ int get_wares_list(char *cmd,char *user,int start,int count){
 		cJSON *item = cJSON_CreateObject();
 		
 		//mysql_num_fields获取结果中列的个数
-		//--wares_id
+		//--product_id
 		if(row[0] != NULL){
-			cJSON_AddNumberToObject(item,"wares_id",atoi(row[0]));
+			cJSON_AddNumberToObject(item,"product_id",atoi(row[0]));
 		}
 		
-		//--wares_name
+		//--product_name
 		if(row[1] != NULL){
-			cJSON_AddStringToObject(item,"wares_name",row[1]);
+			cJSON_AddStringToObject(item,"product_name",row[1]);
 		}
 		
-		//wares_store_unit
+		//product_store_unit
 		if(row[2] != NULL){
-			cJSON_AddStringToObject(item,"wares_store_unit",row[2]);
+			cJSON_AddStringToObject(item,"product_store_unit",row[2]);
 		}
 		
-		//wares_amount
+		//product_amount
 		if(row[3] != NULL){
-			cJSON_AddNumberToObject(item,"wares_amount",atoi(row[3]));
+			cJSON_AddNumberToObject(item,"product_amount",atoi(row[3]));
 		}
 		
-		//wares_sell_unit
+		//product_sell_unit
 		if(row[4] != NULL){
-			cJSON_AddStringToObject(item,"wares_sell_unit",row[4]);
+			cJSON_AddStringToObject(item,"product_sell_unit",row[4]);
 		}
 		
-		//wares_price
+		//product_price
 		if(row[5] != NULL){
-			cJSON_AddNumberToObject(item,"wares_price",atoi(row[5]));
+			cJSON_AddNumberToObject(item,"product_price",atoi(row[5]));
 		}
 		
 		cJSON_AddItemToArray(array,item);
 	}
 	
-	cJSON_AddItemToObject(root,"wares",array);
+	cJSON_AddItemToObject(root,"product",array);
 	
 	out = cJSON_Print(root);
 	
-	LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"%s\n",out);
+	LOG(Product_LOG_MODULE,Product_LOG_PROC,"%s\n",out);
 	
 END:
 	if(ret == 0){
@@ -813,7 +813,7 @@ int main(){
 
         // 解析命令
         query_parse_key_value(query, "cmd", cmd, NULL);
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "cmd = %s\n", cmd);
+        LOG(Product_LOG_MODULE, Product_LOG_PROC, "cmd = %s\n", cmd);
 
         char *contentLength = getenv("CONTENT_LENGTH");
         int len;
@@ -832,7 +832,7 @@ int main(){
         if (len <= 0)
         {
             printf("No data from standard input.<p>\n");
-            LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "len = 0, No data from standard input\n");
+            LOG(Product_LOG_MODULE, Product_LOG_PROC, "len = 0, No data from standard input\n");
         }
         else
         {
@@ -841,31 +841,31 @@ int main(){
             ret = fread(buf, 1, len, stdin); // 从标准输入(web服务器)读取内容
             if(ret == 0)
             {
-                LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "fread(buf, 1, len, stdin) err\n");
+                LOG(Product_LOG_MODULE, Product_LOG_PROC, "fread(buf, 1, len, stdin) err\n");
                 continue;
             }
 
-            LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "buf = %s\n", buf);
+            LOG(Product_LOG_MODULE, Product_LOG_PROC, "buf = %s\n", buf);
 
-            if (strcmp(cmd, "warescount") == 0) //count 获取商品信息数目
+            if (strcmp(cmd, "productcount") == 0) //count 获取商品信息数目
             {
                 get_count_json_info(buf, user, token); // 通过json包获取用户名, token
 
                 // 验证登陆token，成功返回0，失败-1
 				ret = verify_token(user, token); // util_cgi.h
 
-                get_wares_count(ret); // 获取商品信息个数
+                get_product_count(ret); // 获取商品信息个数
 
-            }else if(strcmp(cmd,"waresnormal") == 0){	//初始化时获取商品列表的
+            }else if(strcmp(cmd,"productnormal") == 0){	//初始化时获取商品列表的
 				int start;// 文件起点
 				int count;// 文件个数
-				get_wareslist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
-				LOG(WARES_LOG_MODULE,WARES_LOG_PROC, "user = %s, token = %s, start = %d, count = %d\n", user, token, start, count);
+				get_productlist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
+				LOG(Product_LOG_MODULE,Product_LOG_PROC, "user = %s, token = %s, start = %d, count = %d\n", user, token, start, count);
 			
 				// 验证登录token，成功返回0，失败-1
 				ret = verify_token(user,token);
 				if(ret == 0){
-					get_wares_list(cmd,user,start,count);	//获取商品列表
+					get_product_list(cmd,user,start,count);	//获取商品列表
 				}
 				else{
 					char *out = return_status("111"); 	// token 验证失败错误码
@@ -874,11 +874,11 @@ int main(){
 						free(out);
 					}
 				}
-			}else if(strcmp(cmd,"waresresult") == 0){	//搜索时获取商品列表的
+			}else if(strcmp(cmd,"productresult") == 0){	//搜索时获取商品列表的
 				int start; //文件起点
 				int count; // 文件个数
-				get_wareslist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
-				LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"user = %s, token = %s, start = %d, count = %d\n", user, token, start, count);
+				get_productlist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
+				LOG(Product_LOG_MODULE,Product_LOG_PROC,"user = %s, token = %s, start = %d, count = %d\n", user, token, start, count);
 				
 				// 验证登录token，成功返回0，失败-1
 				ret = verify_token(user,token);
@@ -892,8 +892,8 @@ int main(){
 						free(out);
 					}
 				}
-			}else if(strcmp(cmd,"waresdelete") == 0){
-				ret = wares_delete(buf);
+			}else if(strcmp(cmd,"productdelete") == 0){
+				ret = product_delete(buf);
 				if (ret == 0) //上传成功
 				{
 					//返回前端删除情况， 023代表成功
@@ -912,8 +912,8 @@ int main(){
 						free(out);
 					}
 				}
-			}else if(strcmp(cmd,"waresupdate") == 0){
-				ret = wares_update(buf);
+			}else if(strcmp(cmd,"productupdate") == 0){
+				ret = product_update(buf);
 				if (ret == 0) //上传成功
 				{
 					//返回前端更新情况， 020代表成功
@@ -932,8 +932,8 @@ int main(){
 						free(out);
 					}
 				}
-			}else if(strcmp(cmd,"waresadd") == 0){
-				ret = wares_add(buf);
+			}else if(strcmp(cmd,"productadd") == 0){
+				ret = product_add(buf);
 				if (ret == 0) //上传成功
 				{
 					//返回前端添加情况， 020代表成功
@@ -953,11 +953,11 @@ int main(){
 					}
 				}
 			}else{
-				query_parse_key_value(cmd,"waressearch",keywordori,NULL);
+				query_parse_key_value(cmd,"productsearch",keywordori,NULL);
 				//将base64转码的关键字转为原来的文字
 				base64_decode(keywordori,keyword);
-				LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"keywordori = %s\n",keywordori);
-				LOG(WARES_LOG_MODULE,WARES_LOG_PROC,"keyword = %s\n",keyword);
+				LOG(Product_LOG_MODULE,Product_LOG_PROC,"keywordori = %s\n",keywordori);
+				LOG(Product_LOG_MODULE,Product_LOG_PROC,"keyword = %s\n",keyword);
 				
 				get_count_json_info(buf, user, token); // 通过json包获取用户名, token
 				

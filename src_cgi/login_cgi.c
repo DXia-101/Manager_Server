@@ -84,7 +84,8 @@ END:
  * @param pwd 		密码
  *
  * @returns
- *      成功: 0
+ *      用户: 0
+ *      管理员：1
  *      失败：-1
  */
  /* -------------------------------------------*/
@@ -121,7 +122,16 @@ int check_user_pwd( char *user, char *pwd )
     process_result_one(conn, sql_cmd, tmp); //执行sql语句，结果集保存在tmp
     if(strcmp(tmp, pwd) == 0)
     {
-        ret = 0;
+
+        //sql语句，查找某个用户对应的权限
+        sprintf(sql_cmd, "select power from user where name=\"%s\"", user);
+
+        //deal result
+        char power[PWD_LEN] = {0};
+
+        //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
+        process_result_one(conn, sql_cmd, power); //执行sql语句，结果集保存在power
+        ret = (atoi(power) != 0) ? 1 : 0;
     }
     else
     {
@@ -295,24 +305,30 @@ int main()
 
             //登陆判断，成功返回0，失败返回-1
             ret = check_user_pwd( user, pwd );
-            if (ret == 0) //登陆成功
+            LOG(LOGIN_LOG_MODULE, LOGIN_LOG_PROC, "Login ret = %d ------\n", ret);
+            int tor = 0;
+            if (ret >= 0) //登陆成功
             {
                 //生成token字符串
                 memset(token, 0, sizeof(token));
-                ret = set_token(user, token);
+                tor = set_token(user, token);
                 LOG(LOGIN_LOG_MODULE, LOGIN_LOG_PROC, "token = %s\n", token);
 
             }
 
-            if(ret == 0)
+            if(ret == 0 && tor == 0)
             {
-                //返回前端登陆情况， 000代表成功
+                //返回前端登陆情况， 000代表用户登录成功
                 return_login_status("000", token);
+            }
+            else if(ret == 1 && tor == 0)
+            {
+                //返回前端登陆情况， 001代表管理员成功
+                return_login_status("001", token);
             }
             else
             {
-                //返回前端登陆情况， 001代表失败
-                return_login_status("001", "fail");
+                return_login_status("101", "fail");
             }
         }
     }

@@ -1,0 +1,49 @@
+[2023-08-27 15:49:59]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-08-27 16:21:13]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-08-27 16:21:13]--[src_cgi/producttable.c:848]--buf = {
+    "token": "fail",
+    "user": "user"
+}
+
+[2023-08-27 16:21:13]--[src_cgi/producttable.c:170]--line = 5
+[2023-08-27 16:21:13]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-08-27 16:21:13]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "fail",
+    "user": "user"
+}
+
+[2023-08-27 16:21:13]--[src_cgi/producttable.c:863]--user = user, token = fail, start = 0, count = 5
+[2023-08-27 16:21:32]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-08-27 16:21:32]--[src_cgi/producttable.c:848]--buf = {
+    "token": "fail",
+    "user": "user"
+}
+
+[2023-08-27 16:21:32]--[src_cgi/producttable.c:170]--line = 5
+[2023-08-27 16:21:32]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-08-27 16:21:32]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "fail",
+    "user": "user"
+}
+
+[2023-08-27 16:21:32]--[src_cgi/producttable.c:863]--user = user, token = fail, start = 0, count = 5
+[2023-08-27 16:47:11]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-08-27 16:47:20]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-08-27 16:47:20]--[src_cgi/producttable.c:848]--buf = {
+    "token": "fail",
+    "user": "user"
+}
+
+[2023-08-27 16:47:20]--[src_cgi/producttable.c:170]--line = 5
+[2023-08-27 16:47:21]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-08-27 16:47:21]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "fail",
+    "user": "user"
+}
+
+[2023-08-27 16:47:21]--[src_cgi/producttable.c:863]--user = user, token = fail, start = 0, count = 5
+[2023-08-27 16:48:16]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-08-27 16:58:36]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager]

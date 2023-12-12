@@ -1,0 +1,36 @@
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:195]--tmp = user825594737463
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:211]--base64 = LMcu6O/9HT4H1XqI+Rl8VC0ZxLNK7pNJ
+[2023-12-11 10:47:02]--[src_cgi/login_cgi.c:315]--token = 056fcab22ee1652398abf79c3f275149
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:195]--tmp = user98095629681
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:211]--base64 = WztgIsuLXdA1Pu7JTq3SYw==
+[2023-12-11 10:47:54]--[src_cgi/login_cgi.c:315]--token = cb99b9c6911a42faf7f5ccbff2dd5694
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:195]--tmp = user36674442070
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:211]--base64 = r3HLq9TBMv6rv0/K/rou4Q==
+[2023-12-11 10:54:03]--[src_cgi/login_cgi.c:315]--token = 1fa6388ef56e43094ebc0e89e940c1fc

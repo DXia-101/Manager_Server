@@ -1,0 +1,113 @@
+[2023-12-08 15:19:27]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-08 15:22:51]--[src_cgi/showpro.c:395]--cmd = showprocount
+[2023-12-08 15:22:51]--[src_cgi/showpro.c:427]--buf = {
+    "token": "c94c82bee4333bbc23ae7fb2a929c203",
+    "user": "user"
+}
+
+[2023-12-08 15:22:51]--[src_cgi/showpro.c:239]--line = 3
+[2023-12-08 15:22:51]--[src_cgi/showpro.c:395]--cmd = showpronormal
+[2023-12-08 15:22:51]--[src_cgi/showpro.c:427]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "c94c82bee4333bbc23ae7fb2a929c203",
+    "user": "user"
+}
+
+[2023-12-08 15:22:51]--[src_cgi/showpro.c:442]--user = user, token = c94c82bee4333bbc23ae7fb2a929c203, start = 0, count = 3
+[2023-12-08 15:22:51]--[src_cgi/showpro.c:275]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-08 15:22:51]--[src_cgi/showpro.c:332]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:395]--cmd = showprocount
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:427]--buf = {
+    "token": "917f02047cd93998450c74305d894d40",
+    "user": "user"
+}
+
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:239]--line = 3
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:395]--cmd = showpronormal
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:427]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "917f02047cd93998450c74305d894d40",
+    "user": "user"
+}
+
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:442]--user = user, token = 917f02047cd93998450c74305d894d40, start = 0, count = 3
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:275]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-08 15:27:42]--[src_cgi/showpro.c:332]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:395]--cmd = showprocount
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:427]--buf = {
+    "token": "b6b8834a9f99384575cd241b7a0e2793",
+    "user": "user"
+}
+
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:239]--line = 3
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:395]--cmd = showpronormal
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:427]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "b6b8834a9f99384575cd241b7a0e2793",
+    "user": "user"
+}
+
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:442]--user = user, token = b6b8834a9f99384575cd241b7a0e2793, start = 0, count = 3
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:275]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-08 15:34:01]--[src_cgi/showpro.c:332]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-08 15:34:33]--[src_cgi/showpro.c:395]--cmd = upload
+[2023-12-08 15:34:33]--[src_cgi/showpro.c:427]--buf = {
+    "": 999,
+    "白色无纺布": 6,
+    "黑色无纺布": 5
+}
+
+[2023-12-08 15:34:33]--[src_cgi/showpro.c:395]--cmd = upload
+[2023-12-08 15:34:33]--[src_cgi/showpro.c:427]--buf = {
+    "": 999,
+    "白色无纺布": 6,
+    "黑色无纺布": 5
+}
+

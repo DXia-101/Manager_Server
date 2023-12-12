@@ -21,12 +21,17 @@ login=$(CGI_BIN_PATH)/login
 register=$(CGI_BIN_PATH)/register
 md5=$(CGI_BIN_PATH)/md5
 wares=$(CGI_BIN_PATH)/wares
+product=$(CGI_BIN_PATH)/product
+showpro=$(CGI_BIN_PATH)/showpro
 
 # 最终目标
 target=$(login) \
 	   $(register) \
 	   $(md5) \
-	   $(wares)
+	   $(wares) \
+	   $(product) \
+	   $(showpro)
+
 ALL:$(target)
 
 #######################################################################
@@ -63,7 +68,7 @@ $(md5): $(CGI_SRC_PATH)/md5_cgi.o \
 		$(COMMON_PATH)/redis_op.o  \
 		$(COMMON_PATH)/cfg.o
 	$(CC) $^ -o $@ $(LIBS)
-# 商品信息表
+# 原料信息表
 $(wares):	$(CGI_SRC_PATH)/warestable.o \
 			$(COMMON_PATH)/make_log.o  \
 			$(COMMON_PATH)/util_cgi.o \
@@ -72,7 +77,27 @@ $(wares):	$(CGI_SRC_PATH)/warestable.o \
 			$(COMMON_PATH)/base64.o \
 			$(COMMON_PATH)/redis_op.o  \
 			$(COMMON_PATH)/cfg.o
-		$(CC) $^ -o $@ $(LIBS)
+	$(CC) $^ -o $@ $(LIBS)
+# 产品信息表
+$(product):	$(CGI_SRC_PATH)/producttable.o \
+			$(COMMON_PATH)/make_log.o  \
+			$(COMMON_PATH)/util_cgi.o \
+			$(COMMON_PATH)/cJSON.o \
+			$(COMMON_PATH)/deal_mysql.o \
+			$(COMMON_PATH)/base64.o \
+			$(COMMON_PATH)/redis_op.o  \
+			$(COMMON_PATH)/cfg.o
+	$(CC) $^ -o $@ $(LIBS)
+# 商品预览页面
+$(showpro):	$(CGI_SRC_PATH)/showpro.o \
+			$(COMMON_PATH)/make_log.o  \
+			$(COMMON_PATH)/util_cgi.o \
+			$(COMMON_PATH)/cJSON.o \
+			$(COMMON_PATH)/deal_mysql.o \
+			$(COMMON_PATH)/base64.o \
+			$(COMMON_PATH)/redis_op.o  \
+			$(COMMON_PATH)/cfg.o
+	$(CC) $^ -o $@ $(LIBS)
 
 # =====================================================================
 

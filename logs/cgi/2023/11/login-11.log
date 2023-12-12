@@ -1,0 +1,9 @@
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:298]--buf = username=admin&password=admin
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:39]--cJSON_Parse err
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:304]--user = , pwd = 
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:195]--tmp = 735523662913
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:211]--base64 = Fy8ZigFGcoG7asCqTw1kOg==
+[2023-11-11 02:48:15]--[src_cgi/login_cgi.c:315]--token = 1c63ad62584ee17376a9b8d6c8d12b89

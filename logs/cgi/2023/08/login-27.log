@@ -1,0 +1,78 @@
+[2023-08-27 11:40:54]--[src_cgi/login_cgi.c:275]--len = 0, No data from standard input
+[2023-08-27 16:21:13]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:21:13]--[src_cgi/login_cgi.c:294]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:21:13]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:21:32]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:21:32]--[src_cgi/login_cgi.c:294]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:21:32]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:47:20]--[src_cgi/login_cgi.c:288]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:47:20]--[src_cgi/login_cgi.c:294]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:47:20]--[src_cgi/login_cgi.c:101]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:48:23]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:48:23]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:48:23]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:48:25]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:48:25]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:48:25]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:50:23]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:50:23]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:50:23]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:50:36]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:50:36]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:50:36]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:58:43]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 16:58:43]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 16:58:43]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 16:58:43]--[src_cgi/login_cgi.c:308]--Login ret = -1 ------
+[2023-08-27 17:15:51]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 17:15:51]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 17:15:51]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 17:15:51]--[src_cgi/login_cgi.c:308]--Login ret = -1 ------
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:195]--tmp = user22883364701
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:211]--base64 = wVrMpjt8Sd0wo9TjqJwKIQ==
+[2023-08-27 17:16:00]--[src_cgi/login_cgi.c:315]--token = bf4844a38c2672608909479bf3d16485

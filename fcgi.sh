@@ -32,7 +32,12 @@ if [ "$STOP" -eq 1 ];then
     kill -9 $(ps aux | grep "./bin_cgi/md5" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
     # WaresTable
     kill -9 $(ps aux | grep "./bin_cgi/wares" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
+    # ProductTable
+    kill -9 $(ps aux | grep "./bin_cgi/product" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
+    # ShowPro
+    kill -9 $(ps aux | grep "./bin_cgi/showpro" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
 
+	char keyword[40];
     echo "CGI 程序已经成功关闭, bye-bye ..."
 
 fi
@@ -55,6 +60,12 @@ if [ "$START" -eq 1 ];then
     # WaresTable 
     echo -n "WaresTable: "
     spawn-fcgi -a 127.0.0.1 -p 10004 -f ./bin_cgi/wares
+    # ProductTable
+    echo -n "ProductTable: "
+    spawn-fcgi -a 127.0.0.1 -p 10005 -f ./bin_cgi/product
+    # ShowPro
+    echo -n "ShowPro: "
+    spawn-fcgi -a 127.0.0.1 -p 10006 -f ./bin_cgi/showpro
 
     echo "CGI 程序已经成功启动 ^_^..."
 fi

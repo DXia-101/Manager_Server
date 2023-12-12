@@ -1,0 +1,60 @@
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:304]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:308]--Login ret = 1 ------
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:195]--tmp = kevin_66665382739964
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:211]--base64 = rp9m4wmNf+Qta+TyHYb1KJu+6OYiTLu4
+[2023-12-08 15:22:13]--[src_cgi/login_cgi.c:315]--token = 3d48b6e2cca5a8f3e754b502d756e1cb
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:195]--tmp = user959954637232
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:211]--base64 = pFiSa74j7vq/5+3YQYeyPC0ZxLNK7pNJ
+[2023-12-08 15:22:51]--[src_cgi/login_cgi.c:315]--token = c94c82bee4333bbc23ae7fb2a929c203
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:195]--tmp = user558801138404
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:211]--base64 = 8xtDoCnxgM0BWldt/90aQi0ZxLNK7pNJ
+[2023-12-08 15:27:42]--[src_cgi/login_cgi.c:315]--token = 917f02047cd93998450c74305d894d40
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:195]--tmp = user584863331
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:211]--base64 = aIeFZ6OQxrBExXonPqDjyw==
+[2023-12-08 15:34:01]--[src_cgi/login_cgi.c:315]--token = b6b8834a9f99384575cd241b7a0e2793
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:195]--tmp = user257896207721
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:211]--base64 = 0RmOLrUqYVpk/Dt/gvXK+i0ZxLNK7pNJ
+[2023-12-08 15:49:42]--[src_cgi/login_cgi.c:315]--token = b11155303ec03826b328501f4cb33bc9

@@ -1,0 +1,13 @@
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "user"
+}
+
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:304]--user = user, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:195]--tmp = user343825619928
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:211]--base64 = UL5BV8gNHLN7wMW1Fr6F4C0ZxLNK7pNJ
+[2023-12-05 20:00:56]--[src_cgi/login_cgi.c:315]--token = 1cc8c8926cbdedb1f8dc5ead3bbd7883
+[2023-12-05 23:31:13]--[src_cgi/login_cgi.c:285]--len = 0, No data from standard input
