@@ -110,18 +110,18 @@ END:
 	return ret;
 }
 
-int Get_Upload_Json_Info(char *buf,const char*** keys,int** values){
+int Get_Upload_Json_Info(char *buf,const char** userName,const char*** keys,int** values){
     cJSON* root = cJSON_Parse(buf);
     if (root == NULL)
     {
         printf("Failed to parse JSON data.\n");
-        return;
+        return -1;
     }
 
     // 获取第一行的key
     cJSON* firstItem = root->child;
-    const char* firstKey = firstItem->string;
-    LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"First Key: %s\n", firstKey);
+    *userName = strdup(firstItem->string);
+    LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"userName: %s\n", *userName);
 
     // 遍历之后的数据，保存为key数组和value
     int itemCount = cJSON_GetArraySize(root);
@@ -229,6 +229,49 @@ void return_login_status(long num, int token_flag)
         printf(out); //给前端反馈信息
         free(out); //记得释放
     }
+}
+//将上传的数据添加到数据库
+int upload_showpro_info(int itemCount,const char** userName,const char*** keys,int** values){
+    int ret = 0;
+    MYSQL *conn = NULL;
+    conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
+	if(conn == NULL){
+		LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"msql_conn err\n");
+		ret = -1;
+		goto END;
+	}
+	mysql_query(conn,"set names utf8");
+	
+	char sql_cmd[SQL_MAX_LEN] = {0};
+
+    sprintf(sql_cmd, "CREATE TABLE IF NOT EXISTS `%s` (`ProductName` VARCHAR(255) PRIMARY KEY,`count` INT)",*userName);
+    char error_message[1024];
+	int ret2 = process_create(conn,sql_cmd,error_message);
+	if(ret2 != 0){
+        LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC, "%s 创建数据库失败\n", error_message);
+		ret = -1;
+        goto END;
+	}else{
+		LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"%s 创建数据库成功\n");
+	}
+
+    for(int i = 0;i < itemCount-1;++i){
+        sprintf(sql_cmd, "INSERT INTO `%s` (ProductName, count) VALUES ( '%s','%d')",*userName,(*keys)[i],(*values)[i]);
+        int affected_rows = 0;
+        ret2 = process_no_result(conn,sql_cmd,&affected_rows);
+        if(ret2 != 0){
+            LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC, "%s 插入失败\n", sql_cmd);
+            ret = -1;
+            goto END;
+        }
+    }
+END:
+    if(conn != NULL)
+    {
+        mysql_close(conn);
+    }
+
+    return ret;
 }
 
 //获取商品信息数目
@@ -486,13 +529,16 @@ int main(){
 			}else if(strcmp(cmd,"upload") == 0){
                 const char** keys;
                 int* values;
-                int itemCount = Get_Upload_Json_Info(buf, &keys, &values); //通过Json获取上传来的购物数据
-                for (int i = 0; i < itemCount; i++) {
-                    const char* key = keys[i];
-                    int value = values[i];
-                    // 在这里处理key和value
-                }
-
+                const char* userName;
+                int itemCount = Get_Upload_Json_Info(buf,&userName, &keys, &values); //通过Json获取上传来的购物数据
+                ret = upload_showpro_info(itemCount,&userName,&keys,&values);
+                if(ret != 0){
+					char *out = return_status("111"); 	// token 验证失败错误码
+					if(out != NULL){
+						printf(out); 	//给前端反馈错误码
+						free(out);
+					}
+				}
                 // 释放内存
                 free(keys);
                 free(values);

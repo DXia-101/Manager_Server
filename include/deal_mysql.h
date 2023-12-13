@@ -51,4 +51,6 @@ int process_result_one(MYSQL *conn, char *sql_cmd, char *buf);
 //返回值：0成功不生成结果集，如果需要返回受影响行数，用mysql_affected_rows，非零值，失败
 int process_no_result(MYSQL *conn,char *sql_cmd,int *affected_rows);
 
+//处理数据库创建的
+int process_create(MYSQL *conn,char *sql_cmd,char *result);
 #endif

@@ -177,3 +177,18 @@ int process_no_result(MYSQL *conn,char *sql_cmd,int *affected_rows){
 END:
 	return ret;
 }
+
+//处理数据库创建的
+int process_create(MYSQL *conn,char *sql_cmd,char *result){
+    int ret = 0;
+	
+    if (mysql_query(conn, sql_cmd) != 0){
+        snprintf(result, sizeof(result), "Failed to create table: Error: %s", mysql_error(conn));
+        ret = -1;
+        goto END;
+    }
+	
+	return ret;
+END:
+	return ret;
+}
