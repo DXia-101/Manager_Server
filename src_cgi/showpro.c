@@ -110,14 +110,14 @@ END:
 	return ret;
 }
 
-int Get_Upload_Json_Info(char *buf,const char** userName,const char*** keys,int** values){
+int Get_Upload_Json_Info_Count(char *buf,const char** userName){
     cJSON* root = cJSON_Parse(buf);
     if (root == NULL)
     {
         printf("Failed to parse JSON data.\n");
         return -1;
     }
-
+    
     // 获取第一行的key
     cJSON* firstItem = root->child;
     *userName = strdup(firstItem->string);
@@ -125,20 +125,45 @@ int Get_Upload_Json_Info(char *buf,const char** userName,const char*** keys,int*
 
     // 遍历之后的数据，保存为key数组和value
     int itemCount = cJSON_GetArraySize(root);
-    *keys = (const char**)malloc(itemCount * sizeof(const char*));
-    *values = (int*)malloc(itemCount * sizeof(int));
-    int i = 0;
-    cJSON* currentItem = firstItem->next;
-    while (currentItem != NULL)
-    {
-        (*keys)[i] = currentItem->string;
-        (*values)[i] = currentItem->valueint;
-        i++;
-        currentItem = currentItem->next;
-    }
 
     cJSON_Delete(root);
     return itemCount;
+}
+
+int Get_Upload_Json_Info(char *buf, char ***productNames, int **values, int *itemCount){
+    int ret = 0;
+    cJSON *json = cJSON_Parse(buf); // 解析json字符串
+    if (json == NULL) {
+        LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"Error parsing JSON.\n");
+        ret = -1;
+        goto END;
+    }
+
+    *itemCount = cJSON_GetArraySize(json) - 1; // 减去"customer"键值对的数量
+    *productNames = (char **)malloc(*itemCount * sizeof(char *));
+    *values = (int *)malloc(*itemCount * sizeof(int));
+
+    cJSON *item = json->child->next; // 跳过"customer"键值对
+    int i = 0;
+    while (item != NULL) {
+        if (item->string != NULL) {
+            (*productNames)[i] = strdup(item->string); // 将key存入productNames数组
+            (*values)[i] = item->valueint; // 将value存入values数组
+            ++i;
+        }
+        item = item->next;
+    }
+
+    cJSON_Delete(json); // 释放json对象
+    json = NULL;
+END:
+    if(json != NULL)
+    {
+        cJSON_Delete(json);//删除json对象
+        json = NULL;
+    }
+
+    return ret;
 }
 
 //解析的json包, 登陆token
@@ -230,8 +255,8 @@ void return_login_status(long num, int token_flag)
         free(out); //记得释放
     }
 }
-//将上传的数据添加到数据库
-int upload_showpro_info(int itemCount,const char** userName,const char*** keys,int** values){
+//创建用户表
+int Create_UserTabe(const char** userName){
     int ret = 0;
     MYSQL *conn = NULL;
     conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
@@ -246,21 +271,43 @@ int upload_showpro_info(int itemCount,const char** userName,const char*** keys,i
 
     sprintf(sql_cmd, "CREATE TABLE IF NOT EXISTS `%s` (`ProductName` VARCHAR(255) PRIMARY KEY,`count` INT)",*userName);
     char error_message[1024];
-	int ret2 = process_create(conn,sql_cmd,error_message);
-	if(ret2 != 0){
+	if(process_create(conn,sql_cmd,error_message) != 0){
         LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC, "%s 创建数据库失败\n", error_message);
 		ret = -1;
         goto END;
 	}else{
-		LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"%s 创建数据库成功\n");
+		LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"%s 创建数据库成功\n",sql_cmd);
 	}
 
-    for(int i = 0;i < itemCount-1;++i){
-        sprintf(sql_cmd, "INSERT INTO `%s` (ProductName, count) VALUES ( '%s','%d')",*userName,(*keys)[i],(*values)[i]);
+END:
+    if(conn != NULL)
+    {
+        mysql_close(conn);
+    }
+
+    return ret;
+}
+
+//将上传的数据添加到数据库
+int upload_showpro_info(int itemCount,const char* userName,const char** productNames,int* values){
+    int ret = 0;
+    MYSQL *conn = NULL;
+    conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
+	if(conn == NULL){
+		LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"msql_conn err\n");
+		ret = -1;
+		goto END;
+	}
+	mysql_query(conn,"set names utf8");
+	
+	char sql_cmd[SQL_MAX_LEN] = {0};
+
+    for(int i = 0;i < itemCount;++i){
+        LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "%s 插入失败\n", productNames[i]);
+        sprintf(sql_cmd, "INSERT INTO `%s` (ProductName, count) VALUES ( '%s','%d')", userName, productNames[i], values[i]);
         int affected_rows = 0;
-        ret2 = process_no_result(conn,sql_cmd,&affected_rows);
-        if(ret2 != 0){
-            LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC, "%s 插入失败\n", sql_cmd);
+        if (process_no_result(conn, sql_cmd, &affected_rows) != 0) {
+            LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "%s 插入失败\n", sql_cmd);
             ret = -1;
             goto END;
         }
@@ -527,20 +574,42 @@ int main(){
 					}
 				}
 			}else if(strcmp(cmd,"upload") == 0){
-                const char** keys;
-                int* values;
-                const char* userName;
-                int itemCount = Get_Upload_Json_Info(buf,&userName, &keys, &values); //通过Json获取上传来的购物数据
-                ret = upload_showpro_info(itemCount,&userName,&keys,&values);
+                const char* userName = NULL;;
+                int itemCount = Get_Upload_Json_Info_Count(buf,&userName) - 1; //通过Json获取上传来的购物数据
+                LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"There are a total of %d items\n",itemCount);
+                
+                char **productNames;
+                int *values;
+
+                int ret = Get_Upload_Json_Info(buf, &productNames, &values, &itemCount);
+                if (ret == 0) {
+                    for (int i = 0; i < itemCount; ++i) {
+                        LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"%s---", productNames[i]);
+                        LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"%s---\n", values[i]);
+                    }
+                }
+
+                ret = Create_UserTabe(&userName);
+                ret = upload_showpro_info(itemCount,userName,productNames,values);
                 if(ret != 0){
-					char *out = return_status("111"); 	// token 验证失败错误码
+					char *out = return_status("034"); 	// token 验证失败错误码
 					if(out != NULL){
 						printf(out); 	//给前端反馈错误码
 						free(out);
 					}
-				}
-                // 释放内存
-                free(keys);
+				}else{
+                    char *out = return_status("033"); 	// token 验证成功验证码
+					if(out != NULL){
+						printf(out); 	//给前端成功验证码
+						free(out);
+					}
+                }
+
+                // 清理内存
+                for (int i = 0; i < itemCount; ++i) {
+                    free(productNames[i]);
+                }
+                free(productNames);
                 free(values);
             }
         }

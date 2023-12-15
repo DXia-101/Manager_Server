@@ -183,7 +183,7 @@ int process_create(MYSQL *conn,char *sql_cmd,char *result){
     int ret = 0;
 	
     if (mysql_query(conn, sql_cmd) != 0){
-        snprintf(result, sizeof(result), "Failed to create table: Error: %s", mysql_error(conn));
+        sprintf(result,"Failed to create table: Error: %s", mysql_error(conn));
         ret = -1;
         goto END;
     }

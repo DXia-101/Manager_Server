@@ -1,0 +1,100 @@
+[2023-12-15 11:00:30]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "3d9188577cc9bfe9291ac66b5cc872b7",
+    "user": "consumer"
+}
+
+[2023-12-15 11:00:30]--[src_cgi/login_cgi.c:304]--user = consumer, pwd = 3d9188577cc9bfe9291ac66b5cc872b7
+[2023-12-15 11:00:30]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:00:30]--[src_cgi/login_cgi.c:308]--Login ret = -1 ------
+[2023-12-15 11:00:35]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "consumer"
+}
+
+[2023-12-15 11:00:35]--[src_cgi/login_cgi.c:304]--user = consumer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:00:35]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:00:35]--[src_cgi/login_cgi.c:308]--Login ret = -1 ------
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:304]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:195]--tmp = customer740912696245
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:211]--base64 = E9xM5l6WSWLgDc/qIFgXUWfuftZ2NkJl
+[2023-12-15 11:00:55]--[src_cgi/login_cgi.c:315]--token = 671f9d825bff0aef0d0127ce03bd9fb2
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:304]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:195]--tmp = customer9341555581
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:211]--base64 = E9xM5l6WSWIrY7SyRIm6Q/w0M40aBkHg
+[2023-12-15 11:11:40]--[src_cgi/login_cgi.c:315]--token = 4ed08e57116d1178b19e7c8a26a90c56
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:304]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:195]--tmp = customer846642375800
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:211]--base64 = E9xM5l6WSWJDhV+h0USQ7cW8ALGS2O5I
+[2023-12-15 11:12:57]--[src_cgi/login_cgi.c:315]--token = 170ae39621fe61f79e29e02f90c6e70a
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:304]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:195]--tmp = customer25413397166
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:211]--base64 = E9xM5l6WSWLmEFqdBuwfhy40GJS+MfYo
+[2023-12-15 11:17:48]--[src_cgi/login_cgi.c:315]--token = 4699f080df5239ef83feaccabb72d03c
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:304]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:195]--tmp = customer393258402237
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:211]--base64 = E9xM5l6WSWJou4mKCo0YH2b0u+1cOXh7
+[2023-12-15 11:22:21]--[src_cgi/login_cgi.c:315]--token = f8ff5b5f7300c117c443228187340a6b
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:304]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:195]--tmp = customer40667815497
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:211]--base64 = E9xM5l6WSWKEOPx5GcQJhhij+vOFQ0ow
+[2023-12-15 11:28:22]--[src_cgi/login_cgi.c:315]--token = 66898d49e0ead0bb3966c16381816665
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:304]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:308]--Login ret = 0 ------
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:195]--tmp = customer18745313136
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:211]--base64 = E9xM5l6WSWIp3OUqTps08jihU86bMAKV
+[2023-12-15 11:34:52]--[src_cgi/login_cgi.c:315]--token = ec25a1cab6d16d9dde4983e82ff2ec26
