@@ -37,7 +37,6 @@ if [ "$STOP" -eq 1 ];then
     # ShowPro
     kill -9 $(ps aux | grep "./bin_cgi/showpro" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
 
-	char keyword[40];
     echo "CGI 程序已经成功关闭, bye-bye ..."
 
 fi

@@ -1,0 +1,577 @@
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:515]--cmd = showprocount
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:547]--buf = {
+    "token": "b9487133034d020a6742b9654e0d24be",
+    "user": "customer"
+}
+
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:359]--line = 3
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:515]--cmd = showpronormal
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:547]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "b9487133034d020a6742b9654e0d24be",
+    "user": "customer"
+}
+
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:562]--user = customer, token = b9487133034d020a6742b9654e0d24be, start = 0, count = 3
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:395]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 17:39:37]--[src_cgi/showpro.c:452]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 17:39:45]--[src_cgi/showpro.c:515]--cmd = upload
+[2023-12-21 17:39:45]--[src_cgi/showpro.c:547]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 5,
+    "白色无纺布": 4,
+    "黑色无纺布": 4
+}
+
+[2023-12-21 17:39:45]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 17:39:45]--[src_cgi/showpro.c:579]--There are a total of 3 items
+[2023-12-21 17:39:45]--[src_cgi/showpro.c:587]--彩色无纺布---
+[2023-12-21 17:40:28]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:40:38]--[src_cgi/showpro.c:515]--cmd = showprocount
+[2023-12-21 17:40:38]--[src_cgi/showpro.c:547]--buf = {
+    "token": "df17a9f2925ab258da3e273afbbbc2dd",
+    "user": "customer"
+}
+
+[2023-12-21 17:40:38]--[src_cgi/showpro.c:359]--line = 3
+[2023-12-21 17:40:38]--[src_cgi/showpro.c:515]--cmd = showpronormal
+[2023-12-21 17:40:38]--[src_cgi/showpro.c:547]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "df17a9f2925ab258da3e273afbbbc2dd",
+    "user": "customer"
+}
+
+[2023-12-21 17:40:38]--[src_cgi/showpro.c:562]--user = customer, token = df17a9f2925ab258da3e273afbbbc2dd, start = 0, count = 3
+[2023-12-21 17:40:38]--[src_cgi/showpro.c:395]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 17:40:38]--[src_cgi/showpro.c:452]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 17:40:44]--[src_cgi/showpro.c:515]--cmd = upload
+[2023-12-21 17:40:44]--[src_cgi/showpro.c:547]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 7,
+    "白色无纺布": 3,
+    "黑色无纺布": 5
+}
+
+[2023-12-21 17:40:44]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 17:40:44]--[src_cgi/showpro.c:579]--There are a total of 3 items
+[2023-12-21 17:40:44]--[src_cgi/showpro.c:587]--彩色无纺布---
+[2023-12-21 17:46:57]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:47:32]--[src_cgi/showpro.c:515]--cmd = showprocount
+[2023-12-21 17:47:32]--[src_cgi/showpro.c:547]--buf = {
+    "token": "0d8aedb9c2abd8cec3b9b30e8b9b7482",
+    "user": "customer"
+}
+
+[2023-12-21 17:47:32]--[src_cgi/showpro.c:359]--line = 3
+[2023-12-21 17:47:32]--[src_cgi/showpro.c:515]--cmd = showpronormal
+[2023-12-21 17:47:32]--[src_cgi/showpro.c:547]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "0d8aedb9c2abd8cec3b9b30e8b9b7482",
+    "user": "customer"
+}
+
+[2023-12-21 17:47:32]--[src_cgi/showpro.c:562]--user = customer, token = 0d8aedb9c2abd8cec3b9b30e8b9b7482, start = 0, count = 3
+[2023-12-21 17:47:32]--[src_cgi/showpro.c:395]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 17:47:32]--[src_cgi/showpro.c:452]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 17:47:41]--[src_cgi/showpro.c:515]--cmd = upload
+[2023-12-21 17:47:41]--[src_cgi/showpro.c:547]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 6,
+    "白色无纺布": 4,
+    "黑色无纺布": 10
+}
+
+[2023-12-21 17:47:41]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 17:47:41]--[src_cgi/showpro.c:579]--There are a total of 3 items
+[2023-12-21 17:47:41]--[src_cgi/showpro.c:587]--彩色无纺布---
+[2023-12-21 17:49:57]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:50:29]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:50:41]--[src_cgi/showpro.c:515]--cmd = showprocount
+[2023-12-21 17:50:41]--[src_cgi/showpro.c:547]--buf = {
+    "token": "a5a4413f251280b99c21b00864ec33ce",
+    "user": "customer"
+}
+
+[2023-12-21 17:50:41]--[src_cgi/showpro.c:359]--line = 3
+[2023-12-21 17:50:41]--[src_cgi/showpro.c:515]--cmd = showpronormal
+[2023-12-21 17:50:41]--[src_cgi/showpro.c:547]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "a5a4413f251280b99c21b00864ec33ce",
+    "user": "customer"
+}
+
+[2023-12-21 17:50:41]--[src_cgi/showpro.c:562]--user = customer, token = a5a4413f251280b99c21b00864ec33ce, start = 0, count = 3
+[2023-12-21 17:50:41]--[src_cgi/showpro.c:395]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 17:50:41]--[src_cgi/showpro.c:452]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 17:50:48]--[src_cgi/showpro.c:515]--cmd = upload
+[2023-12-21 17:50:48]--[src_cgi/showpro.c:547]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 7,
+    "白色无纺布": 5,
+    "黑色无纺布": 5
+}
+
+[2023-12-21 17:50:48]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 17:50:48]--[src_cgi/showpro.c:579]--There are a total of 3 items
+[2023-12-21 17:50:48]--[src_cgi/showpro.c:587]--彩色无纺布---
+[2023-12-21 18:32:38]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:32:53]--[src_cgi/showpro.c:515]--cmd = showprocount
+[2023-12-21 18:32:53]--[src_cgi/showpro.c:547]--buf = {
+    "token": "7299bf966e1a5233a67bc4a5ab42a82f",
+    "user": "customer"
+}
+
+[2023-12-21 18:32:53]--[src_cgi/showpro.c:359]--line = 3
+[2023-12-21 18:32:53]--[src_cgi/showpro.c:515]--cmd = showpronormal
+[2023-12-21 18:32:53]--[src_cgi/showpro.c:547]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "7299bf966e1a5233a67bc4a5ab42a82f",
+    "user": "customer"
+}
+
+[2023-12-21 18:32:53]--[src_cgi/showpro.c:562]--user = customer, token = 7299bf966e1a5233a67bc4a5ab42a82f, start = 0, count = 3
+[2023-12-21 18:32:53]--[src_cgi/showpro.c:395]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 18:32:53]--[src_cgi/showpro.c:452]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 18:33:03]--[src_cgi/showpro.c:515]--cmd = upload
+[2023-12-21 18:33:03]--[src_cgi/showpro.c:547]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 3,
+    "白色无纺布": 5,
+    "黑色无纺布": 7
+}
+
+[2023-12-21 18:33:03]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 18:33:03]--[src_cgi/showpro.c:579]--There are a total of 3 items
+[2023-12-21 18:33:03]--[src_cgi/showpro.c:587]--彩色无纺布---
+[2023-12-21 18:34:07]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:34:19]--[src_cgi/showpro.c:515]--cmd = showprocount
+[2023-12-21 18:34:19]--[src_cgi/showpro.c:547]--buf = {
+    "token": "e396ff93baf03d852cb18d962f2be073",
+    "user": "customer"
+}
+
+[2023-12-21 18:34:19]--[src_cgi/showpro.c:359]--line = 3
+[2023-12-21 18:34:19]--[src_cgi/showpro.c:515]--cmd = showpronormal
+[2023-12-21 18:34:19]--[src_cgi/showpro.c:547]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "e396ff93baf03d852cb18d962f2be073",
+    "user": "customer"
+}
+
+[2023-12-21 18:34:19]--[src_cgi/showpro.c:562]--user = customer, token = e396ff93baf03d852cb18d962f2be073, start = 0, count = 3
+[2023-12-21 18:34:19]--[src_cgi/showpro.c:395]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 18:34:19]--[src_cgi/showpro.c:452]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:515]--cmd = upload
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:547]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 7,
+    "白色无纺布": 2,
+    "黑色无纺布": 6
+}
+
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:579]--There are a total of 3 items
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:279]--CREATE TABLE IF NOT EXISTS `customer` (`ProductName` VARCHAR(255) PRIMARY KEY,`count` INT) 创建数据库成功
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:306]--彩色无纺布 插入失败
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:306]--白色无纺布 插入失败
+[2023-12-21 18:34:27]--[src_cgi/showpro.c:306]--黑色无纺布 插入失败
+[2023-12-21 18:45:54]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:46:05]--[src_cgi/showpro.c:546]--cmd = showprocount
+[2023-12-21 18:46:05]--[src_cgi/showpro.c:578]--buf = {
+    "token": "0ef235b22af48c06598f0c749fa14af6",
+    "user": "customer"
+}
+
+[2023-12-21 18:46:05]--[src_cgi/showpro.c:390]--line = 3
+[2023-12-21 18:46:05]--[src_cgi/showpro.c:546]--cmd = showpronormal
+[2023-12-21 18:46:05]--[src_cgi/showpro.c:578]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "0ef235b22af48c06598f0c749fa14af6",
+    "user": "customer"
+}
+
+[2023-12-21 18:46:05]--[src_cgi/showpro.c:593]--user = customer, token = 0ef235b22af48c06598f0c749fa14af6, start = 0, count = 3
+[2023-12-21 18:46:05]--[src_cgi/showpro.c:426]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 18:46:05]--[src_cgi/showpro.c:483]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 18:46:12]--[src_cgi/showpro.c:546]--cmd = upload
+[2023-12-21 18:46:12]--[src_cgi/showpro.c:578]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 4,
+    "白色无纺布": 3,
+    "黑色无纺布": 3
+}
+
+[2023-12-21 18:46:12]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 18:46:12]--[src_cgi/showpro.c:610]--There are a total of 3 items
+[2023-12-21 18:46:12]--[src_cgi/showpro.c:279]--CREATE TABLE IF NOT EXISTS `customer` (`ProductName` VARCHAR(255) PRIMARY KEY,`count` INT) 创建数据库成功
+[2023-12-21 18:52:04]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:52:15]--[src_cgi/showpro.c:544]--cmd = showprocount
+[2023-12-21 18:52:15]--[src_cgi/showpro.c:576]--buf = {
+    "token": "a82c73d37d2860383568824cc35773ee",
+    "user": "customer"
+}
+
+[2023-12-21 18:52:15]--[src_cgi/showpro.c:388]--line = 3
+[2023-12-21 18:52:15]--[src_cgi/showpro.c:544]--cmd = showpronormal
+[2023-12-21 18:52:15]--[src_cgi/showpro.c:576]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "a82c73d37d2860383568824cc35773ee",
+    "user": "customer"
+}
+
+[2023-12-21 18:52:15]--[src_cgi/showpro.c:591]--user = customer, token = a82c73d37d2860383568824cc35773ee, start = 0, count = 3
+[2023-12-21 18:52:15]--[src_cgi/showpro.c:424]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 18:52:15]--[src_cgi/showpro.c:481]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 18:52:24]--[src_cgi/showpro.c:544]--cmd = upload
+[2023-12-21 18:52:24]--[src_cgi/showpro.c:576]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 7,
+    "白色无纺布": 6,
+    "黑色无纺布": 5
+}
+
+[2023-12-21 18:52:24]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 18:52:24]--[src_cgi/showpro.c:608]--There are a total of 3 items
+[2023-12-21 18:52:24]--[src_cgi/showpro.c:312]--Execute query: SELECT count FROM `customer` WHERE ProductName='彩色无纺布'
+[2023-12-21 18:54:33]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:54:43]--[src_cgi/showpro.c:576]--cmd = showprocount
+[2023-12-21 18:54:43]--[src_cgi/showpro.c:608]--buf = {
+    "token": "3b23df81ae18182069c932f5537660e9",
+    "user": "customer"
+}
+
+[2023-12-21 18:54:43]--[src_cgi/showpro.c:420]--line = 3
+[2023-12-21 18:54:43]--[src_cgi/showpro.c:576]--cmd = showpronormal
+[2023-12-21 18:54:43]--[src_cgi/showpro.c:608]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "3b23df81ae18182069c932f5537660e9",
+    "user": "customer"
+}
+
+[2023-12-21 18:54:43]--[src_cgi/showpro.c:623]--user = customer, token = 3b23df81ae18182069c932f5537660e9, start = 0, count = 3
+[2023-12-21 18:54:43]--[src_cgi/showpro.c:456]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 18:54:43]--[src_cgi/showpro.c:513]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 18:54:51]--[src_cgi/showpro.c:576]--cmd = upload
+[2023-12-21 18:54:51]--[src_cgi/showpro.c:608]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 6,
+    "白色无纺布": 5,
+    "黑色无纺布": 11
+}
+
+[2023-12-21 18:54:51]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 18:54:51]--[src_cgi/showpro.c:640]--There are a total of 3 items
+[2023-12-21 18:54:51]--[src_cgi/showpro.c:304]--彩色无纺布 插入失败
+[2023-12-21 18:54:51]--[src_cgi/showpro.c:308]--INSERT INTO `customer` (ProductName, count) VALUES ( '彩色无纺布','6') 插入失败
+[2023-12-21 18:55:30]--[src_cgi/showpro.c:576]--cmd = showprocount
+[2023-12-21 18:55:30]--[src_cgi/showpro.c:608]--buf = {
+    "token": "cf52882e53d1ace94727dc07ec330fe5",
+    "user": "customer"
+}
+
+[2023-12-21 18:55:30]--[src_cgi/showpro.c:420]--line = 3
+[2023-12-21 18:55:31]--[src_cgi/showpro.c:576]--cmd = showpronormal
+[2023-12-21 18:55:31]--[src_cgi/showpro.c:608]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "cf52882e53d1ace94727dc07ec330fe5",
+    "user": "customer"
+}
+
+[2023-12-21 18:55:31]--[src_cgi/showpro.c:623]--user = customer, token = cf52882e53d1ace94727dc07ec330fe5, start = 0, count = 3
+[2023-12-21 18:55:31]--[src_cgi/showpro.c:456]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 18:55:31]--[src_cgi/showpro.c:513]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 18:55:40]--[src_cgi/showpro.c:576]--cmd = upload
+[2023-12-21 18:55:40]--[src_cgi/showpro.c:608]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 7,
+    "白色无纺布": 4,
+    "黑色无纺布": 6
+}
+
+[2023-12-21 18:55:40]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 18:55:40]--[src_cgi/showpro.c:640]--There are a total of 3 items
+[2023-12-21 18:55:40]--[src_cgi/showpro.c:304]--彩色无纺布 插入失败
+[2023-12-21 18:55:40]--[src_cgi/showpro.c:304]--白色无纺布 插入失败
+[2023-12-21 18:55:40]--[src_cgi/showpro.c:304]--黑色无纺布 插入失败
+[2023-12-21 19:05:37]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:05:48]--[src_cgi/showpro.c:576]--cmd = showprocount
+[2023-12-21 19:05:48]--[src_cgi/showpro.c:608]--buf = {
+    "token": "78460e58ea567f117285d9a91a45696f",
+    "user": "customer"
+}
+
+[2023-12-21 19:05:48]--[src_cgi/showpro.c:420]--line = 3
+[2023-12-21 19:05:48]--[src_cgi/showpro.c:576]--cmd = showpronormal
+[2023-12-21 19:05:48]--[src_cgi/showpro.c:608]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "78460e58ea567f117285d9a91a45696f",
+    "user": "customer"
+}
+
+[2023-12-21 19:05:48]--[src_cgi/showpro.c:623]--user = customer, token = 78460e58ea567f117285d9a91a45696f, start = 0, count = 3
+[2023-12-21 19:05:48]--[src_cgi/showpro.c:456]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 19:05:48]--[src_cgi/showpro.c:513]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 19:05:56]--[src_cgi/showpro.c:576]--cmd = upload
+[2023-12-21 19:05:56]--[src_cgi/showpro.c:608]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 1,
+    "白色无纺布": 1,
+    "黑色无纺布": 6
+}
+
+[2023-12-21 19:05:56]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 19:05:56]--[src_cgi/showpro.c:640]--There are a total of 3 items
+[2023-12-21 19:05:56]--[src_cgi/showpro.c:344]--Execute query: SELECT count FROM `customer` WHERE ProductName='彩色无纺布'
+[2023-12-21 19:12:17]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:12:31]--[src_cgi/showpro.c:578]--cmd = showprocount
+[2023-12-21 19:12:31]--[src_cgi/showpro.c:610]--buf = {
+    "token": "6ff7cd24e53470283e8e2b39a626ae06",
+    "user": "customer"
+}
+
+[2023-12-21 19:12:31]--[src_cgi/showpro.c:422]--line = 3
+[2023-12-21 19:12:31]--[src_cgi/showpro.c:578]--cmd = showpronormal
+[2023-12-21 19:12:31]--[src_cgi/showpro.c:610]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "6ff7cd24e53470283e8e2b39a626ae06",
+    "user": "customer"
+}
+
+[2023-12-21 19:12:31]--[src_cgi/showpro.c:625]--user = customer, token = 6ff7cd24e53470283e8e2b39a626ae06, start = 0, count = 3
+[2023-12-21 19:12:31]--[src_cgi/showpro.c:458]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 19:12:31]--[src_cgi/showpro.c:515]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 19:12:38]--[src_cgi/showpro.c:578]--cmd = upload
+[2023-12-21 19:12:38]--[src_cgi/showpro.c:610]--buf = {
+    "customer": 9999,
+    "彩色无纺布": 5,
+    "白色无纺布": 6,
+    "黑色无纺布": 8
+}
+
+[2023-12-21 19:12:38]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 19:12:38]--[src_cgi/showpro.c:642]--There are a total of 3 items
+[2023-12-21 19:12:38]--[src_cgi/showpro.c:344]--Execute query: SELECT count FROM `customer` WHERE ProductName='彩色无纺布'
+[2023-12-21 19:32:50]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:33:08]--[src_cgi/showpro.c:584]--cmd = showprocount
+[2023-12-21 19:33:08]--[src_cgi/showpro.c:616]--buf = {
+    "token": "6ae339e662ef7c66a04dab723f832054",
+    "user": "customer"
+}
+
+[2023-12-21 19:33:08]--[src_cgi/showpro.c:428]--line = 3
+[2023-12-21 19:33:08]--[src_cgi/showpro.c:584]--cmd = showpronormal
+[2023-12-21 19:33:08]--[src_cgi/showpro.c:616]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "6ae339e662ef7c66a04dab723f832054",
+    "user": "customer"
+}
+
+[2023-12-21 19:33:08]--[src_cgi/showpro.c:631]--user = customer, token = 6ae339e662ef7c66a04dab723f832054, start = 0, count = 3
+[2023-12-21 19:33:08]--[src_cgi/showpro.c:464]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2023-12-21 19:33:08]--[src_cgi/showpro.c:521]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://picss.sunbangyan.cn/2023/10/07/wdx1ha.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://picdm.sunbangyan.cn/2023/10/07/wdx3rj.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://picdl.sunbangyan.cn/2023/10/07/wdx05j.jpg"
+		}]
+}
+[2023-12-21 19:33:13]--[src_cgi/showpro.c:584]--cmd = upload
+[2023-12-21 19:33:13]--[src_cgi/showpro.c:616]--buf = {
+    "customer": 9999,
+    "白色无纺布": 4,
+    "黑色无纺布": 5
+}
+
+[2023-12-21 19:33:13]--[src_cgi/showpro.c:124]--userName: customer
+[2023-12-21 19:33:13]--[src_cgi/showpro.c:648]--There are a total of 2 items
+[2023-12-21 19:34:05]--[src_cgi/showpro.c:39]--mysql:[user=root,pwd=k916025328,database=Manager]

@@ -275,8 +275,6 @@ int Create_UserTabe(const char** userName){
         LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC, "%s 创建数据库失败\n", error_message);
 		ret = -1;
         goto END;
-	}else{
-		LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"%s 创建数据库成功\n",sql_cmd);
 	}
 
 END:
@@ -293,14 +291,14 @@ int upload_showpro_info(int itemCount,const char* userName,const char** productN
     int ret = 0;
     MYSQL *conn = NULL;
     conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
-	if(conn == NULL){
-		LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"msql_conn err\n");
-		ret = -1;
-		goto END;
-	}
-	mysql_query(conn,"set names utf8");
-	
-	char sql_cmd[SQL_MAX_LEN] = {0};
+    if(conn == NULL){
+        LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"msql_conn err\n");
+        ret = -1;
+        goto END;
+    }
+    mysql_query(conn,"set names utf8");
+
+    char sql_cmd[SQL_MAX_LEN] = {0};
 
     for(int i = 0;i < itemCount;++i){
         LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "%s 插入失败\n", productNames[i]);
@@ -320,6 +318,69 @@ END:
 
     return ret;
 }
+
+// int upload_showpro_info(int itemCount, const char* userName, const char** productNames, int* values) {
+//     int ret = 0;
+//     MYSQL *conn = NULL;
+//     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
+//     if(conn == NULL) {
+//         LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "msql_conn err\n");
+//         ret = -1;
+//         goto END;
+//     }
+//     mysql_query(conn, "set names utf8");
+
+//     char sql_cmd[SQL_MAX_LEN] = {0};
+
+//     for(int i = 0; i < itemCount; ++i) {
+//         // Check if the product already exists
+//         sprintf(sql_cmd, "SELECT count FROM `%s` WHERE ProductName='%s'", userName, productNames[i]);
+//         MYSQL_RES* result = NULL;
+//         if (process_result_one(conn, sql_cmd, &result) != 0) {
+//             LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "Failed to execute query: %s\n", sql_cmd);
+//             ret = -1;
+//             goto END;
+//         }
+//         LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "Execute query: %s\n", sql_cmd);
+//         if (mysql_num_rows(result) > 0) {
+//             // Product already exists, update the count
+//             MYSQL_ROW row = mysql_fetch_row(result);
+//             int currentCount = atoi(row[0]);
+//             int newCount = currentCount + values[i];
+
+//             sprintf(sql_cmd, "UPDATE `%s` SET count=%d WHERE ProductName='%s'", userName, newCount, productNames[i]);
+//             if (process_no_result(conn, sql_cmd, NULL) != 0) {
+//                 LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "Failed to update count for product: %s\n", productNames[i]);
+//                 ret = -1;
+//                 mysql_free_result(result);
+//                 goto END;
+//             }
+
+//             LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "Updated count for product: %s\n", productNames[i]);
+//         } else {
+//             // Product does not exist, insert a new record
+//             sprintf(sql_cmd, "INSERT INTO `%s` (ProductName, count) VALUES ('%s', %d)", userName, productNames[i], values[i]);
+//             int affected_rows = 0;
+//             if (process_no_result(conn, sql_cmd, &affected_rows) != 0) {
+//                 LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "Failed to insert product: %s\n", productNames[i]);
+//                 ret = -1;
+//                 mysql_free_result(result);
+//                 goto END;
+//             }
+
+//             LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "Inserted product: %s\n", productNames[i]);
+//         }
+
+//         mysql_free_result(result);
+//     }
+
+// END:
+//     if(conn != NULL) {
+//         mysql_close(conn);
+//     }
+
+//     return ret;
+// }
 
 //获取商品信息数目
 void get_showpro_count(int ret){
@@ -582,14 +643,14 @@ int main(){
                 int *values;
 
                 int ret = Get_Upload_Json_Info(buf, &productNames, &values, &itemCount);
-                if (ret == 0) {
-                    for (int i = 0; i < itemCount; ++i) {
-                        LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"%s---", productNames[i]);
-                        LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"%s---\n", values[i]);
-                    }
-                }
+                // if (ret == 0) {
+                //     for (int i = 0; i < itemCount; ++i) {
+                //         LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"%s---\n", productNames[i]);
+                //         LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC,"%s---\n", values[i+1]);
+                //     }
+                // }
 
-                ret = Create_UserTabe(&userName);
+                Create_UserTabe(&userName);
                 ret = upload_showpro_info(itemCount,userName,productNames,values);
                 if(ret != 0){
 					char *out = return_status("034"); 	// token 验证失败错误码
