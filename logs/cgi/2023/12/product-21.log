@@ -1,1 +1,56 @@
-[2023-12-21 17:39:20]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:40:28]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:46:57]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:49:57]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:50:29]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:32:38]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:34:07]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:45:54]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:52:04]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:54:32]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:05:37]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:12:17]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:32:50]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:34:05]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager]
+[2023-12-21 17:39:20]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:40:28]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:46:57]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:49:57]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:50:29]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:32:38]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:34:07]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:45:54]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:52:04]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:54:32]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:05:37]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:12:17]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:32:50]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:34:05]--[src_cgi/producttable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:50:56]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-12-21 19:50:56]--[src_cgi/producttable.c:848]--buf = {
+    "token": "7e5fe5725733bf41c9202356a47d1bdc",
+    "user": "kevin_666"
+}
+
+[2023-12-21 19:50:56]--[src_cgi/producttable.c:170]--line = 5
+[2023-12-21 19:50:56]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-12-21 19:50:56]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "7e5fe5725733bf41c9202356a47d1bdc",
+    "user": "kevin_666"
+}
+
+[2023-12-21 19:50:56]--[src_cgi/producttable.c:863]--user = kevin_666, token = 7e5fe5725733bf41c9202356a47d1bdc, start = 0, count = 5
+[2023-12-21 19:50:56]--[src_cgi/producttable.c:677]--SELECT * FROM productinfo limit 0,5 
+ 在操作
+[2023-12-21 19:50:56]--[src_cgi/producttable.c:750]--{
+	"product":	[{
+			"product_id":	1,
+			"product_name":	"黑色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	4000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	2,
+			"product_name":	"白色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	3,
+			"product_name":	"彩色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	4,
+			"product_name":	"紫色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	5,
+			"product_name":	"产品独有布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2124,
+			"product_sell_unit":	"米/元",
+			"product_price":	2342
+		}]
+}

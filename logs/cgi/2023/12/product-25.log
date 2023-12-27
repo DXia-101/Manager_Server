@@ -1,0 +1,168 @@
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:848]--buf = {
+    "token": "a030bb0a931da105faabfdcf554ecdd9",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:170]--line = 5
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "a030bb0a931da105faabfdcf554ecdd9",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:863]--user = kevin_666, token = a030bb0a931da105faabfdcf554ecdd9, start = 0, count = 5
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:677]--SELECT * FROM productinfo limit 0,5 
+ 在操作
+[2023-12-25 15:29:14]--[src_cgi/producttable.c:750]--{
+	"product":	[{
+			"product_id":	1,
+			"product_name":	"黑色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	4000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	2,
+			"product_name":	"白色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	3,
+			"product_name":	"彩色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	4,
+			"product_name":	"紫色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	5,
+			"product_name":	"产品独有布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2124,
+			"product_sell_unit":	"米/元",
+			"product_price":	2342
+		}]
+}
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:848]--buf = {
+    "token": "c3bf40b9760b96972ce094d5ad033e71",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:170]--line = 5
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "c3bf40b9760b96972ce094d5ad033e71",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:863]--user = kevin_666, token = c3bf40b9760b96972ce094d5ad033e71, start = 0, count = 5
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:677]--SELECT * FROM productinfo limit 0,5 
+ 在操作
+[2023-12-25 15:31:11]--[src_cgi/producttable.c:750]--{
+	"product":	[{
+			"product_id":	1,
+			"product_name":	"黑色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	4000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	2,
+			"product_name":	"白色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	3,
+			"product_name":	"彩色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	4,
+			"product_name":	"紫色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	5,
+			"product_name":	"产品独有布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2124,
+			"product_sell_unit":	"米/元",
+			"product_price":	2342
+		}]
+}
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:848]--buf = {
+    "token": "22b5527c7c5bd0091e84a1e8b5eef1d7",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:170]--line = 5
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "22b5527c7c5bd0091e84a1e8b5eef1d7",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:863]--user = kevin_666, token = 22b5527c7c5bd0091e84a1e8b5eef1d7, start = 0, count = 5
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:677]--SELECT * FROM productinfo limit 0,5 
+ 在操作
+[2023-12-25 15:59:19]--[src_cgi/producttable.c:750]--{
+	"product":	[{
+			"product_id":	1,
+			"product_name":	"黑色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	4000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	2,
+			"product_name":	"白色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	3,
+			"product_name":	"彩色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	4,
+			"product_name":	"紫色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	5,
+			"product_name":	"产品独有布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2124,
+			"product_sell_unit":	"米/元",
+			"product_price":	2342
+		}]
+}

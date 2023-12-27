@@ -1,1 +1,49 @@
-[2023-12-21 17:39:20]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:40:28]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:46:57]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:49:56]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:50:29]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:32:38]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:34:07]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:45:53]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:52:04]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:54:32]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:05:37]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:12:17]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:32:50]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:34:04]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager]
+[2023-12-21 17:39:20]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:40:28]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:46:57]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:49:56]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 17:50:29]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:32:38]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:34:07]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:45:53]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:52:04]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 18:54:32]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:05:37]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:12:17]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:32:50]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:34:04]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-21 19:50:56]--[src_cgi/warestable.c:816]--cmd = warescount
+[2023-12-21 19:50:56]--[src_cgi/warestable.c:848]--buf = {
+    "token": "7e5fe5725733bf41c9202356a47d1bdc",
+    "user": "kevin_666"
+}
+
+[2023-12-21 19:50:56]--[src_cgi/warestable.c:170]--line = 4
+[2023-12-21 19:50:56]--[src_cgi/warestable.c:816]--cmd = waresnormal
+[2023-12-21 19:50:56]--[src_cgi/warestable.c:848]--buf = {
+    "count": 4,
+    "start": 0,
+    "token": "7e5fe5725733bf41c9202356a47d1bdc",
+    "user": "kevin_666"
+}
+
+[2023-12-21 19:50:56]--[src_cgi/warestable.c:863]--user = kevin_666, token = 7e5fe5725733bf41c9202356a47d1bdc, start = 0, count = 4
+[2023-12-21 19:50:56]--[src_cgi/warestable.c:677]--SELECT * FROM waresinfo limit 0,4 
+ 在操作
+[2023-12-21 19:50:56]--[src_cgi/warestable.c:750]--{
+	"wares":	[{
+			"wares_id":	1,
+			"wares_name":	"黑色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	4000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	2,
+			"wares_name":	"白色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	3,
+			"wares_name":	"彩色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	4,
+			"wares_name":	"紫色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}]
+}

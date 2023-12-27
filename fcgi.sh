@@ -36,7 +36,8 @@ if [ "$STOP" -eq 1 ];then
     kill -9 $(ps aux | grep "./bin_cgi/product" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
     # ShowPro
     kill -9 $(ps aux | grep "./bin_cgi/showpro" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
-
+    # UserOrder
+    kill -9 $(ps aux | grep "./bin_cgi/UserOrder" | grep -v grep | awk '{print $2}') > /dev/null 2>&1
     echo "CGI 程序已经成功关闭, bye-bye ..."
 
 fi
@@ -65,6 +66,10 @@ if [ "$START" -eq 1 ];then
     # ShowPro
     echo -n "ShowPro: "
     spawn-fcgi -a 127.0.0.1 -p 10006 -f ./bin_cgi/showpro
+    # UserOrder
+    echo -n "UserOrder: "
+    spawn-fcgi -a 127.0.0.1 -p 10007 -f ./bin_cgi/UserOrder
+
 
     echo "CGI 程序已经成功启动 ^_^..."
 fi

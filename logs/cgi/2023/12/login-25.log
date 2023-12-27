@@ -1,0 +1,36 @@
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:304]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:308]--Login ret = 1 ------
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:195]--tmp = kevin_66684832223862
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:211]--base64 = rp9m4wmNf+SxhjBLssLyv5NmYY6qQRdR
+[2023-12-25 15:29:14]--[src_cgi/login_cgi.c:315]--token = a030bb0a931da105faabfdcf554ecdd9
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:304]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:308]--Login ret = 1 ------
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:195]--tmp = kevin_666799200113320
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:211]--base64 = rp9m4wmNf+QqAFlbPCou8A2Xk3GxPEVs
+[2023-12-25 15:31:11]--[src_cgi/login_cgi.c:315]--token = c3bf40b9760b96972ce094d5ad033e71
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:304]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:308]--Login ret = 1 ------
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:195]--tmp = kevin_666623434330888
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:211]--base64 = rp9m4wmNf+Tx4E3gEInRTByc221QtTbX
+[2023-12-25 15:59:18]--[src_cgi/login_cgi.c:315]--token = 22b5527c7c5bd0091e84a1e8b5eef1d7
