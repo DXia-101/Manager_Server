@@ -1,0 +1,70 @@
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:848]--buf = {
+    "token": "b9fe16f5eedb2fed00490644f3375e16",
+    "user": "kevin_666"
+}
+
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:170]--line = 5
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:816]--cmd = productnormal
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:848]--buf = {
+    "count": 5,
+    "start": 0,
+    "token": "b9fe16f5eedb2fed00490644f3375e16",
+    "user": "kevin_666"
+}
+
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:863]--user = kevin_666, token = b9fe16f5eedb2fed00490644f3375e16, start = 0, count = 5
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:677]--SELECT * FROM productinfo limit 0,5 
+ 在操作
+[2023-12-28 16:17:13]--[src_cgi/producttable.c:750]--{
+	"product":	[{
+			"product_id":	1,
+			"product_name":	"黑色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	4000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	2,
+			"product_name":	"白色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	3,
+			"product_name":	"彩色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	4,
+			"product_name":	"紫色无纺布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2000,
+			"product_sell_unit":	"米/元",
+			"product_price":	2000
+		}, {
+			"product_id":	5,
+			"product_name":	"产品独有布",
+			"product_store_unit":	"米/元",
+			"product_amount":	2124,
+			"product_sell_unit":	"米/元",
+			"product_price":	2342
+		}]
+}
+[2023-12-28 17:01:48]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-12-28 17:01:48]--[src_cgi/producttable.c:848]--buf = {
+    "token": "a8f6f115a868a5b7a20d099b59162a22",
+    "user": "kevin_666"
+}
+
+[2023-12-28 17:01:48]--[src_cgi/producttable.c:170]--line = 5
+[2023-12-28 17:02:07]--[src_cgi/producttable.c:816]--cmd = productcount
+[2023-12-28 17:02:07]--[src_cgi/producttable.c:848]--buf = {
+    "token": "b4d818c638ebba7af5182261e3bcf6d0",
+    "user": "kevin_666"
+}
+
+[2023-12-28 17:02:07]--[src_cgi/producttable.c:170]--line = 5

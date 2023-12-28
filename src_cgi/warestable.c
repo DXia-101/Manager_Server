@@ -540,7 +540,7 @@ int wares_update(char *buf){
 	int affected_rows = 0;
 	int ret2 = process_no_result(conn,sql_cmd,&affected_rows);
 	if(ret2 != 0){
-        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 删除失败\n", sql_cmd);
+        LOG(WARES_LOG_MODULE, WARES_LOG_PROC, "%s 更新失败\n", sql_cmd);
 		ret = -1;
         goto END;
 	}else{
