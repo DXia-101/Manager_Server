@@ -1,7 +1,7 @@
 /**
  * @file util_cgi.c
  * @brief  cgi后台通用接口
- * @author Mike
+ * @author DXia
  * @version 1.0
  * @date 2017年1月13日23:38:31
  */

@@ -1,8 +1,8 @@
 /**
  * @file reg_cgi.c
  * @brief  注册事件后CGI程序
- * @author Mike
- * @version 2.0
+ * @author DXia
+ * @version 1.0
  * @date 2017年2月14日
  */
 

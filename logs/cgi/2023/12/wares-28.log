@@ -61,3 +61,53 @@
 }
 
 [2023-12-28 17:02:07]--[src_cgi/warestable.c:170]--line = 4
+[2023-12-28 17:26:55]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-28 17:27:05]--[src_cgi/warestable.c:816]--cmd = warescount
+[2023-12-28 17:27:05]--[src_cgi/warestable.c:848]--buf = {
+    "token": "94e4904d9ac0fd424e158a9d97077f23",
+    "user": "kevin_666"
+}
+
+[2023-12-28 17:27:05]--[src_cgi/warestable.c:170]--line = 4
+[2023-12-28 17:27:05]--[src_cgi/warestable.c:816]--cmd = waresnormal
+[2023-12-28 17:27:05]--[src_cgi/warestable.c:848]--buf = {
+    "count": 4,
+    "start": 0,
+    "token": "94e4904d9ac0fd424e158a9d97077f23",
+    "user": "kevin_666"
+}
+
+[2023-12-28 17:27:05]--[src_cgi/warestable.c:863]--user = kevin_666, token = 94e4904d9ac0fd424e158a9d97077f23, start = 0, count = 4
+[2023-12-28 17:27:05]--[src_cgi/warestable.c:677]--SELECT * FROM waresinfo limit 0,4 
+ 在操作
+[2023-12-28 17:27:05]--[src_cgi/warestable.c:750]--{
+	"wares":	[{
+			"wares_id":	1,
+			"wares_name":	"黑色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	4000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	2,
+			"wares_name":	"白色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	3,
+			"wares_name":	"彩色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}, {
+			"wares_id":	4,
+			"wares_name":	"紫色无纺布",
+			"wares_store_unit":	"米/元",
+			"wares_amount":	2000,
+			"wares_sell_unit":	"米/元",
+			"wares_price":	2000
+		}]
+}
+[2023-12-28 17:27:38]--[src_cgi/warestable.c:39]--mysql:[user=root,pwd=k916025328,database=Manager]

@@ -1,7 +1,7 @@
 /**
  * @file cfg.c
  * @brief  读取配置文件信息
- * @author Mike
+ * @author DXia
  * @version 1.0
  * @date
  */

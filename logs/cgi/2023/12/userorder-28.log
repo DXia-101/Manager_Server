@@ -3,3 +3,16 @@
 [2023-12-28 17:01:48]--[src_cgi/UserOrder.c:209]--cmd = userOrdercount=Y3VzdG9tZXI=
 [2023-12-28 17:02:06]--[src_cgi/UserOrder.c:209]--cmd = GetNames
 [2023-12-28 17:02:07]--[src_cgi/UserOrder.c:209]--cmd = userOrdercount=Y3VzdG9tZXI=
+[2023-12-28 17:26:55]--[src_cgi/UserOrder.c:38]--mysql:[user=root,pwd=k916025328,database=Manager][2023-12-28 17:27:05]--[src_cgi/UserOrder.c:722]--cmd = GetNames
+[2023-12-28 17:27:05]--[src_cgi/UserOrder.c:740]--Count****
+[2023-12-28 17:27:05]--[src_cgi/UserOrder.c:722]--cmd = userOrdercount=Y3VzdG9tZXI=
+[2023-12-28 17:27:05]--[src_cgi/UserOrder.c:776]--buf = {
+    "token": "94e4904d9ac0fd424e158a9d97077f23",
+    "user": "kevin_666"
+}
+
+[2023-12-28 17:27:05]--[src_cgi/UserOrder.c:784]--curUserNameori = Y3VzdG9tZXI=
+[2023-12-28 17:27:05]--[src_cgi/UserOrder.c:785]--curUserName = customer(הY�
+[2023-12-28 17:27:05]--[src_cgi/UserOrder.c:252]--select count(*) from customer(הY� 操作失败
+[2023-12-28 17:27:05]--[src_cgi/UserOrder.c:261]--line = 0
+[2023-12-28 17:27:39]--[src_cgi/UserOrder.c:38]--mysql:[user=root,pwd=k916025328,database=Manager]

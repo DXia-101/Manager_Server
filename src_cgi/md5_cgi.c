@@ -1,8 +1,8 @@
 /**
  * @file md5_cgi.c
  * @brief  秒传功能的cgi
- * @author Mike
- * @version 2.0
+ * @author DXia
+ * @version 1.0
  * @date 2017年2月25日
  */
 

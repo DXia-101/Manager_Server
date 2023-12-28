@@ -34,3 +34,15 @@
 [2023-12-28 17:02:06]--[src_cgi/login_cgi.c:195]--tmp = kevin_666895715935431
 [2023-12-28 17:02:06]--[src_cgi/login_cgi.c:211]--base64 = rp9m4wmNf+SOEqfyvvJWMZkDi9+OWWHH
 [2023-12-28 17:02:06]--[src_cgi/login_cgi.c:315]--token = b4d818c638ebba7af5182261e3bcf6d0
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:298]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:304]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:102]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:308]--Login ret = 1 ------
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:171]--redis:[ip=127.0.0.1,port=6379]
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:195]--tmp = kevin_666961822633972
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:211]--base64 = rp9m4wmNf+TW5t/D8S/hXuT+60OGvjam
+[2023-12-28 17:27:05]--[src_cgi/login_cgi.c:315]--token = 94e4904d9ac0fd424e158a9d97077f23
