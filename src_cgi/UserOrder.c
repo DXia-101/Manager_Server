@@ -329,7 +329,7 @@ END:
 	return ret;
 }
 
-int get_userOrder_list(char *cmd,char *user,int start,int count,char *curUserName){
+int get_userOrder_list(char *user,int start,int count,char *curUserName){
 	int ret = 0;
 	char sql_cmd[SQL_MAX_LEN] = {0};
 	MYSQL *conn = NULL;
@@ -350,12 +350,9 @@ int get_userOrder_list(char *cmd,char *user,int start,int count,char *curUserNam
 
     //设置数据库编码，主要处理中文编码问题
     mysql_query(conn, "set names utf8");
-	
-	if(strcmp(cmd,"userOrdernormal") == 0) // 获取商品信息
-	{
-		//sql语句
-		sprintf(sql_cmd,"SELECT * FROM %s limit %d,%d \n",curUserName,start,count);
-	}
+
+	sprintf(sql_cmd,"SELECT * FROM %s limit %d,%d \n",curUserName,start,count);
+
 	
 	LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"%s 在操作\n",sql_cmd);
 	
@@ -391,14 +388,24 @@ int get_userOrder_list(char *cmd,char *user,int start,int count,char *curUserNam
     // 当数据用完或发生错误时返回NULL.
 	while((row = mysql_fetch_row(res_set)) != NULL){
 		cJSON *item = cJSON_CreateObject();
-		//--UserOrderTable_Productname
+		//--UserOrderTable_OrderID
 		if(row[0] != NULL){
+			cJSON_AddNumberToObject(item,"UserOrderTable_OrderID",atoi(row[1]));
+		}
+
+		//--UserOrderTable_Productname
+		if(row[1] != NULL){
 			cJSON_AddStringToObject(item,"UserOrderTable_Productname",row[0]);
 		}
 		
 		//--UserOrderTable_count
-		if(row[1] != NULL){
+		if(row[2] != NULL){
 			cJSON_AddNumberToObject(item,"UserOrderTable_count",atoi(row[1]));
+		}
+
+        //--UserOrderTable_time
+		if(row[3] != NULL){
+			cJSON_AddStringToObject(item,"UserOrderTable_time",row[2]);
 		}
 		
 		cJSON_AddItemToArray(array,item);
@@ -499,14 +506,24 @@ int get_search_list(char *cmd,char *user,int start,int count,char *curUserName,c
     // 当数据用完或发生错误时返回NULL.
 	while((row = mysql_fetch_row(res_set)) != NULL){
 		cJSON *item = cJSON_CreateObject();
-		//--UserOrderTable_Productname
+		//--UserOrderTable_OrderID
 		if(row[0] != NULL){
+			cJSON_AddNumberToObject(item,"UserOrderTable_OrderID",atoi(row[1]));
+		}
+
+		//--UserOrderTable_Productname
+		if(row[1] != NULL){
 			cJSON_AddStringToObject(item,"UserOrderTable_Productname",row[0]);
 		}
 		
 		//--UserOrderTable_count
-		if(row[1] != NULL){
+		if(row[2] != NULL){
 			cJSON_AddNumberToObject(item,"UserOrderTable_count",atoi(row[1]));
+		}
+
+        //--UserOrderTable_time
+		if(row[3] != NULL){
+			cJSON_AddStringToObject(item,"UserOrderTable_time",row[2]);
 		}
 		
 		cJSON_AddItemToArray(array,item);
@@ -776,12 +793,7 @@ int main(){
 
             if(strncmp(cmd,userOrdercountPrefix,strlen(userOrdercountPrefix))==0){
             	char curUserName[100];
-	            char curUserNameori[100];
-                query_parse_key_value(cmd,"userOrdercount",curUserNameori,NULL);
-				//将base64转码的关键字转为原来的文字
-				base64_decode(curUserNameori,curUserName);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserNameori = %s\n",curUserNameori);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserName = %s\n",curUserName);
+                query_parse_key_value(cmd,"userOrdercount",curUserName,NULL);
 				
                 get_count_json_info(buf, user, token); // 通过json包获取用户名, token
 
@@ -791,12 +803,7 @@ int main(){
                 get_userOrder_count(ret,curUserName); // 获取商品信息个数
             }else if(strncmp(cmd,userOrdernormalPrefix,strlen(userOrdernormalPrefix)) == 0){	//初始化时获取商品列表的
                 char curUserName[100];
-	            char curUserNameori[100];
-                query_parse_key_value(cmd,"userOrdernormal",curUserNameori,NULL);
-				//将base64转码的关键字转为原来的文字
-				base64_decode(curUserNameori,curUserName);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserNameori = %s\n",curUserNameori);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserName = %s\n",curUserName);
+                query_parse_key_value(cmd,"userOrdernormal",curUserName,NULL);
 				int start;// 文件起点
 				int count;// 文件个数
 				get_userOrderlist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
@@ -805,7 +812,7 @@ int main(){
 				// 验证登录token，成功返回0，失败-1
 				ret = verify_token(user,token);
 				if(ret == 0){
-					get_userOrder_list(cmd,user,start,count,curUserName);
+					get_userOrder_list(user,start,count,curUserName);
 				}
 				else{
 					char *out = return_status("111"); 	// token 验证失败错误码
@@ -816,12 +823,7 @@ int main(){
 				}
 			}else if(strncmp(cmd,userOrderresultPrefix,strlen(userOrderresultPrefix)) == 0){	//搜索时获取商品列表的
                 char curUserName[100];
-	            char curUserNameori[100];
-                query_parse_key_value(cmd,"userOrderresult",curUserNameori,NULL);
-				//将base64转码的关键字转为原来的文字
-				base64_decode(curUserNameori,curUserName);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserNameori = %s\n",curUserNameori);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserName = %s\n",curUserName);
+                query_parse_key_value(cmd,"userOrderresult",curUserName,NULL);
 				int start; //文件起点
 				int count; // 文件个数
 				get_userOrderlist_json_info(buf,user,token,&start,&count); // 通过json包获取信息
@@ -841,12 +843,7 @@ int main(){
 				}
 			}else if(strncmp(cmd,userOrderdeletePrefix,strlen(userOrderdeletePrefix)) == 0){
                 char curUserName[100];
-	            char curUserNameori[100];
-                query_parse_key_value(cmd,"userOrderdelete",curUserNameori,NULL);
-				//将base64转码的关键字转为原来的文字
-				base64_decode(curUserNameori,curUserName);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserNameori = %s\n",curUserNameori);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserName = %s\n",curUserName);
+                query_parse_key_value(cmd,"userOrderdelete",curUserName,NULL);
 				ret = userOrder_delete(buf,curUserName);
 				if (ret == 0) //上传成功
 				{
@@ -868,12 +865,7 @@ int main(){
 				}
 			}else if(strncmp(cmd,userOrderupdatePrefix,strlen(userOrderupdatePrefix)) == 0){
                 char curUserName[100];
-	            char curUserNameori[100];
-                query_parse_key_value(cmd,"userOrderupdate",curUserNameori,NULL);
-				//将base64转码的关键字转为原来的文字
-				base64_decode(curUserNameori,curUserName);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserNameori = %s\n",curUserNameori);
-				LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"curUserName = %s\n",curUserName);
+                query_parse_key_value(cmd,"userOrderupdate",curUserName,NULL);
 				ret = userOrder_update(buf,curUserName);
 				if (ret == 0) //上传成功
 				{

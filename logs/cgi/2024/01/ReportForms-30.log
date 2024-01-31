@@ -1,0 +1,206 @@
+[2024-01-30 22:07:30]--[src_cgi/ReportForms.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2024-01-30 22:13:20]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:13:20]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "6c4a6dbb7764ea67b6107358abee3792",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:13:20]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:13:20]--[src_cgi/ReportForms.c:676]--cmd = ReportFormResult
+[2024-01-30 22:13:20]--[src_cgi/ReportForms.c:708]--buf = {
+    "count": 0,
+    "start": 0,
+    "token": "6c4a6dbb7764ea67b6107358abee3792",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:13:20]--[src_cgi/ReportForms.c:741]--user = kevin_666, token = 6c4a6dbb7764ea67b6107358abee3792, start = 0, count = 0
+[2024-01-30 22:13:20]--[src_cgi/ReportForms.c:319]--select * from ReportForms where CustomerName = 'P�c� ' 在操作
+[2024-01-30 22:13:20]--[src_cgi/ReportForms.c:341]--mysql_num_rows(res_set) failed：
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "d5d68fd90fd4741050dc645076817bdd",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:676]--cmd = ReportFormResult
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:708]--buf = {
+    "count": 0,
+    "start": 0,
+    "token": "d5d68fd90fd4741050dc645076817bdd",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:741]--user = kevin_666, token = d5d68fd90fd4741050dc645076817bdd, start = 0, count = 0
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:319]--select * from ReportForms where CustomerName = 'P�c� ' 在操作
+[2024-01-30 22:14:14]--[src_cgi/ReportForms.c:341]--mysql_num_rows(res_set) failed：
+[2024-01-30 22:22:06]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:22:06]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "d6b8eb13d7bfbfc43a8bbd0b93991dcb",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:22:06]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:32:28]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:32:28]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "e3df5f09d2feaebb3889fe93620c95f9",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:32:28]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:46:30]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:46:30]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "9b1c2a9d4c1c0fa5a3bcc1ef53dbcb68",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:46:30]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:48:23]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:48:23]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "d60f309409faa9529376602250529221",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:48:23]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:49:04]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:49:04]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "5ae77fedb7e5a775836ac944a055cc3a",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:49:04]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:52:32]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:52:32]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "9b0ab27559cb95ba4d9e3fbf4a39ae3f",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:52:32]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:52:33]--[src_cgi/ReportForms.c:676]--cmd = ReportFormNormal
+[2024-01-30 22:52:33]--[src_cgi/ReportForms.c:708]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "9b0ab27559cb95ba4d9e3fbf4a39ae3f",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:52:33]--[src_cgi/ReportForms.c:723]--user = kevin_666, token = 9b0ab27559cb95ba4d9e3fbf4a39ae3f, start = 0, count = 1
+[2024-01-30 22:52:33]--[src_cgi/ReportForms.c:542]--SELECT * FROM ReportForms limit 0,1 
+ 在操作
+[2024-01-30 22:52:33]--[src_cgi/ReportForms.c:610]--{
+	"ReportForms":	[{
+			"OrderID":	1,
+			"CustomerName":	"customer",
+			"SubscriptionDate":	"2024-01-30 19:44:58",
+			"DeliveryDate":	"2024-01-31 19:45:02",
+			"IsSuccess":	"true"
+		}]
+}
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "a617a2b4607ed86d36bd4149e1d9f9b3",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:676]--cmd = ReportFormNormal
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:708]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "a617a2b4607ed86d36bd4149e1d9f9b3",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:723]--user = kevin_666, token = a617a2b4607ed86d36bd4149e1d9f9b3, start = 0, count = 1
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:542]--SELECT * FROM ReportForms limit 0,1 
+ 在操作
+[2024-01-30 22:54:54]--[src_cgi/ReportForms.c:610]--{
+	"ReportForms":	[{
+			"OrderID":	1,
+			"CustomerName":	"customer",
+			"SubscriptionDate":	"2024-01-30 19:44:58",
+			"DeliveryDate":	"2024-01-31 19:45:02",
+			"IsSuccess":	"true"
+		}]
+}
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "20f8d9cc54d895cd72e8a8c531f35f26",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:676]--cmd = ReportFormNormal
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:708]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "20f8d9cc54d895cd72e8a8c531f35f26",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:723]--user = kevin_666, token = 20f8d9cc54d895cd72e8a8c531f35f26, start = 0, count = 1
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:542]--SELECT * FROM ReportForms limit 0,1 
+ 在操作
+[2024-01-30 22:57:00]--[src_cgi/ReportForms.c:610]--{
+	"ReportForms":	[{
+			"OrderID":	1,
+			"CustomerName":	"customer",
+			"SubscriptionDate":	"2024-01-30 19:44:58",
+			"DeliveryDate":	"2024-01-31 19:45:02",
+			"IsSuccess":	"true"
+		}]
+}
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "4b03d3a3e5b011f57fec560e49105e4f",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:676]--cmd = ReportFormNormal
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:708]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "4b03d3a3e5b011f57fec560e49105e4f",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:723]--user = kevin_666, token = 4b03d3a3e5b011f57fec560e49105e4f, start = 0, count = 1
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:542]--SELECT * FROM ReportForms limit 0,1 
+ 在操作
+[2024-01-30 22:57:36]--[src_cgi/ReportForms.c:610]--{
+	"ReportForms":	[{
+			"OrderID":	1,
+			"CustomerName":	"customer",
+			"SubscriptionDate":	"2024-01-30 19:44:58",
+			"DeliveryDate":	"2024-01-31 19:45:02",
+			"IsSuccess":	"true"
+		}]
+}
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:676]--cmd = ReportFormCount
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:708]--buf = {
+    "token": "73bbc45995029c7e5fe904d187af1286",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:159]--line = 1
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:676]--cmd = ReportFormNormal
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:708]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "73bbc45995029c7e5fe904d187af1286",
+    "user": "kevin_666"
+}
+
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:723]--user = kevin_666, token = 73bbc45995029c7e5fe904d187af1286, start = 0, count = 1
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:542]--SELECT * FROM ReportForms limit 0,1 
+ 在操作
+[2024-01-30 22:59:07]--[src_cgi/ReportForms.c:610]--{
+	"ReportForms":	[{
+			"OrderID":	1,
+			"CustomerName":	"customer",
+			"SubscriptionDate":	"2024-01-30 19:44:58",
+			"DeliveryDate":	"2024-01-31 19:45:02",
+			"IsSuccess":	"true"
+		}]
+}

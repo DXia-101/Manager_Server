@@ -269,7 +269,7 @@ int Create_UserTabe(const char** userName){
 	
 	char sql_cmd[SQL_MAX_LEN] = {0};
 
-    sprintf(sql_cmd, "CREATE TABLE IF NOT EXISTS `%s` (`ProductName` VARCHAR(255) PRIMARY KEY,`count` INT)",*userName);
+    sprintf(sql_cmd, "CREATE TABLE IF NOT EXISTS `%s` (`OrderID` INT PRIMARY KEY, `ProductName` VARCHAR(255), `count` INT, `timestamp` VARCHAR(255))", *userName);
     char error_message[1024];
 	if(process_create(conn,sql_cmd,error_message) != 0){
         LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC, "%s 创建数据库失败\n", error_message);
@@ -299,11 +299,61 @@ int upload_showpro_info(int itemCount,const char* userName,const char** productN
     mysql_query(conn,"set names utf8");
 
     char sql_cmd[SQL_MAX_LEN] = {0};
+    //获取报表的最新的订单ID并加一
+    if (mysql_query(conn, "SELECT OrderID FROM ReportForms ORDER BY OrderID DESC LIMIT 1") != 0) {
+        LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC, "Error executing query: %s\n", mysql_error(conn));
+        mysql_close(conn);
+        return -1;
+    }
+
+    MYSQL_RES *result;
+    MYSQL_ROW row;
+
+    result = mysql_store_result(conn);
+
+    if (result == NULL) {
+        LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"Error retrieving result set: %s\n", mysql_error(conn));
+        mysql_close(conn);
+        return -1;
+    }
+
+    row = mysql_fetch_row(result);
+
+    if (row == NULL) {
+        LOG(SHOWPRO_LOG_MODULE,SHOWPRO_LOG_PROC,"No rows found in the result set\n");
+        mysql_free_result(result);
+        mysql_close(conn);
+        return -1;
+    }
+
+    int orderID = atoi(row[0])+1;
+
+    time_t currentTime;
+    struct tm *localTime;
+    char timeString[20];
+
+    // 获取当前时间
+    currentTime = time(NULL);
+    localTime = localtime(&currentTime);
+
+    // 将时间转换为字符串
+    strftime(timeString, sizeof(timeString), "%Y-%m-%d %H:%M:%S", localTime);
+
 
     for(int i = 0;i < itemCount;++i){
         LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "%s 插入失败\n", productNames[i]);
-        sprintf(sql_cmd, "INSERT INTO `%s` (ProductName, count) VALUES ( '%s','%d')", userName, productNames[i], values[i]);
+
+        sprintf(sql_cmd, "INSERT INTO `%s` (OrderID, ProductName, count, timestamp) VALUES ('%d', '%s', '%d', '%s')", userName, orderID, productNames[i], values[i],timeString);
+        
         int affected_rows = 0;
+        if (process_no_result(conn, sql_cmd, &affected_rows) != 0) {
+            LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "%s 插入失败\n", sql_cmd);
+            ret = -1;
+            goto END;
+        }
+
+        sprintf(sql_cmd, "INSERT INTO ReportForms (OrderID, CustomerName, SubscriptionDate) VALUES ('%d', '%s', '%s')",  orderID++, userName,timeString);
+        affected_rows = 0;
         if (process_no_result(conn, sql_cmd, &affected_rows) != 0) {
             LOG(SHOWPRO_LOG_MODULE, SHOWPRO_LOG_PROC, "%s 插入失败\n", sql_cmd);
             ret = -1;

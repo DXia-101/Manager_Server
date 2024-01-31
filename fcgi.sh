@@ -69,6 +69,9 @@ if [ "$START" -eq 1 ];then
     # UserOrder
     echo -n "UserOrder: "
     spawn-fcgi -a 127.0.0.1 -p 10007 -f ./bin_cgi/UserOrder
+    # ReportForm
+    echo -n "ReportForm: "
+    spawn-fcgi -a 127.0.0.1 -p 10008 -f ./bin_cgi/ReportForm
 
 
     echo "CGI 程序已经成功启动 ^_^..."
