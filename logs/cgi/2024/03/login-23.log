@@ -1,0 +1,10 @@
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:291]--buf = username=admin&password=admin
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:35]--cJSON_Parse err
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:297]--user = , pwd = 
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:301]--Login ret = 0 ------
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:189]--tmp = 731880973713
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:205]--base64 = baXRHVucsBExs+endy71cQ==
+[2024-03-23 10:16:06]--[src_cgi/login_cgi.c:308]--token = 9fbc0a57d2809556feeb1a095db6fa57
+[2024-03-23 13:33:49]--[src_cgi/login_cgi.c:278]--len = 0, No data from standard input

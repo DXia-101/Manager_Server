@@ -51,18 +51,6 @@ int get_md5_info(char *buf, char *user, char *token, char *md5, char *filename)
 {
     int ret = 0;
 
-    //解析json中信息
-    /*
-     * {
-        user:xxxx,
-        token: xxxx,
-        md5:xxx,
-        fileName: xxx
-       }
-     */
-
-    //解析json包
-    //解析一个json字符串为cJSON对象
     cJSON * root = cJSON_Parse(buf);
     if(NULL == root)
     {
@@ -71,8 +59,6 @@ int get_md5_info(char *buf, char *user, char *token, char *md5, char *filename)
         goto END;
     }
 
-    //返回指定字符串对应的json对象
-    //用户
     cJSON *child1 = cJSON_GetObjectItem(root, "user");
     if(NULL == child1)
     {
@@ -81,8 +67,7 @@ int get_md5_info(char *buf, char *user, char *token, char *md5, char *filename)
         goto END;
     }
 
-    //LOG(MD5_LOG_MODULE, MD5_LOG_PROC, "child1->valuestring = %s\n", child1->valuestring);
-    strcpy(user, child1->valuestring); //拷贝内容
+    strcpy(user, child1->valuestring); 
 
     //MD5
     cJSON *child2 = cJSON_GetObjectItem(root, "md5");
@@ -92,7 +77,7 @@ int get_md5_info(char *buf, char *user, char *token, char *md5, char *filename)
         ret = -1;
         goto END;
     }
-    strcpy(md5, child2->valuestring); //拷贝内容
+    strcpy(md5, child2->valuestring); 
 
     //文件名字
     cJSON *child3 = cJSON_GetObjectItem(root, "fileName");
@@ -102,7 +87,7 @@ int get_md5_info(char *buf, char *user, char *token, char *md5, char *filename)
         ret = -1;
         goto END;
     }
-    strcpy(filename, child3->valuestring); //拷贝内容
+    strcpy(filename, child3->valuestring); 
 
     //token
     cJSON *child4 = cJSON_GetObjectItem(root, "token");
@@ -113,12 +98,12 @@ int get_md5_info(char *buf, char *user, char *token, char *md5, char *filename)
         goto END;
     }
 
-    strcpy(token, child4->valuestring); //拷贝内容
+    strcpy(token, child4->valuestring); 
 
 END:
     if(root != NULL)
     {
-        cJSON_Delete(root);//删除json对象
+        cJSON_Delete(root);
         root = NULL;
     }
 
@@ -136,7 +121,7 @@ int deal_md5(char *user, char *md5, char *filename)
     char sql_cmd[SQL_MAX_LEN] = {0};
     char *out = NULL;
 
-    //connect the database
+    
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
@@ -145,7 +130,7 @@ int deal_md5(char *user, char *md5, char *filename)
         goto END;
     }
 
-    //设置数据库编码，主要处理中文编码问题
+    
     mysql_query(conn, "set names utf8");
 
     /*
@@ -167,7 +152,7 @@ int deal_md5(char *user, char *md5, char *filename)
     //sql 语句，获取此md5值文件的文件计数器 count
     sprintf(sql_cmd, "select count from file_info where md5 = '%s'", md5);
 
-    //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
+    
     ret2 = process_result_one(conn, sql_cmd, tmp); //执行sql语句
 
     if(ret2 == 0) //有结果，说明服务器已经有此文件
@@ -177,7 +162,7 @@ int deal_md5(char *user, char *md5, char *filename)
         //查看此用户是否已经有此文件，如果存在说明此文件已上传，无需再上传
         sprintf(sql_cmd, "select * from user_file_list where user = '%s' and md5 = '%s' and filename = '%s'", user, md5, filename);
 
-        //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
+        
         ret2 = process_result_one(conn, sql_cmd, NULL); //执行sql语句，最后一个参数为NULL，只做查询
         if(ret2 == 2) //如果有结果，说明此用户已经保存此文件
         {
@@ -229,8 +214,8 @@ int deal_md5(char *user, char *md5, char *filename)
         sprintf(sql_cmd, "select count from user_file_count where user = '%s'", user);
         count = 0;
 
-        //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
-        ret2 = process_result_one(conn, sql_cmd, tmp); //指向sql语句
+        
+        ret2 = process_result_one(conn, sql_cmd, tmp); 
         if(ret2 == 1) //没有记录
         {
             //数据库插入此记录
@@ -285,8 +270,8 @@ END:
 
     if(out != NULL)
     {
-        printf(out); //给前端反馈信息
-        free(out); //记得释放
+        printf(out); 
+        free(out); 
     }
 
 

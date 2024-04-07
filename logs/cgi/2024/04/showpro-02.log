@@ -1,0 +1,66 @@
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:613]--cmd = showprocount
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:645]--buf = {
+    "token": "2dbee144f13294e25e5ccb4652fd51a5",
+    "user": "customer"
+}
+
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:457]--line = 3
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:613]--cmd = showpronormal
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:645]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "2dbee144f13294e25e5ccb4652fd51a5",
+    "user": "customer"
+}
+
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:660]--user = customer, token = 2dbee144f13294e25e5ccb4652fd51a5, start = 0, count = 3
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:493]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2024-04-02 20:59:04]--[src_cgi/showpro.c:550]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://cbu01.alicdn.com/img/ibank/O1CN01MBIuTl1mfnyigIyCf_!!4003504982-0-cib.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://cbu01.alicdn.com/img/ibank/O1CN01nfldpC2MtqB3sMAju_!!933149886-0-cib.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://tgi12.jia.com/115/004/15004894.jpg"
+		}]
+}
+[2024-04-02 21:40:05]--[src_cgi/showpro.c:613]--cmd = showprocount
+[2024-04-02 21:40:05]--[src_cgi/showpro.c:645]--buf = {
+    "token": "8681d2469416fb81552b371ef9a37a8d",
+    "user": "customer"
+}
+
+[2024-04-02 21:40:06]--[src_cgi/showpro.c:457]--line = 3
+[2024-04-02 21:40:06]--[src_cgi/showpro.c:613]--cmd = showpronormal
+[2024-04-02 21:40:06]--[src_cgi/showpro.c:645]--buf = {
+    "count": 3,
+    "start": 0,
+    "token": "8681d2469416fb81552b371ef9a37a8d",
+    "user": "customer"
+}
+
+[2024-04-02 21:40:06]--[src_cgi/showpro.c:660]--user = customer, token = 8681d2469416fb81552b371ef9a37a8d, start = 0, count = 3
+[2024-04-02 21:40:06]--[src_cgi/showpro.c:493]--SELECT * FROM showproinfo limit 0,3 
+ 在操作
+[2024-04-02 21:40:06]--[src_cgi/showpro.c:550]--{
+	"showpro":	[{
+			"showpro_id":	1,
+			"showpro_name":	"黑色无纺布",
+			"showpro_url":	"https://cbu01.alicdn.com/img/ibank/O1CN01MBIuTl1mfnyigIyCf_!!4003504982-0-cib.jpg"
+		}, {
+			"showpro_id":	2,
+			"showpro_name":	"白色无纺布",
+			"showpro_url":	"https://cbu01.alicdn.com/img/ibank/O1CN01nfldpC2MtqB3sMAju_!!933149886-0-cib.jpg"
+		}, {
+			"showpro_id":	3,
+			"showpro_name":	"彩色无纺布",
+			"showpro_url":	"https://tgi12.jia.com/115/004/15004894.jpg"
+		}]
+}

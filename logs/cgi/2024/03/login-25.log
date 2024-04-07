@@ -1,0 +1,48 @@
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:291]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:297]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:301]--Login ret = 1 ------
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:189]--tmp = kevin_666202523176864
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:205]--base64 = rp9m4wmNf+Q2quLUbmackeF31pEA/NRy
+[2024-03-25 20:41:08]--[src_cgi/login_cgi.c:308]--token = 252946b4ac8d8b3b42190dcac4bc195e
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:291]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:297]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:301]--Login ret = 1 ------
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:189]--tmp = kevin_66679227410655
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:205]--base64 = rp9m4wmNf+RigTDHMq6dAIaRpsjwYKsY
+[2024-03-25 20:53:22]--[src_cgi/login_cgi.c:308]--token = 13da68aa6d56bf938794ad0840b2f342
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:291]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:297]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:301]--Login ret = 1 ------
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:189]--tmp = kevin_666106480661522
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:205]--base64 = rp9m4wmNf+Q8R5N2eRJVl+xKyPFWBe6Y
+[2024-03-25 20:54:30]--[src_cgi/login_cgi.c:308]--token = e19e8c4e44edeb4b36655d236908c0cf
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:291]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:297]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:301]--Login ret = 1 ------
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:189]--tmp = kevin_666724630137494
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:205]--base64 = rp9m4wmNf+Rtchx9qr/lHc+h7tur7F0W
+[2024-03-25 20:55:18]--[src_cgi/login_cgi.c:308]--token = c43a182de9f747c56278547883ff2dfe

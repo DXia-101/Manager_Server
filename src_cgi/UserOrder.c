@@ -47,27 +47,26 @@ void return_login_status(long num, int token_flag)
 
     if(token_flag == 0)
     {
-        token = "110"; //成功
+        token = "110"; 
     }
     else
     {
-        token = "111"; //失败
+        token = "111"; 
     }
 
-    //数字
+    
     sprintf(num_buf, "%ld", num);
 
-    cJSON *root = cJSON_CreateObject();  //创建json项目
-    cJSON_AddStringToObject(root, "num", num_buf);// {"num":"1111"}
-    cJSON_AddStringToObject(root, "code", token);// {"code":"110"}
-    out = cJSON_Print(root);//cJSON to string(char *)
-
+    cJSON *root = cJSON_CreateObject();  
+    cJSON_AddStringToObject(root, "num", num_buf);
+    cJSON_AddStringToObject(root, "code", token);
+    out = cJSON_Print(root);
     cJSON_Delete(root);
 
     if(out != NULL)
     {
-        printf(out); //给前端反馈信息
-        free(out); //记得释放
+        printf(out); 
+        free(out); 
     }
 }
 
@@ -145,7 +144,7 @@ int Get_User_Count(){
     char sql_cmd[SQL_MAX_LEN] = {0};
 	MYSQL *conn = NULL;
 	
-	//connect the database
+	
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
@@ -153,20 +152,20 @@ int Get_User_Count(){
         goto END;
     }
 	
-	//设置数据库编码，主要处理中文编码问题
+	
     mysql_query(conn, "set names utf8");
 
     sprintf(sql_cmd, "select count(*) from user");
     char tmp[512] = {0};
-    //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
-    int ret = process_result_one(conn, sql_cmd, tmp); //指向sql语句
+    
+    int ret = process_result_one(conn, sql_cmd, tmp); 
     if(ret != 0)
     {
         LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC, "%s 操作失败\n", sql_cmd);
         goto END;
     }
 
-    return atol(tmp); //字符串转长整形
+    return atol(tmp); 
 END:
     if(conn != NULL)
     {
@@ -198,8 +197,6 @@ int get_count_json_info(char *buf, char *user, char *token){
         goto END;
 	}
 	
-	//返回指定字符串对应的json对象
-    //用户
     cJSON *child1 = cJSON_GetObjectItem(root, "user");
     if(NULL == child1)
     {
@@ -207,9 +204,8 @@ int get_count_json_info(char *buf, char *user, char *token){
         ret = -1;
         goto END;
     }
-    strcpy(user, child1->valuestring); //拷贝内容
+    strcpy(user, child1->valuestring); 
 
-    //登陆token
     cJSON *child2 = cJSON_GetObjectItem(root, "token");
     if(NULL == child2)
     {
@@ -217,12 +213,12 @@ int get_count_json_info(char *buf, char *user, char *token){
         ret = -1;
         goto END;
     }
-    strcpy(token, child2->valuestring); //拷贝内容
+    strcpy(token, child2->valuestring); 
 
 END:
     if(root != NULL)
     {
-        cJSON_Delete(root);//删除json对象
+        cJSON_Delete(root);
         root = NULL;
     }
 
@@ -240,26 +236,26 @@ void get_userOrder_count(int ret,char *curUserName){
         LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"msql_conn err\n");
         goto END;
     }
-	//设置数据库编码，主要处理中文编码问题
+	
     mysql_query(conn, "set names utf8");
 
     sprintf(sql_cmd, "select count(*) from %s",curUserName);
     char tmp[512] = {0};
-    //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
-    int ret2 = process_result_one(conn, sql_cmd, tmp); //指向sql语句
+    
+    int ret2 = process_result_one(conn, sql_cmd, tmp); 
     if(ret2 != 0)
     {
         LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"%s 操作失败\n", sql_cmd);
         goto END;
     }
-    line = atol(tmp); //字符串转长整形
+    line = atol(tmp); 
 END:
     if(conn != NULL)
     {
         mysql_close(conn);
     }
     LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"line = %ld\n", line);
-    //给前端反馈的信息
+    
     return_login_status(line, ret);
 }
 
@@ -281,7 +277,7 @@ int get_userOrderlist_json_info(char *buf,char *user,char *token,int *p_start,in
 		goto END;
 	}
 	
-	// 返回指定字符串对应的json对象
+	
 	// 用户
 	cJSON* child1 = cJSON_GetObjectItem(root,"user");
 	if(NULL == child1){
@@ -289,9 +285,9 @@ int get_userOrderlist_json_info(char *buf,char *user,char *token,int *p_start,in
 		ret = -1;
 		goto END;
 	}
-	strcpy(user, child1->valuestring); //拷贝内容
+	strcpy(user, child1->valuestring); 
 	
-	// 返回指定字符串对应的json对象
+	
 	// token
 	cJSON* child2 = cJSON_GetObjectItem(root,"token");
 	if(NULL == child2){
@@ -299,9 +295,9 @@ int get_userOrderlist_json_info(char *buf,char *user,char *token,int *p_start,in
 		ret = -1;
 		goto END;
 	}
-	strcpy(token, child2->valuestring); //拷贝内容
+	strcpy(token, child2->valuestring); 
 	
-	// 返回指定字符串对应的json对象
+	
 	// 文件起点
 	cJSON* child3 = cJSON_GetObjectItem(root,"start");
 	if(NULL == child3){
@@ -309,21 +305,21 @@ int get_userOrderlist_json_info(char *buf,char *user,char *token,int *p_start,in
 		ret = -1;
 		goto END;
 	}
-	*p_start = child3->valueint; //拷贝内容
+	*p_start = child3->valueint; 
 
-	// 返回指定字符串对应的json对象
-	// 文件请求个数
+	
+	
 	cJSON* child4 = cJSON_GetObjectItem(root,"count");
 	if(NULL == child4){
 		LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"cJSON_GetObjectItem err\n");
 		ret = -1;
 		goto END;
 	}
-	*p_count = child4->valueint; //拷贝内容
+	*p_count = child4->valueint; 
 	
 END:
 	if(NULL != root){
-		cJSON_Delete(root);	//删除json对象
+		cJSON_Delete(root);	
 		root = NULL;
 	}
 	return ret;
@@ -339,7 +335,7 @@ int get_userOrder_list(char *user,int start,int count,char *curUserName){
     char *out2 = NULL;
     MYSQL_RES *res_set = NULL;
 	
-    //connect the database
+    
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
@@ -348,7 +344,7 @@ int get_userOrder_list(char *user,int start,int count,char *curUserName){
         goto END;
     }
 
-    //设置数据库编码，主要处理中文编码问题
+    
     mysql_query(conn, "set names utf8");
 
 	sprintf(sql_cmd,"SELECT * FROM %s limit %d,%d \n",curUserName,start,count);
@@ -421,7 +417,7 @@ END:
 	if(ret == 0){
 		printf("%s",out); //给客户端返回信息
 	}else{
-		//失败
+		
         /*
 			获取商品列表：
             成功：商品列表json
@@ -458,7 +454,7 @@ int get_search_list(char *cmd,char *user,int start,int count,char *curUserName,c
 	char *out2 = NULL;
 	MYSQL_RES *res_set = NULL;
 	
-	//connect the database
+	
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
 		LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"msql_conn err\n");
@@ -466,7 +462,7 @@ int get_search_list(char *cmd,char *user,int start,int count,char *curUserName,c
 		goto END;
 	}
 	
-	//设置数据库编码，主要处理中文编码问题
+	
     mysql_query(conn, "set names utf8");
 	
 	sprintf(sql_cmd,"select * from %s where ProductName = '%s'",curUserName,searchTarget);
@@ -539,7 +535,7 @@ END:
 	if(ret == 0){
 		printf("%s",out); //给客户端返回信息
 	}else{
-		//失败
+		
         /*
 			获取商品列表：
             成功：商品列表json
@@ -685,26 +681,26 @@ void get_search_count(int ret,char *UserName,char *searchTarget){
 	MYSQL *conn = NULL;
 	long line = 0;
 	
-	//connect the database
+	
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
 		LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"msql_conn err\n");
 		goto END;
 	}
 	
-	//设置数据库编码，主要处理中文编码问题
+	
     mysql_query(conn, "set names utf8");
 	sprintf(sql_cmd,"select count(*) from %s where ProductName = '%s'",UserName,searchTarget);
 	
 	char tmp[512] = {0};
-	//返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
-	int ret2 = process_result_one(conn,sql_cmd,tmp);	//指向sql语句
+	
+	int ret2 = process_result_one(conn,sql_cmd,tmp);	
 	if(ret2 != 0){
 		LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"%s 操作失败\n",sql_cmd);
 		goto END;
 	}
 
-	line = atol(tmp); //字符串转长整形
+	line = atol(tmp); 
 	
 END:
 	if(conn != NULL)
@@ -712,7 +708,7 @@ END:
 	
 	LOG(USERORDER_LOG_MODULE, USERORDER_LOG_PROC,"line = %ld\n",line);
 	
-	//给前端反馈的信息
+	
 	return_login_status(line,ret);
 }
 

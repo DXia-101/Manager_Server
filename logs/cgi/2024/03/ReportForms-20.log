@@ -1,0 +1,54 @@
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:732]--cmd = ReportFormCount
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:764]--buf = {
+    "token": "1c8ce93e3f7b241f366c0162f1364ee6",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:152]--line = 1
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:732]--cmd = ReportFormNormal
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:764]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "1c8ce93e3f7b241f366c0162f1364ee6",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:779]--user = kevin_666, token = 1c8ce93e3f7b241f366c0162f1364ee6, start = 0, count = 1
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:598]--SELECT * FROM ReportForms limit 0,1 
+ 在操作
+[2024-03-20 17:01:59]--[src_cgi/ReportForm.c:666]--{
+	"ReportForms":	[{
+			"OrderID":	1,
+			"CustomerName":	"customer",
+			"SubscriptionDate":	"2024-01-30 19:44:58",
+			"DeliveryDate":	"",
+			"IsSuccess":	"true"
+		}]
+}
+[2024-03-20 17:07:13]--[src_cgi/ReportForm.c:732]--cmd = ReportFormCount
+[2024-03-20 17:07:13]--[src_cgi/ReportForm.c:764]--buf = {
+    "token": "e1101c4f2c0aaa3f10e1cc8c14495061",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:07:13]--[src_cgi/ReportForm.c:152]--line = 1
+[2024-03-20 17:07:14]--[src_cgi/ReportForm.c:732]--cmd = ReportFormNormal
+[2024-03-20 17:07:14]--[src_cgi/ReportForm.c:764]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "e1101c4f2c0aaa3f10e1cc8c14495061",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:07:14]--[src_cgi/ReportForm.c:779]--user = kevin_666, token = e1101c4f2c0aaa3f10e1cc8c14495061, start = 0, count = 1
+[2024-03-20 17:07:14]--[src_cgi/ReportForm.c:598]--SELECT * FROM ReportForms limit 0,1 
+ 在操作
+[2024-03-20 17:07:14]--[src_cgi/ReportForm.c:666]--{
+	"ReportForms":	[{
+			"OrderID":	1,
+			"CustomerName":	"customer",
+			"SubscriptionDate":	"2024-01-30 19:44:58",
+			"DeliveryDate":	"",
+			"IsSuccess":	"true"
+		}]
+}

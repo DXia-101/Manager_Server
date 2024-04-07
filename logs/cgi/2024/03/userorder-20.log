@@ -1,0 +1,54 @@
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:735]--cmd = GetNames
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:735]--cmd = userOrdercount=customer
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:788]--buf = {
+    "token": "1c8ce93e3f7b241f366c0162f1364ee6",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:257]--line = 1
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:735]--cmd = userOrdernormal=customer
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:788]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "1c8ce93e3f7b241f366c0162f1364ee6",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:806]--user = kevin_666, token = 1c8ce93e3f7b241f366c0162f1364ee6, start = 0, count = 1
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:353]--SELECT * FROM customer limit 0,1 
+ 在操作
+[2024-03-20 17:01:59]--[src_cgi/UserOrder.c:414]--{
+	"UserOrder":	[{
+			"UserOrderTable_OrderID":	0,
+			"UserOrderTable_Productname":	"1",
+			"UserOrderTable_count":	0,
+			"UserOrderTable_time":	"10"
+		}]
+}
+[2024-03-20 17:07:13]--[src_cgi/UserOrder.c:735]--cmd = GetNames
+[2024-03-20 17:07:13]--[src_cgi/UserOrder.c:735]--cmd = userOrdercount=customer
+[2024-03-20 17:07:13]--[src_cgi/UserOrder.c:788]--buf = {
+    "token": "e1101c4f2c0aaa3f10e1cc8c14495061",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:07:13]--[src_cgi/UserOrder.c:257]--line = 1
+[2024-03-20 17:07:14]--[src_cgi/UserOrder.c:735]--cmd = userOrdernormal=customer
+[2024-03-20 17:07:14]--[src_cgi/UserOrder.c:788]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "e1101c4f2c0aaa3f10e1cc8c14495061",
+    "user": "kevin_666"
+}
+
+[2024-03-20 17:07:14]--[src_cgi/UserOrder.c:806]--user = kevin_666, token = e1101c4f2c0aaa3f10e1cc8c14495061, start = 0, count = 1
+[2024-03-20 17:07:14]--[src_cgi/UserOrder.c:353]--SELECT * FROM customer limit 0,1 
+ 在操作
+[2024-03-20 17:07:14]--[src_cgi/UserOrder.c:414]--{
+	"UserOrder":	[{
+			"UserOrderTable_OrderID":	0,
+			"UserOrderTable_Productname":	"1",
+			"UserOrderTable_count":	0,
+			"UserOrderTable_time":	"10"
+		}]
+}

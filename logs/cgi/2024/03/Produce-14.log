@@ -1,0 +1,34 @@
+[2024-03-14 21:25:07]--[src_cgi/Produce.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2024-03-14 21:30:04]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-03-14 21:30:04]--[src_cgi/Produce.c:775]--buf = {
+    "token": "e19c6e6b38f0501989bfffd01f6eba18",
+    "user": "kevin_666"
+}
+
+[2024-03-14 21:30:04]--[src_cgi/Produce.c:886]--keywordori = 
+[2024-03-14 21:30:04]--[src_cgi/Produce.c:887]--keyword = PteÇ
+[2024-03-14 21:30:04]--[src_cgi/Produce.c:254]--line = 0
+[2024-03-14 21:30:34]--[src_cgi/Produce.c:743]--cmd = ProduceAdd
+[2024-03-14 21:30:34]--[src_cgi/Produce.c:775]--buf = {
+    "data": {
+        "produce_id": 1,
+        "product_name": "é»‘è‰²æ— çººå¸ƒ",
+        "product_quantity": 100,
+        "product_time": "2020"
+    },
+    "material_table": [
+    ]
+}
+
+[2024-03-14 21:30:34]--[src_cgi/Produce.c:886]--keywordori = 
+[2024-03-14 21:30:34]--[src_cgi/Produce.c:887]--keyword = PteÇ
+[2024-03-14 21:30:34]--[src_cgi/Produce.c:58]--cJSON_GetObjectItem err
+[2024-03-14 21:30:34]--[src_cgi/Produce.c:254]--line = 0
+[2024-03-14 21:44:08]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-03-14 21:44:08]--[src_cgi/Produce.c:775]--buf = {
+    "token": "c6bab2b56b587afdebf53c5a84ffaeb0",
+    "user": "kevin_666"
+}
+
+[2024-03-14 21:44:08]--[src_cgi/Produce.c:886]--keywordori = 
+[2024-03-14 21:44:08]--[src_cgi/Produce.c:887]--keyword = PteÇ
+[2024-03-14 21:44:08]--[src_cgi/Produce.c:254]--line = 0

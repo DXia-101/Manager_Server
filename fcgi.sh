@@ -71,7 +71,16 @@ if [ "$START" -eq 1 ];then
     spawn-fcgi -a 127.0.0.1 -p 10007 -f ./bin_cgi/UserOrder
     # ReportForm
     echo -n "ReportForm: "
-    spawn-fcgi -a 127.0.0.1 -p 10008 -f ./bin_cgi/ReportForm
+    spawn-fcgi -a 127.0.0.1 -p 10010 -f ./bin_cgi/ReportForm
+    # Produce
+    echo -n "Produce: "
+    spawn-fcgi -a 127.0.0.1 -p 10011 -f ./bin_cgi/Produce
+    # Procure
+    echo -n "Procure: "
+    spawn-fcgi -a 127.0.0.1 -p 10012 -f ./bin_cgi/Procure
+    # Produce
+    echo -n "UserManager: "
+    spawn-fcgi -a 127.0.0.1 -p 10013 -f ./bin_cgi/UserManager
 
 
     echo "CGI 程序已经成功启动 ^_^..."

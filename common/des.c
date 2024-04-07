@@ -757,7 +757,6 @@ int DesEnc_raw(
 #define  ERR_FILECONT 20
 
 
-//用户使用函数des解密
 int DesDec(
 		   unsigned char *pInData,
 		   int            nInDataLen,
@@ -800,7 +799,6 @@ int DesDec(
 }
 
 
-//用户使用函数des解密
 int DesDec_raw(
 	unsigned char *pInData,
 	int            nInDataLen,

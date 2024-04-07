@@ -27,18 +27,6 @@ int get_reg_info(char *reg_buf, char *user, char *nick_name, char *pwd, char *te
 {
     int ret = 0;
 
-    /*json数据如下
-    {
-        userName:xxxx,
-        nickName:xxx,
-        firstPwd:xxx,
-        phone:xxx,
-        email:xxx
-    }
-    */
-
-    //解析json包
-    //解析一个json字符串为cJSON对象
     cJSON * root = cJSON_Parse(reg_buf);
     if(NULL == root)
     {
@@ -47,8 +35,6 @@ int get_reg_info(char *reg_buf, char *user, char *nick_name, char *pwd, char *te
         goto END;
     }
 
-    //返回指定字符串对应的json对象
-    //用户
     cJSON *child1 = cJSON_GetObjectItem(root, "userName");
     if(NULL == child1)
     {
@@ -57,10 +43,8 @@ int get_reg_info(char *reg_buf, char *user, char *nick_name, char *pwd, char *te
         goto END;
     }
 
-    //LOG(REG_LOG_MODULE, REG_LOG_PROC, "child1->valuestring = %s\n", child1->valuestring);
-    strcpy(user, child1->valuestring); //拷贝内容
+    strcpy(user, child1->valuestring); 
 
-    //昵称
     cJSON *child2 = cJSON_GetObjectItem(root, "nickName");
     if(NULL == child2)
     {
@@ -68,9 +52,8 @@ int get_reg_info(char *reg_buf, char *user, char *nick_name, char *pwd, char *te
         ret = -1;
         goto END;
     }
-    strcpy(nick_name, child2->valuestring); //拷贝内容
+    strcpy(nick_name, child2->valuestring); 
 
-    //密码
     cJSON *child3 = cJSON_GetObjectItem(root, "firstPwd");
     if(NULL == child3)
     {
@@ -78,9 +61,8 @@ int get_reg_info(char *reg_buf, char *user, char *nick_name, char *pwd, char *te
         ret = -1;
         goto END;
     }
-    strcpy(pwd, child3->valuestring); //拷贝内容
+    strcpy(pwd, child3->valuestring); 
 
-    //电话
     cJSON *child4 = cJSON_GetObjectItem(root, "phone");
     if(NULL == child4)
     {
@@ -88,9 +70,8 @@ int get_reg_info(char *reg_buf, char *user, char *nick_name, char *pwd, char *te
         ret = -1;
         goto END;
     }
-    strcpy(tel, child4->valuestring); //拷贝内容
+    strcpy(tel, child4->valuestring); 
 
-    //邮箱
     cJSON *child5 = cJSON_GetObjectItem(root, "email");
     if(NULL == child5)
     {
@@ -98,12 +79,12 @@ int get_reg_info(char *reg_buf, char *user, char *nick_name, char *pwd, char *te
         ret = -1;
         goto END;
     }
-    strcpy(email, child5->valuestring); //拷贝内容
+    strcpy(email, child5->valuestring); 
 
 END:
     if(root != NULL)
     {
-        cJSON_Delete(root);//删除json对象
+        cJSON_Delete(root);
         root = NULL;
     }
 
@@ -140,7 +121,7 @@ int user_register( char *reg_buf )
     }
     LOG(REG_LOG_MODULE, REG_LOG_PROC, "user = %s, nick_name = %s, pwd = %s, tel = %s, email = %s\n", user, nick_name, pwd, tel, email);
 
-    //connect the database
+    
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
@@ -149,7 +130,7 @@ int user_register( char *reg_buf )
         goto END;
     }
 
-    //设置数据库编码，主要处理中文编码问题
+    
     mysql_query(conn, "set names utf8");
 
     char sql_cmd[SQL_MAX_LEN] = {0};
@@ -158,7 +139,7 @@ int user_register( char *reg_buf )
 
     //查看该用户是否存在
     int ret2 = 0;
-    //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
+    
     ret2 = process_result_one(conn, sql_cmd, NULL); //指向sql查询语句
     if(ret2 == 2) //如果存在
     {
@@ -260,8 +241,8 @@ int main()
 
             if(out != NULL)
             {
-                printf(out); //给前端反馈信息
-                free(out); //记得释放
+                printf(out); 
+                free(out); 
             }
         }
 

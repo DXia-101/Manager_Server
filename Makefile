@@ -25,6 +25,9 @@ product=$(CGI_BIN_PATH)/product
 showpro=$(CGI_BIN_PATH)/showpro
 UserOrder=$(CGI_BIN_PATH)/UserOrder
 ReportForm=$(CGI_BIN_PATH)/ReportForm
+Produce=$(CGI_BIN_PATH)/Produce
+Procure=$(CGI_BIN_PATH)/Procure
+UserManager=$(CGI_BIN_PATH)/UserManager
 
 # 最终目标
 target=$(login) \
@@ -34,7 +37,11 @@ target=$(login) \
 	   $(product) \
 	   $(showpro) \
 	   $(UserOrder) \
-	   $(ReportForm)
+	   $(ReportForm) \
+	   $(Produce) \
+	   $(Procure) \
+	   $(UserManager)
+
 
 ALL:$(target)
 
@@ -112,6 +119,33 @@ $(UserOrder):	$(CGI_SRC_PATH)/UserOrder.o \
 			$(COMMON_PATH)/cfg.o
 	$(CC) $^ -o $@ $(LIBS)
 $(ReportForm):	$(CGI_SRC_PATH)/ReportForm.o \
+			$(COMMON_PATH)/make_log.o  \
+			$(COMMON_PATH)/util_cgi.o \
+			$(COMMON_PATH)/cJSON.o \
+			$(COMMON_PATH)/deal_mysql.o \
+			$(COMMON_PATH)/base64.o \
+			$(COMMON_PATH)/redis_op.o  \
+			$(COMMON_PATH)/cfg.o
+	$(CC) $^ -o $@ $(LIBS)
+$(Produce):	$(CGI_SRC_PATH)/Produce.o \
+			$(COMMON_PATH)/make_log.o  \
+			$(COMMON_PATH)/util_cgi.o \
+			$(COMMON_PATH)/cJSON.o \
+			$(COMMON_PATH)/deal_mysql.o \
+			$(COMMON_PATH)/base64.o \
+			$(COMMON_PATH)/redis_op.o  \
+			$(COMMON_PATH)/cfg.o
+	$(CC) $^ -o $@ $(LIBS)
+$(Procure):	$(CGI_SRC_PATH)/Procure.o \
+			$(COMMON_PATH)/make_log.o  \
+			$(COMMON_PATH)/util_cgi.o \
+			$(COMMON_PATH)/cJSON.o \
+			$(COMMON_PATH)/deal_mysql.o \
+			$(COMMON_PATH)/base64.o \
+			$(COMMON_PATH)/redis_op.o  \
+			$(COMMON_PATH)/cfg.o
+	$(CC) $^ -o $@ $(LIBS)
+$(UserManager):	$(CGI_SRC_PATH)/UserManager.o \
 			$(COMMON_PATH)/make_log.o  \
 			$(COMMON_PATH)/util_cgi.o \
 			$(COMMON_PATH)/cJSON.o \

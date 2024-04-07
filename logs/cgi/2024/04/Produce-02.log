@@ -1,0 +1,60 @@
+[2024-04-02 21:01:50]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-02 21:01:50]--[src_cgi/Produce.c:775]--buf = {
+    "token": "83833994c6ccc2fb040f0eb349de5424",
+    "user": "kevin_666"
+}
+
+[2024-04-02 21:01:50]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-02 21:01:50]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-04-02 21:01:51]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-02 21:01:51]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-02 21:01:51]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "83833994c6ccc2fb040f0eb349de5424",
+    "user": "kevin_666"
+}
+
+[2024-04-02 21:01:51]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-02 21:01:51]--[src_cgi/Produce.c:792]--user = kevin_666, token = 83833994c6ccc2fb040f0eb349de5424, start = 0, count = 1
+[2024-04-02 21:01:51]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-02 21:01:51]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:775]--buf = {
+    "token": "83c6a8d27c66488b38c5ea9aa88ecabc",
+    "user": "kevin_666"
+}
+
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-02 22:15:46]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-04-02 22:15:46]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "83c6a8d27c66488b38c5ea9aa88ecabc",
+    "user": "kevin_666"
+}
+
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-02 22:15:46]--[src_cgi/Produce.c:792]--user = kevin_666, token = 83c6a8d27c66488b38c5ea9aa88ecabc, start = 0, count = 1
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-02 22:15:46]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}

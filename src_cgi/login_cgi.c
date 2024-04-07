@@ -25,14 +25,10 @@
 #define LOGIN_LOG_MODULE "cgi"
 #define LOGIN_LOG_PROC   "login"
 
-//解析用户登陆信息的json包login_buf
-//用户名保存在user，密码保存在pwd
 int get_login_info(char *login_buf, char *user, char *pwd)
 {
     int ret = 0;
 
-    //解析json包
-    //解析一个json字符串为cJSON对象
     cJSON * root = cJSON_Parse(login_buf);
     if(NULL == root)
     {
@@ -41,8 +37,6 @@ int get_login_info(char *login_buf, char *user, char *pwd)
         goto END;
     }
 
-    //返回指定字符串对应的json对象
-    //用户
     cJSON *child1 = cJSON_GetObjectItem(root, "user");
     if(NULL == child1)
     {
@@ -52,7 +46,7 @@ int get_login_info(char *login_buf, char *user, char *pwd)
     }
 
     //LOG(LOGIN_LOG_MODULE, LOGIN_LOG_PROC, "child1->valuestring = %s\n", child1->valuestring);
-    strcpy(user, child1->valuestring); //拷贝内容
+    strcpy(user, child1->valuestring); 
 
     //密码
     cJSON *child2 = cJSON_GetObjectItem(root, "pwd");
@@ -64,12 +58,12 @@ int get_login_info(char *login_buf, char *user, char *pwd)
     }
 
     //LOG(LOGIN_LOG_MODULE, LOGIN_LOG_PROC, "child1->valuestring = %s\n", child1->valuestring);
-    strcpy(pwd, child2->valuestring); //拷贝内容
+    strcpy(pwd, child2->valuestring); 
 
 END:
     if(root != NULL)
     {
-        cJSON_Delete(root);//删除json对象
+        cJSON_Delete(root);
         root = NULL;
     }
 
@@ -101,7 +95,7 @@ int check_user_pwd( char *user, char *pwd )
     get_mysql_info(mysql_user, mysql_pwd,  mysql_db);
     LOG(LOGIN_LOG_MODULE, LOGIN_LOG_PROC, "mysql_user = %s, mysql_pwd = %s, mysql_db = %s\n", mysql_user, mysql_pwd, mysql_db);
 
-    //connect the database
+    
     MYSQL *conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
@@ -109,7 +103,7 @@ int check_user_pwd( char *user, char *pwd )
         return -1;
     }
 
-    //设置数据库编码，主要处理中文编码问题
+    
     mysql_query(conn, "set names utf8");
 
     //sql语句，查找某个用户对应的密码
@@ -118,7 +112,7 @@ int check_user_pwd( char *user, char *pwd )
     //deal result
     char tmp[PWD_LEN] = {0};
 
-    //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
+    
     process_result_one(conn, sql_cmd, tmp); //执行sql语句，结果集保存在tmp
     if(strcmp(tmp, pwd) == 0)
     {
@@ -129,7 +123,7 @@ int check_user_pwd( char *user, char *pwd )
         //deal result
         char power[PWD_LEN] = {0};
 
-        //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
+        
         process_result_one(conn, sql_cmd, power); //执行sql语句，结果集保存在power
         ret = (atoi(power) != 0) ? 1 : 0;
     }
@@ -244,17 +238,16 @@ END:
 void return_login_status(char *status_num, char *token)
 {
     char *out = NULL;
-    cJSON *root = cJSON_CreateObject();  //创建json项目
+    cJSON *root = cJSON_CreateObject();  
     cJSON_AddStringToObject(root, "code", status_num);// {"code":"000"}
      cJSON_AddStringToObject(root, "token", token);// {"token":"token"}
-    out = cJSON_Print(root);//cJSON to string(char *)
-
+    out = cJSON_Print(root);
     cJSON_Delete(root);
 
     if(out != NULL)
     {
-        printf(out); //给前端反馈信息
-        free(out); //记得释放
+        printf(out); 
+        free(out); 
     }
 }
 

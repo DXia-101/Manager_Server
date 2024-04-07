@@ -93,9 +93,9 @@ int get_cfg_value(const char *profile, char *title, char *key, char *value)
     }
 
     //LOG(CFG_LOG_MODULE, CFG_LOG_PROC, "son->valuestring = %s\n", son->valuestring);
-    strcpy(value, son->valuestring); //拷贝内容
+    strcpy(value, son->valuestring); 
 
-    cJSON_Delete(root);//删除json对象
+    cJSON_Delete(root);
 
 END:
     if(fp != NULL)

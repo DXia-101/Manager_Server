@@ -1,0 +1,27 @@
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:735]--cmd = GetNames
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:735]--cmd = userOrdercount=customer
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:788]--buf = {
+    "token": "e6ecd23a39c1b43464cffad93c9eac4e",
+    "user": "kevin_666"
+}
+
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:257]--line = 1
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:735]--cmd = userOrdernormal=customer
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:788]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "e6ecd23a39c1b43464cffad93c9eac4e",
+    "user": "kevin_666"
+}
+
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:806]--user = kevin_666, token = e6ecd23a39c1b43464cffad93c9eac4e, start = 0, count = 1
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:353]--SELECT * FROM customer limit 0,1 
+ 在操作
+[2024-03-30 11:36:14]--[src_cgi/UserOrder.c:414]--{
+	"UserOrder":	[{
+			"UserOrderTable_OrderID":	0,
+			"UserOrderTable_Productname":	"1",
+			"UserOrderTable_count":	0,
+			"UserOrderTable_time":	"10"
+		}]
+}

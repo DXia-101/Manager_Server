@@ -23,7 +23,6 @@
 #define REPORTFORMS_LOG_MODULE       "cgi"
 #define REPORTFORMS_LOG_PROC         "ReportForms"
 
-//mysql 数据库配置信息 用户名， 密码， 数据库名称
 static char mysql_user[128] = {0};
 static char mysql_pwd[128] = {0};
 static char mysql_db[128] = {0};
@@ -32,20 +31,17 @@ static char mysql_db[128] = {0};
 // 读取配置信息
 void read_cfg()
 {
-	//读取mysql数据库配置信息
+
     get_cfg_value(CFG_PATH, "mysql", "user", mysql_user);
     get_cfg_value(CFG_PATH, "mysql", "password", mysql_pwd);
     get_cfg_value(CFG_PATH, "mysql", "database", mysql_db);
     LOG(REPORTFORMS_LOG_MODULE, REPORTFORMS_LOG_PROC, "mysql:[user=%s,pwd=%s,database=%s]", mysql_user, mysql_pwd, mysql_db);
 }
 
-//解析的json包, 登陆token
 int get_count_json_info(char *buf, char *user, char *token){
 	
 	int ret = 0;
 	
-	//解析json包
-	//解析一个json字符串为json对象
 	cJSON* root = cJSON_Parse(buf);
 	if(NULL == root)
     {
@@ -54,8 +50,6 @@ int get_count_json_info(char *buf, char *user, char *token){
         goto END;
 	}
 	
-	//返回指定字符串对应的json对象
-    //用户
     cJSON *child1 = cJSON_GetObjectItem(root, "user");
     if(NULL == child1)
     {
@@ -63,9 +57,9 @@ int get_count_json_info(char *buf, char *user, char *token){
         ret = -1;
         goto END;
     }
-    strcpy(user, child1->valuestring); //拷贝内容
+    strcpy(user, child1->valuestring); 
 
-    //登陆token
+    
     cJSON *child2 = cJSON_GetObjectItem(root, "token");
     if(NULL == child2)
     {
@@ -73,12 +67,12 @@ int get_count_json_info(char *buf, char *user, char *token){
         ret = -1;
         goto END;
     }
-    strcpy(token, child2->valuestring); //拷贝内容
+    strcpy(token, child2->valuestring); 
 
 END:
     if(root != NULL)
     {
-        cJSON_Delete(root);//删除json对象
+        cJSON_Delete(root);
         root = NULL;
     }
 
@@ -95,27 +89,26 @@ void return_login_status(long num, int token_flag)
 
     if(token_flag == 0)
     {
-        token = "110"; //成功
+        token = "110"; 
     }
     else
     {
-        token = "111"; //失败
+        token = "111"; 
     }
 
-    //数字
+    
     sprintf(num_buf, "%ld", num);
 
-    cJSON *root = cJSON_CreateObject();  //创建json项目
-    cJSON_AddStringToObject(root, "num", num_buf);// {"num":"1111"}
-    cJSON_AddStringToObject(root, "code", token);// {"code":"110"}
-    out = cJSON_Print(root);//cJSON to string(char *)
-
+    cJSON *root = cJSON_CreateObject();  
+    cJSON_AddStringToObject(root, "num", num_buf);
+    cJSON_AddStringToObject(root, "code", token);
+    out = cJSON_Print(root);
     cJSON_Delete(root);
 
     if(out != NULL)
     {
-        printf(out); //给前端反馈信息
-        free(out); //记得释放
+        printf(out); 
+        free(out); 
     }
 }
 
@@ -127,7 +120,7 @@ void get_ReportForms_count(int ret){
 	MYSQL *conn = NULL;
 	long line = 0;
 	
-	//connect the database
+	
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
@@ -135,20 +128,20 @@ void get_ReportForms_count(int ret){
         goto END;
     }
 	
-	//设置数据库编码，主要处理中文编码问题
+	
     mysql_query(conn, "set names utf8");
 
     sprintf(sql_cmd, "select count(*) from ReportForms");
     char tmp[512] = {0};
-    //返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
-    int ret2 = process_result_one(conn, sql_cmd, tmp); //指向sql语句
+    
+    int ret2 = process_result_one(conn, sql_cmd, tmp); 
     if(ret2 != 0)
     {
         LOG(REPORTFORMS_LOG_MODULE, REPORTFORMS_LOG_PROC, "%s 操作失败\n", sql_cmd);
         goto END;
     }
 
-    line = atol(tmp); //字符串转长整形
+    line = atol(tmp); 
 
 END:
     if(conn != NULL)
@@ -158,7 +151,7 @@ END:
 
     LOG(REPORTFORMS_LOG_MODULE, REPORTFORMS_LOG_PROC, "line = %ld\n", line);
 
-    //给前端反馈的信息
+    
     return_login_status(line, ret);
 }
 
@@ -184,7 +177,7 @@ int get_ReportFormslist_json_info(char *buf,char *user,char *token,int *p_start,
 		goto END;
 	}
 	
-	// 返回指定字符串对应的json对象
+	
 	// 用户
 	cJSON* child1 = cJSON_GetObjectItem(root,"user");
 	if(NULL == child1){
@@ -192,9 +185,9 @@ int get_ReportFormslist_json_info(char *buf,char *user,char *token,int *p_start,
 		ret = -1;
 		goto END;
 	}
-	strcpy(user, child1->valuestring); //拷贝内容
+	strcpy(user, child1->valuestring); 
 	
-	// 返回指定字符串对应的json对象
+	
 	// token
 	cJSON* child2 = cJSON_GetObjectItem(root,"token");
 	if(NULL == child2){
@@ -202,9 +195,9 @@ int get_ReportFormslist_json_info(char *buf,char *user,char *token,int *p_start,
 		ret = -1;
 		goto END;
 	}
-	strcpy(token, child2->valuestring); //拷贝内容
+	strcpy(token, child2->valuestring); 
 	
-	// 返回指定字符串对应的json对象
+	
 	// 文件起点
 	cJSON* child3 = cJSON_GetObjectItem(root,"start");
 	if(NULL == child3){
@@ -212,21 +205,21 @@ int get_ReportFormslist_json_info(char *buf,char *user,char *token,int *p_start,
 		ret = -1;
 		goto END;
 	}
-	*p_start = child3->valueint; //拷贝内容
+	*p_start = child3->valueint; 
 
-	// 返回指定字符串对应的json对象
-	// 文件请求个数
+	
+	
 	cJSON* child4 = cJSON_GetObjectItem(root,"count");
 	if(NULL == child4){
 		LOG(REPORTFORMS_LOG_MODULE,REPORTFORMS_LOG_PROC,"cJSON_GetObjectItem err\n");
 		ret = -1;
 		goto END;
 	}
-	*p_count = child4->valueint; //拷贝内容
+	*p_count = child4->valueint; 
 	
 END:
 	if(NULL != root){
-		cJSON_Delete(root);	//删除json对象
+		cJSON_Delete(root);	
 		root = NULL;
 	}
 	
@@ -250,14 +243,14 @@ void get_search_count(int ret,char *keyword){
 	MYSQL *conn = NULL;
 	long line = 0;
 	
-	//connect the database
+	
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
 		LOG(REPORTFORMS_LOG_MODULE,REPORTFORMS_LOG_PROC,"msql_conn err\n");
 		goto END;
 	}
 	
-	//设置数据库编码，主要处理中文编码问题
+	
     mysql_query(conn, "set names utf8");
 	
 	if(is_number(keyword)){
@@ -267,14 +260,14 @@ void get_search_count(int ret,char *keyword){
 	}
 	
 	char tmp[512] = {0};
-	//返回值： 0成功并保存记录集，1没有记录集，2有记录集但是没有保存，-1失败
-	int ret2 = process_result_one(conn,sql_cmd,tmp);	//指向sql语句
+	
+	int ret2 = process_result_one(conn,sql_cmd,tmp);	
 	if(ret2 != 0){
 		LOG(REPORTFORMS_LOG_MODULE,REPORTFORMS_LOG_PROC,"%s 操作失败\n",sql_cmd);
 		goto END;
 	}
 
-	line = atol(tmp); //字符串转长整形
+	line = atol(tmp); 
 	
 END:
 	if(conn != NULL){
@@ -283,7 +276,7 @@ END:
 	
 	LOG(REPORTFORMS_LOG_MODULE,REPORTFORMS_LOG_PROC,"line = %ld\n",line);
 	
-	//给前端反馈的信息
+	
 	return_login_status(line,ret);
 }
 
@@ -298,7 +291,7 @@ int get_search_list(char *cmd,char *user,int start,int count,char *keyword){
 	char *out2 = NULL;
 	MYSQL_RES *res_set = NULL;
 	
-	//connect the database
+	
 	conn = msql_conn(mysql_user,mysql_pwd,mysql_db);
 	if(conn == NULL){
 		LOG(REPORTFORMS_LOG_MODULE,REPORTFORMS_LOG_PROC,"msql_conn err\n");
@@ -306,7 +299,7 @@ int get_search_list(char *cmd,char *user,int start,int count,char *keyword){
 		goto END;
 	}
 	
-	//设置数据库编码，主要处理中文编码问题
+	
     mysql_query(conn, "set names utf8");
 	
 	
@@ -390,7 +383,7 @@ END:
 	if(ret == 0){
 		printf("%s",out); //给客户端返回信息
 	}else{
-		//失败
+		
         /*
 			获取报表列表：
             成功：报表列表json
@@ -587,7 +580,7 @@ int get_ReportForms_list(char *user,int start,int count){
     char *out2 = NULL;
     MYSQL_RES *res_set = NULL;
 	
-    //connect the database
+    
     conn = msql_conn(mysql_user, mysql_pwd, mysql_db);
     if (conn == NULL)
     {
@@ -596,7 +589,7 @@ int get_ReportForms_list(char *user,int start,int count){
         goto END;
     }
 
-    //设置数据库编码，主要处理中文编码问题
+    
     mysql_query(conn, "set names utf8");
 	
 	sprintf(sql_cmd,"SELECT * FROM ReportForms limit %d,%d \n",start,count);
@@ -676,7 +669,7 @@ END:
 	if(ret == 0){
 		printf("%s",out); //给客户端返回信息
 	}else{
-		//失败
+		
         /*
 			获取报表列表：
             成功：报表列表json

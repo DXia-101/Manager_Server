@@ -1,0 +1,30 @@
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:775]--buf = {
+    "token": "e6ecd23a39c1b43464cffad93c9eac4e",
+    "user": "kevin_666"
+}
+
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:777]--Cmd is :[2024-03-30 11:36:14]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-03-30 11:36:14]--[src_cgi/Produce.c:152]--line = 1
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "e6ecd23a39c1b43464cffad93c9eac4e",
+    "user": "kevin_666"
+}
+
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:777]--Cmd is :[2024-03-30 11:36:14]--[src_cgi/Produce.c:792]--user = kevin_666, token = e6ecd23a39c1b43464cffad93c9eac4e, start = 0, count = 1
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-03-30 11:36:14]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}

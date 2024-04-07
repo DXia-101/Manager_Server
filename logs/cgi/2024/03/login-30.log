@@ -1,0 +1,36 @@
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:291]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "kevin_666"
+}
+
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:297]--user = kevin_666, pwd = e10adc3949ba59abbe56e057f20f883e
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:301]--Login ret = 1 ------
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:189]--tmp = kevin_66695888149571
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:205]--base64 = rp9m4wmNf+Q4jl1vUAHkACu4o8+1X4D6
+[2024-03-30 11:36:14]--[src_cgi/login_cgi.c:308]--token = e6ecd23a39c1b43464cffad93c9eac4e
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:291]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:297]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:301]--Login ret = 0 ------
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:189]--tmp = customer568856568337
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:205]--base64 = E9xM5l6WSWIhkp2UNNXm1q88qk5yfVSL
+[2024-03-30 16:28:18]--[src_cgi/login_cgi.c:308]--token = 4ee186d83ca2479b1b0be52dc46a5453
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:291]--buf = {
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "user": "customer"
+}
+
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:297]--user = customer, pwd = e10adc3949ba59abbe56e057f20f883e
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:96]--mysql_user = root, mysql_pwd = k916025328, mysql_db = Manager
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:301]--Login ret = 0 ------
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:165]--redis:[ip=127.0.0.1,port=6379]
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:189]--tmp = customer346542167697
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:205]--base64 = E9xM5l6WSWKmAoE/qaMIx4s3TvGpOhVe
+[2024-03-30 16:30:32]--[src_cgi/login_cgi.c:308]--token = 5a8eddbb603afa8e5e828c52acf88dac
