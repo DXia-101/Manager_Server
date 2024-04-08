@@ -1,0 +1,501 @@
+[2024-04-07 21:47:26]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 21:47:26]--[src_cgi/Produce.c:775]--buf = {
+    "token": "be1ddae0bc1b6e9348942811bb8c28b0",
+    "user": "kevin_666"
+}
+
+[2024-04-07 21:47:26]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 21:47:26]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-04-07 21:47:26]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 21:47:27]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 21:47:27]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "be1ddae0bc1b6e9348942811bb8c28b0",
+    "user": "kevin_666"
+}
+
+[2024-04-07 21:47:27]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 21:47:27]--[src_cgi/Produce.c:792]--user = kevin_666, token = be1ddae0bc1b6e9348942811bb8c28b0, start = 0, count = 1
+[2024-04-07 21:47:27]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 21:47:27]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:775]--buf = {
+    "token": "4eac12dbe9777dec20673e46a0a69de9",
+    "user": "kevin_666"
+}
+
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 21:53:51]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-04-07 21:53:51]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "4eac12dbe9777dec20673e46a0a69de9",
+    "user": "kevin_666"
+}
+
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 21:53:51]--[src_cgi/Produce.c:792]--user = kevin_666, token = 4eac12dbe9777dec20673e46a0a69de9, start = 0, count = 1
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 21:53:51]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 21:58:11]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 21:58:11]--[src_cgi/Produce.c:775]--buf = {
+    "token": "9f4e156f1d32508b854fcb1b86f1af0e",
+    "user": "kevin_666"
+}
+
+[2024-04-07 21:58:11]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 21:58:11]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-04-07 21:58:11]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 21:58:12]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 21:58:12]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "9f4e156f1d32508b854fcb1b86f1af0e",
+    "user": "kevin_666"
+}
+
+[2024-04-07 21:58:12]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 21:58:12]--[src_cgi/Produce.c:792]--user = kevin_666, token = 9f4e156f1d32508b854fcb1b86f1af0e, start = 0, count = 1
+[2024-04-07 21:58:12]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 21:58:12]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:775]--buf = {
+    "token": "b2cd7b0b6403e45e9205f9f9c47fb046",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 22:04:45]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-04-07 22:04:45]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "b2cd7b0b6403e45e9205f9f9c47fb046",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 22:04:45]--[src_cgi/Produce.c:792]--user = kevin_666, token = b2cd7b0b6403e45e9205f9f9c47fb046, start = 0, count = 1
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:04:45]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:18:56]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:18:56]--[src_cgi/Produce.c:775]--buf = {
+    "token": "122e571683401e3282a213f017b1ba7b",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:18:56]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 22:18:56]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is :[2024-04-07 22:18:56]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:18:57]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:18:57]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "122e571683401e3282a213f017b1ba7b",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:18:57]--[src_cgi/Produce.c:777]--Cmd is :[2024-04-07 22:18:57]--[src_cgi/Produce.c:792]--user = kevin_666, token = 122e571683401e3282a213f017b1ba7b, start = 0, count = 1
+[2024-04-07 22:18:57]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:18:57]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:28:21]--[src_cgi/Produce.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2024-04-07 22:28:21]--[src_cgi/Produce.c:733]--确实是Produce 
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:775]--buf = {
+    "token": "f945d2730cc3d9ccdfc8b004e2f8357a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "f945d2730cc3d9ccdfc8b004e2f8357a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:792]--user = kevin_666, token = f945d2730cc3d9ccdfc8b004e2f8357a, start = 0, count = 1
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:29:37]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:775]--buf = {
+    "token": "f8712dadae2beb033294ad0b1b905536",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "f8712dadae2beb033294ad0b1b905536",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:792]--user = kevin_666, token = f8712dadae2beb033294ad0b1b905536, start = 0, count = 1
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:30:58]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:775]--buf = {
+    "token": "ee159eca57c98b09ae215891b44fc52c",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ee159eca57c98b09ae215891b44fc52c",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:792]--user = kevin_666, token = ee159eca57c98b09ae215891b44fc52c, start = 0, count = 1
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:33:19]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:775]--buf = {
+    "token": "40e8774c0b6c1c2426982e247ae0905a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "40e8774c0b6c1c2426982e247ae0905a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:792]--user = kevin_666, token = 40e8774c0b6c1c2426982e247ae0905a, start = 0, count = 1
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:40:01]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:775]--buf = {
+    "token": "d37f997706f04d22c173f0ae3efe516f",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "d37f997706f04d22c173f0ae3efe516f",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:792]--user = kevin_666, token = d37f997706f04d22c173f0ae3efe516f, start = 0, count = 1
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:41:34]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:775]--buf = {
+    "token": "ca9864b2738687f75947be99e1ada814",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ca9864b2738687f75947be99e1ada814",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:792]--user = kevin_666, token = ca9864b2738687f75947be99e1ada814, start = 0, count = 1
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:42:12]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:44:37]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:44:37]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:44:37]--[src_cgi/Produce.c:775]--buf = {
+    "token": "70cfbd2d989ca8c237de993029724a49",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:44:37]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:44:37]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "70cfbd2d989ca8c237de993029724a49",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:792]--user = kevin_666, token = 70cfbd2d989ca8c237de993029724a49, start = 0, count = 1
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:44:38]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:775]--buf = {
+    "token": "ae6dee39a46a7aa0b6e9e40f7db6584b",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ae6dee39a46a7aa0b6e9e40f7db6584b",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:792]--user = kevin_666, token = ae6dee39a46a7aa0b6e9e40f7db6584b, start = 0, count = 1
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:48:40]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:775]--buf = {
+    "token": "ecb4c576cc9ed70a697c894242beb503",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ecb4c576cc9ed70a697c894242beb503",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:792]--user = kevin_666, token = ecb4c576cc9ed70a697c894242beb503, start = 0, count = 1
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:52:16]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}
+[2024-04-07 22:56:10]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:56:10]--[src_cgi/Produce.c:743]--cmd = ProduceCount
+[2024-04-07 22:56:10]--[src_cgi/Produce.c:775]--buf = {
+    "token": "22f94c2f80461fd701722e9020ce47f5",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:56:10]--[src_cgi/Produce.c:777]--Cmd is :ProduceCount 
+[2024-04-07 22:56:10]--[src_cgi/Produce.c:780]--Join In ProduceCount cmd is : ProduceCount
+[2024-04-07 22:56:10]--[src_cgi/Produce.c:152]--line = 1
+[2024-04-07 22:56:11]--[src_cgi/Produce.c:737]--确实是Produce确实确实
+[2024-04-07 22:56:11]--[src_cgi/Produce.c:743]--cmd = ProduceNormal
+[2024-04-07 22:56:11]--[src_cgi/Produce.c:775]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "22f94c2f80461fd701722e9020ce47f5",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:56:11]--[src_cgi/Produce.c:777]--Cmd is :ProduceNormal 
+[2024-04-07 22:56:11]--[src_cgi/Produce.c:792]--user = kevin_666, token = 22f94c2f80461fd701722e9020ce47f5, start = 0, count = 1
+[2024-04-07 22:56:11]--[src_cgi/Produce.c:620]--SELECT * FROM ProduceRecords limit 0,1 
+ 在操作
+[2024-04-07 22:56:11]--[src_cgi/Produce.c:677]--{
+	"Produce":	[{
+			"produce_id":	1,
+			"product_name":	"白色无纺布",
+			"product_quantity":	100,
+			"product_time":	"2024-03-16",
+			"RawMaterial":	{
+				"number":	100,
+				"material_name":	"白色无纺布"
+			}
+		}]
+}

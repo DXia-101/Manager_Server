@@ -131,7 +131,7 @@ void get_Procure_count(int ret){
 	
     mysql_query(conn, "set names utf8");
 
-    sprintf(sql_cmd, "select count(*) from ProcureRecords");
+    sprintf(sql_cmd, "select count(*) from Procurement");
     char tmp[512] = {0};
     
     int ret2 = process_result_one(conn, sql_cmd, tmp); 
@@ -520,16 +520,28 @@ int Procure_add(char* buf) {
     mysql_query(conn, "set names utf8");
 
     char sql_cmd[SQL_MAX_LEN] = {0};
-
+	mysql_autocommit(conn,0);
     sprintf(sql_cmd, "INSERT INTO Procurement (procure_id, material_name, material_quantity, procure_time) VALUES ('%d', '%s', '%d', '%s')", procure_id, material_name, material_quantity, procure_time);
-    int affected_rows = 0;
-    int ret2 = process_no_result(conn, sql_cmd, &affected_rows);
-    if (ret2 != 0) {
-        LOG(Procure_LOG_MODULE, Procure_LOG_PROC, "%s 插入失败\n", sql_cmd);
-        ret = -1;
-        goto END;
-    } else {
-        LOG(Procure_LOG_MODULE, Procure_LOG_PROC, "affected %d rows\n", affected_rows);
+    if (mysql_query(conn, sql_cmd) != 0) {
+        LOG(Procure_LOG_MODULE, Procure_LOG_PROC, "插入Procurement表失败: %s\n", mysql_error(conn));
+        mysql_rollback(conn);
+        mysql_close(conn);
+        return -1;
+    }
+
+	sprintf(sql_cmd,"UPDATE waresinfo SET wares_amount = wares_amount + %d WHERE wares_name = '%s';",material_quantity,material_name);
+    if (mysql_query(conn, sql_cmd) != 0) {
+        LOG(Procure_LOG_MODULE, Procure_LOG_PROC, "更新waresinfo表失败: %s\n", mysql_error(conn));
+        mysql_rollback(conn);
+        mysql_close(conn); 
+        return -1;
+    }
+
+	if (mysql_commit(conn) != 0) {
+        LOG(Procure_LOG_MODULE, Procure_LOG_PROC, "无法提交事务：%s\n", mysql_error(conn));
+        mysql_rollback(conn);
+        mysql_close(conn);
+        return 1;
     }
 
 END:
@@ -610,19 +622,6 @@ int ret = 0;
 		if(row[3] != NULL){
 			cJSON_AddStringToObject(item,"procure_time",row[3]);
 		}
-        if(row[3] != NULL){
-			cJSON_AddStringToObject(item,"procure_time",row[3]);
-		}
-        if(row[3] != NULL){
-			cJSON_AddStringToObject(item,"procure_time",row[3]);
-		}
-        if(row[3] != NULL){
-			cJSON_AddStringToObject(item,"procure_time",row[3]);
-		}
-        if(row[3] != NULL){
-			cJSON_AddStringToObject(item,"procure_time",row[3]);
-		}
-		
 		cJSON_AddItemToArray(array,item);
 	}
 	

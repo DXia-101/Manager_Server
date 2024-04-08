@@ -1,0 +1,316 @@
+[2024-04-07 22:04:45]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:04:45]--[src_cgi/Procure.c:714]--buf = {
+    "token": "b2cd7b0b6403e45e9205f9f9c47fb046",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:04:45]--[src_cgi/Procure.c:140]--select count(*) from ProcureRecords 操作失败
+[2024-04-07 22:04:45]--[src_cgi/Procure.c:152]--line = 0
+[2024-04-07 22:18:56]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:18:56]--[src_cgi/Procure.c:714]--buf = {
+    "token": "122e571683401e3282a213f017b1ba7b",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:18:56]--[src_cgi/Procure.c:140]--select count(*) from ProcureRecords 操作失败
+[2024-04-07 22:18:56]--[src_cgi/Procure.c:152]--line = 0
+[2024-04-07 22:28:22]--[src_cgi/Procure.c:39]--mysql:[user=root,pwd=k916025328,database=Manager][2024-04-07 22:29:37]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:29:37]--[src_cgi/Procure.c:714]--buf = {
+    "token": "f945d2730cc3d9ccdfc8b004e2f8357a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:29:37]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:29:37]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:29:37]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "f945d2730cc3d9ccdfc8b004e2f8357a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:29:37]--[src_cgi/Procure.c:728]--user = kevin_666, token = f945d2730cc3d9ccdfc8b004e2f8357a, start = 0, count = 1
+[2024-04-07 22:29:37]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:29:37]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:714]--buf = {
+    "token": "f8712dadae2beb033294ad0b1b905536",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "f8712dadae2beb033294ad0b1b905536",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:728]--user = kevin_666, token = f8712dadae2beb033294ad0b1b905536, start = 0, count = 1
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:30:58]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:714]--buf = {
+    "token": "ee159eca57c98b09ae215891b44fc52c",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ee159eca57c98b09ae215891b44fc52c",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:728]--user = kevin_666, token = ee159eca57c98b09ae215891b44fc52c, start = 0, count = 1
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:33:19]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:714]--buf = {
+    "token": "40e8774c0b6c1c2426982e247ae0905a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "40e8774c0b6c1c2426982e247ae0905a",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:728]--user = kevin_666, token = 40e8774c0b6c1c2426982e247ae0905a, start = 0, count = 1
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:40:01]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:714]--buf = {
+    "token": "d37f997706f04d22c173f0ae3efe516f",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "d37f997706f04d22c173f0ae3efe516f",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:728]--user = kevin_666, token = d37f997706f04d22c173f0ae3efe516f, start = 0, count = 1
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:41:34]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:714]--buf = {
+    "token": "ca9864b2738687f75947be99e1ada814",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ca9864b2738687f75947be99e1ada814",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:728]--user = kevin_666, token = ca9864b2738687f75947be99e1ada814, start = 0, count = 1
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:42:12]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:44:37]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:44:37]--[src_cgi/Procure.c:714]--buf = {
+    "token": "70cfbd2d989ca8c237de993029724a49",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:44:38]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:44:38]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:44:38]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "70cfbd2d989ca8c237de993029724a49",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:44:38]--[src_cgi/Procure.c:728]--user = kevin_666, token = 70cfbd2d989ca8c237de993029724a49, start = 0, count = 1
+[2024-04-07 22:44:38]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:44:38]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:714]--buf = {
+    "token": "ae6dee39a46a7aa0b6e9e40f7db6584b",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ae6dee39a46a7aa0b6e9e40f7db6584b",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:728]--user = kevin_666, token = ae6dee39a46a7aa0b6e9e40f7db6584b, start = 0, count = 1
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:48:40]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:714]--buf = {
+    "token": "ecb4c576cc9ed70a697c894242beb503",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "ecb4c576cc9ed70a697c894242beb503",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:728]--user = kevin_666, token = ecb4c576cc9ed70a697c894242beb503, start = 0, count = 1
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:52:16]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
+[2024-04-07 22:56:10]--[src_cgi/Procure.c:682]--cmd = ProcureCount
+[2024-04-07 22:56:10]--[src_cgi/Procure.c:714]--buf = {
+    "token": "22f94c2f80461fd701722e9020ce47f5",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:56:10]--[src_cgi/Procure.c:152]--line = 1
+[2024-04-07 22:56:11]--[src_cgi/Procure.c:682]--cmd = ProcureNormal
+[2024-04-07 22:56:11]--[src_cgi/Procure.c:714]--buf = {
+    "count": 1,
+    "start": 0,
+    "token": "22f94c2f80461fd701722e9020ce47f5",
+    "user": "kevin_666"
+}
+
+[2024-04-07 22:56:11]--[src_cgi/Procure.c:728]--user = kevin_666, token = 22f94c2f80461fd701722e9020ce47f5, start = 0, count = 1
+[2024-04-07 22:56:11]--[src_cgi/Procure.c:569]--SELECT * FROM Procurement limit 0,1 
+ 在操作
+[2024-04-07 22:56:11]--[src_cgi/Procure.c:633]--{
+	"Procure":	[{
+			"procure_id":	1,
+			"material_name":	"棉花",
+			"material_quantity":	100,
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12",
+			"procure_time":	"2023-11-12"
+		}]
+}
